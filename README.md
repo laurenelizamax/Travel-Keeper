@@ -4,8 +4,10 @@
 ### Motivation
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
 
-### Screenshots
-Include logo/demo screenshot etc.
+### Screenshots-Wireframe-ERD
+![wireframe](./travel-wireframe.jpg)
+![ERD](link-to-image)
+
 
 ### Tech/framework used
 Built with
