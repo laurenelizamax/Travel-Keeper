@@ -5,7 +5,7 @@
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
 
 ### Screenshots-Wireframe-ERD
-![wireframe](travel-ERD.pdf)
+![wireframe](https://github.com/laurenelizamax/Travel-Keeper/blob/master/travel-wireframe.jpg)
 ![ERD](https://github.com/laurenelizamax/Travel-Keeper/blob/master/travel-ERD.pdf)
 
 
