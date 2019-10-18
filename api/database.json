@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "Heidi",
+      "email": "heidi@heidi.com",
+      "password": "heidi",
+      "id": 1
+    },
+    {
+      "name": "Lauren",
+      "email": "lauren@lauren.com",
+      "password": "lauren",
+      "id": 3
+    },
+    {
+      "name": "eliza",
+      "email": "eliza@eliza.com",
+      "password": "eliza",
+      "id": 5
+    },
+    {
+      "name": "lil",
+      "email": "lil@lil.com",
+      "password": "lil",
+      "id": 6
+    },
+    {
+      "name": "lol",
+      "email": "lol@lol",
+      "password": "lol",
+      "id": 7
+    }
+  ]
+}
