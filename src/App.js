@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import Navbar from './components/nav/Navbar'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+import ApplicationViews from './components/ApplicationViews'
 
-function App() {
+class App extends Component {
+  state = {
+    user: false
+  }
+
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+
+  setUser = (authObj) => {
+    sessionStorage.setItem(
+      "credentials",
+      JSON.stringify(authObj)
+    )
+    this.setState({
+      user: this.isAuthenticated()
+    });
+  }
+  clearUser = () => {
+    sessionStorage.clear()
+    this.setState({
+      user: this.isAuthenticated()
+    });
+  }
+
+  componentDidMount() {
+    this.setState({
+      user: this.isAuthenticated()
+    })
+  }
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {(this.state.user) ?
+        <>
+          <Navbar clearUser={this.clearUser} />
+          <ApplicationViews />
+        </>
+        : <><div className="logRegContainer">
+          <Login setUser={this.setUser} />
+          <Register setUser={this.setUser} />
+        </div>
+        </>}
+    </React.Fragment>
   );
 }
+}
 
-export default App;
+export default App
