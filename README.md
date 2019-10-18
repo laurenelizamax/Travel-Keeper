@@ -6,7 +6,7 @@ A short description of the motivation behind the creation and maintenance of the
 
 ### Screenshots-Wireframe-ERD
 ![wireframe](https://github.com/laurenelizamax/Travel-Keeper/blob/master/travel-wireframe.jpg)
-![ERD](https://github.com/laurenelizamax/Travel-Keeper/blob/master/Travel%20Keeper.png)
+![ERD](https://github.com/laurenelizamax/Travel-Keeper/blob/master/Travel%20Keeper%20(2).png)
 
 
 ### Tech/framework used
