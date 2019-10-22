@@ -48,7 +48,7 @@ class Login extends Component {
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
-                        <button className="submit">Login</button>
+                        <button type="submit" className="submit">Login</button>
                     </form>
                 </div>
             </>

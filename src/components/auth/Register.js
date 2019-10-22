@@ -62,7 +62,7 @@ class Register extends Component {
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
-                        <button className="submit">Register</button>
+                        <button type="submit" className="submit">Register</button>
                     </form>
                 </div>
             </>
