@@ -30,12 +30,6 @@
       "name": "France",
       "description": "Visited Friends in Paris",
       "tripId": 1
-    },
-    {
-      "id": 2,
-      "name": "Spain",
-      "description": "Visited Friends in Paris",
-      "tripId": 1
     }
   ],
   "fellowTravelers": [
@@ -56,15 +50,10 @@
   "transportations": [
     {
       "id": 1,
-      "name": "airplane"
-    }
-  ],
-  "transportationLocations": [
-    {
-      "id": 1,
-      "transportationId": 1,
-      "placeId": 1,
-      "description": "Got a great deal with British Airways"
+      "name": "airplane",
+      "description": "Got a great deal with British Airways",
+      "placeId": 1
+
     }
   ],
   "activities": [
