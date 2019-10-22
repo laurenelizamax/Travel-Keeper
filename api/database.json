@@ -11,24 +11,69 @@
       "email": "lauren@lauren.com",
       "password": "lauren",
       "id": 3
+    }
+
+  ],
+  "trips": [
+    {
+      "id": 1,
+      "title": "Europe Trip",
+      "userId": 3,
+      "startDate": "10/15/19",
+      "endDate": "10/18/19",
+      "notes": "Great Trip!"
+    }
+  ],
+  "places": [
+    {
+      "id": 1,
+      "name": "France",
+      "description": "Visited Friends in Paris",
+      "tripId": 1
     },
     {
-      "name": "eliza",
-      "email": "eliza@eliza.com",
-      "password": "eliza",
-      "id": 5
-    },
+      "id": 2,
+      "name": "Spain",
+      "description": "Visited Friends in Paris",
+      "tripId": 1
+    }
+  ],
+  "fellowTravelers": [
     {
-      "name": "lil",
-      "email": "lil@lil.com",
-      "password": "lil",
-      "id": 6
-    },
+      "id": 2,
+      "name": "Renee",
+      "tripId": 1
+    }
+  ],
+  "accomodations": [
     {
-      "name": "lol",
-      "email": "lol@lol",
-      "password": "lol",
-      "id": 7
+      "id": 1,
+      "name": "Les Cedres",
+      "description": "Rented a room",
+      "placeId": 1
+    }
+  ],
+  "transportations": [
+    {
+      "id": 1,
+      "name": "airplane"
+    }
+  ],
+  "transportationLocations": [
+    {
+      "id": 1,
+      "transportationId": 1,
+      "placeId": 1,
+      "description": "Got a great deal with British Airways"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "name": "La Tour Eiffel",
+      "description": "Went to the Eiffel Tower. All the way to the top!",
+      "placeId": 1,
+      "favorite": false
     }
   ]
 }
