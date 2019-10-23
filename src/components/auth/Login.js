@@ -26,6 +26,9 @@ class Login extends Component {
                 window.alert("Please enter your password")
             } else if (loginUser) {
                 this.props.setUser(loginUser);
+                    sessionStorage.setItem("userId", loginUser.id);
+                    sessionStorage.setItem("email", this.state.email);
+                    sessionStorage.setItem("name", this.state.name);
             } else {
                 window.alert("You have not registered yet")
             }

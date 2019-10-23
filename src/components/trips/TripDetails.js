@@ -27,18 +27,21 @@ class TripDetails extends Component {
             .then(() => {
                 this.setState(setNewState)
             })
-            console.log("potato")
     }
+    // handleDelete = (id) =>  {
+    //     APIManager.deleteTrip(id)
+    //     .then(() => this.props.getData());
+    //   }
 
     render() {
-        console.log("tripdetails rendering")
         return (
             <>
                 <div>
-                        <h4>Title: {this.state.trip.title}</h4>
-                        <p>Start Date: {this.state.trip.startDate}</p>
-                        <p>End Date: {this.state.trip.endDate}</p>
-                    </div>
+                    <h4>Title: {this.state.trip.title}</h4>
+                    <p>Start Date: {this.state.trip.startDate}</p>
+                    <p>End Date: {this.state.trip.endDate}</p>
+                    <p>Notes: {this.state.trip.notes}</p>
+                </div>
 
 
 
@@ -53,6 +56,14 @@ class TripDetails extends Component {
                         <p>Fellow Travelers: {fellowTraveler.name}</p>
                     </div>
                 )}
+
+                <button className="tripDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete(this.props.trip.id)}>Delete</button>
+
+                <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
+
+
+
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>

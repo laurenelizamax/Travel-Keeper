@@ -1,68 +1,96 @@
 import React, { Component } from "react"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import APIManager from "../../modules/APIManager"
 
 
 class TripAddForm extends Component {
+    state = {
+        tripTitle: "",
+        startDate: "",
+        endDate: "",
+        userId: "",
+        notes: "",
+        loadingStatus: false,
+    };
+    activeUser = parseInt(sessionStorage.getItem("userId"))
 
-    render () {
-        return(
+    handleFieldChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+    };
+    constructNewTrip = evt => {
+        evt.preventDefault();
+        if (this.state.tripTitle === "" || this.state.startDate === "" || this.state.endDate === "" || this.state.notes === "") {
+            window.alert("Please add a trip title, start date and end date");
+        } else {
+            this.setState({ loadingStatus: true });
+            const trip = {
+                title: this.state.tripTitle,
+                startDate: this.state.startDate,
+                endDate: this.state.endDate,
+                notes: this.state.notes,
+                userId: this.activeUser
+            };
+
+            APIManager.postTrip(trip)
+            .then(() => this.props.history.push("/"));
+        }
+
+    };
+    render() {
+        return (
             <>
-            <div className="tripAddForm">
-                    <div id="tripAddFormHeader"><h3>Add A Trip</h3>
-                    </div>
-                    <Button id="modalFormBtn" onClick={this.toggle} >{this.props.buttonLabel} Add Another Trip </Button>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.tripName}>
-                        <ModalHeader toggle={this.toggle}>Add New Trip</ModalHeader>
-                        <ModalBody>
-                            <form>
-                                <fieldset>
-                                    <div className="eventForm">
-                                        <label htmlFor="eventName">Title:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="eventName"
-                                            placeholder="Event Title"
-                                        />
-                                        <label htmlFor="date">Date:</label>
-                                        <input
-                                            type="date"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="date"
-                                            placeholder="Date"
-                                        />
-                                        <label htmlFor="venue">Venue:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="venue"
-                                            placeholder="Venue"
-                                        />
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button id="editBtn"
-                                onClick={(evt) => {
-                                    this.constructNewEvent(evt)
-                                    this.toggle()
-                                }}>Add New Event</Button>{' '}
-                            <Button id="deleteBtn" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
+                <div>
+                    <button type="button" className="cardButton"
+                        onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
                 </div>
-                <div className="eventCardContainer">
-                    {this.state.events.map(event => <EventCard
-                        key={event.id}
-                        event={event}
-                        getData={this.getData}
-                        {...this.props} />)}
+
+                <div className="tripAddForm">
+                    <form>
+                        <fieldset>
+                            <div className="tripForm">
+                                <label htmlFor="tripTitle">Trip Title:</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="tripTitle"
+                                    placeholder="TripTitle"
+                                />
+                                <label htmlFor="startDate">Start Date:</label>
+                                <input
+                                    type="date"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="startDate"
+                                    placeholder="Start Date"
+                                />
+                                <label htmlFor="endDate">End Date:</label>
+                                <input
+                                    type="date"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="endDate"
+                                    placeholder="End Date"
+                                />
+                                 <label htmlFor="notes">Notes:</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="notes"
+                                    placeholder="notes"
+                                />
+                                  <button
+                        type="submit"
+                        disabled={this.state.loadingStatus}
+                        onClick={this.constructNewTrip}
+                        >Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
-        </>
+            </>
         )
     }
 }
