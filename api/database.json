@@ -11,8 +11,19 @@
       "email": "lauren@lauren.com",
       "password": "lauren",
       "id": 3
+    },
+    {
+      "name": "lily",
+      "email": "lily@lily",
+      "password": "lily",
+      "id": 4
+    },
+    {
+      "name": "sparkle",
+      "email": "sparkle@sparkle.com",
+      "password": "sparkle",
+      "id": 5
     }
-
   ],
   "trips": [
     {
@@ -22,18 +33,28 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
+    },
+    {
+      "title": "new trip",
+      "startDate": "2019-10-16",
+      "endDate": "2019-10-22",
+      "notes": "works?",
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "title": "new trip!!!",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-09",
+      "notes": "dfsdfdsfd",
+      "userId": 5,
+      "id": 4
     }
   ],
   "places": [
     {
       "id": 1,
       "name": "France",
-      "description": "Visited Friends in Paris",
-      "tripId": 1
-    },
-    {
-      "id": 2,
-      "name": "Spain",
       "description": "Visited Friends in Paris",
       "tripId": 1
     }
@@ -56,15 +77,9 @@
   "transportations": [
     {
       "id": 1,
-      "name": "airplane"
-    }
-  ],
-  "transportationLocations": [
-    {
-      "id": 1,
-      "transportationId": 1,
-      "placeId": 1,
-      "description": "Got a great deal with British Airways"
+      "name": "airplane",
+      "description": "Got a great deal with British Airways",
+      "placeId": 1
     }
   ],
   "activities": [

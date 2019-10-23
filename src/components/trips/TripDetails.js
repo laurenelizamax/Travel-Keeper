@@ -3,47 +3,68 @@ import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 
 class TripDetails extends Component {
+
     state = {
-        trips: [],
-        places: []
+        trip: "",
+        places: [],
+        fellowTravelers: []
     }
     componentDidMount() {
         const setNewState = {}
-        APIManager.getTrip()
-            .then((trips) => {
-                setNewState.trips = trips
+        APIManager.getTrip(this.props.tripId)
+            .then((trip) => {
+                setNewState.trip = trip
             })
-            .then(() => APIManager.getTripSpecificPlace()
+            .then(() => APIManager.getTripSpecificPlace(this.props.tripId)
                 .then((places) => {
                     setNewState.places = places
                 })
-            )
-            .then(() => APIManager.getTripAccomodations()
-                .then((lodging) => {
-                    setNewState.accomodations = lodging
-                })
-            )
-            .then(() => APIManager.getTripTransportation()
-                .then((trans) => {
-                    setNewState.transportationLocations = trans
-                })
-            )
-            .then(() => APIManager.getTripActivities()
-                .then((activites) => {
-                    setNewState.activities = activites
+            ).then(() => APIManager.getTripTravelers(this.props.tripId)
+                .then((travelers) => {
+                    setNewState.fellowTravelers = travelers
                 })
             )
             .then(() => {
                 this.setState(setNewState)
             })
     }
+    // handleDelete = (id) =>  {
+    //     APIManager.deleteTrip(id)
+    //     .then(() => this.props.getData());
+    //   }
 
     render() {
         return (
             <>
+                <div>
+                    <h4>Title: {this.state.trip.title}</h4>
+                    <p>Start Date: {this.state.trip.startDate}</p>
+                    <p>End Date: {this.state.trip.endDate}</p>
+                    <p>Notes: {this.state.trip.notes}</p>
+                </div>
+
+
+
                 {this.state.places.map(place =>
-                    <PlaceCard key={place.id} />
-                    )}
+                    <PlaceCard key={place.id}
+                        place={place}
+                    />
+
+                )}
+                {this.state.fellowTravelers.map(fellowTraveler =>
+                    <div>
+                        <p>Fellow Travelers: {fellowTraveler.name}</p>
+                    </div>
+                )}
+
+                <button className="tripDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete(this.props.trip.id)}>Delete</button>
+
+                <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
+
+
+
+
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 

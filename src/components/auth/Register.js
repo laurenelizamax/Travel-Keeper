@@ -3,9 +3,9 @@ import LogRegManager from "../../modules/LogRegManager"
 
 class Register extends Component {
     state = {
+        name: "",
         email: "",
-        password: "",
-        id: "",
+        password: ""
     }
     handleFieldChange = (evt) => {
         const stateToChange = {}
@@ -31,8 +31,11 @@ class Register extends Component {
                     password: this.state.password
                 };
                 LogRegManager.createNewUser(newUser)
-                    .then((createdNewUser) => {
-                        this.props.setUser(createdNewUser)
+                    .then((createNewUser) => {
+                        sessionStorage.setItem("userId", createNewUser.id);
+                        sessionStorage.setItem("email", this.state.email);
+                        sessionStorage.setItem("name", this.state.name);
+                        this.props.setUser(createNewUser)
                     }
                     )
             }
