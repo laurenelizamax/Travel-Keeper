@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import "./TripForm.css"
+import { Link } from "react-router-dom"
 
 
 class TripAddForm extends Component {
@@ -9,6 +11,7 @@ class TripAddForm extends Component {
         endDate: "",
         userId: "",
         notes: "",
+        fellowTravelers: [],
         loadingStatus: false,
     };
     activeUser = parseInt(sessionStorage.getItem("userId"))
@@ -20,8 +23,9 @@ class TripAddForm extends Component {
     };
     constructNewTrip = evt => {
         evt.preventDefault();
-        if (this.state.tripTitle === "" || this.state.startDate === "" || this.state.endDate === "" || this.state.notes === "") {
-            window.alert("Please add a trip title, start date and end date");
+        if (this.state.tripTitle === "" || this.state.startDate === "" || this.state.endDate === "" ||
+            this.state.notes === "") {
+            window.alert("Please add trip details");
         } else {
             this.setState({ loadingStatus: true });
             const trip = {
@@ -29,14 +33,16 @@ class TripAddForm extends Component {
                 startDate: this.state.startDate,
                 endDate: this.state.endDate,
                 notes: this.state.notes,
-                userId: this.activeUser
-            };
+                userId: this.activeUser,
+            }
 
             APIManager.postTrip(trip)
-            .then(() => this.props.history.push("/"));
+                .then(() => {this.props.history.push("/")});
+                // `/trips/${this.props.tripId}`
+                // {<Link to={`/trips/${this.props.trip.id}`}></Link>}
         }
+    }
 
-    };
     render() {
         return (
             <>
@@ -45,10 +51,11 @@ class TripAddForm extends Component {
                         onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
                 </div>
 
-                <div className="tripAddForm">
-                    <form>
+                <div>
+                    <form className="tripAddForm">
                         <fieldset>
                             <div className="tripForm">
+                                {/* Trip Title input*/}
                                 <label htmlFor="tripTitle">Trip Title:</label>
                                 <input
                                     type="text"
@@ -57,6 +64,7 @@ class TripAddForm extends Component {
                                     id="tripTitle"
                                     placeholder="TripTitle"
                                 />
+                                {/* Start Date input*/}
                                 <label htmlFor="startDate">Start Date:</label>
                                 <input
                                     type="date"
@@ -65,6 +73,7 @@ class TripAddForm extends Component {
                                     id="startDate"
                                     placeholder="Start Date"
                                 />
+                                {/* End Date input*/}
                                 <label htmlFor="endDate">End Date:</label>
                                 <input
                                     type="date"
@@ -73,7 +82,8 @@ class TripAddForm extends Component {
                                     id="endDate"
                                     placeholder="End Date"
                                 />
-                                 <label htmlFor="notes">Notes:</label>
+                                {/* Notes input*/}
+                                <label htmlFor="notes">Notes:</label>
                                 <input
                                     type="text"
                                     required
@@ -81,11 +91,14 @@ class TripAddForm extends Component {
                                     id="notes"
                                     placeholder="notes"
                                 />
-                                  <button
-                        type="submit"
-                        disabled={this.state.loadingStatus}
-                        onClick={this.constructNewTrip}
-                        >Submit</button>
+                                {/* Button to create new trip*/}
+                                <button
+                                    type="submit"
+                                    className="cardButton"
+                                    disabled={this.state.loadingStatus}
+                                    onClick={this.constructNewTrip}
+                                >Submit</button>
+
                             </div>
                         </fieldset>
                     </form>

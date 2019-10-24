@@ -1,54 +1,32 @@
 {
   "users": [
     {
-      "name": "Heidi",
-      "email": "heidi@heidi.com",
-      "password": "heidi",
-      "id": 1
-    },
-    {
       "name": "Lauren",
       "email": "lauren@lauren.com",
       "password": "lauren",
-      "id": 3
-    },
-    {
-      "name": "lily",
-      "email": "lily@lily",
-      "password": "lily",
-      "id": 4
+      "id": 1
     },
     {
       "name": "sparkle",
       "email": "sparkle@sparkle.com",
       "password": "sparkle",
-      "id": 5
+      "id": 2
+    },
+    {
+      "name": "les",
+      "email": "les@les.com",
+      "password": "les",
+      "id": 3
     }
   ],
   "trips": [
     {
       "id": 1,
       "title": "Europe Trip",
-      "userId": 3,
+      "userId": 1,
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
-    },
-    {
-      "title": "new trip",
-      "startDate": "2019-10-16",
-      "endDate": "2019-10-22",
-      "notes": "works?",
-      "userId": 3,
-      "id": 2
-    },
-    {
-      "title": "new trip!!!",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-09",
-      "notes": "dfsdfdsfd",
-      "userId": 5,
-      "id": 4
     }
   ],
   "places": [
@@ -56,6 +34,12 @@
       "id": 1,
       "name": "France",
       "description": "Visited Friends in Paris",
+      "tripId": 1
+    },
+    {
+      "id": 1,
+      "name": "Spain",
+      "description": "Cool",
       "tripId": 1
     }
   ],
@@ -66,7 +50,7 @@
       "tripId": 1
     }
   ],
-  "accomodations": [
+  "accommodations": [
     {
       "id": 1,
       "name": "Les Cedres",

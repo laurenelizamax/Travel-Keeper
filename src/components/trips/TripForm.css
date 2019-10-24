@@ -1,0 +1,43 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+fieldset {
+    max-width: 60em;
+    padding: 4px;
+    margin: 2em auto;
+    border: 0 none;
+    box-shadow: 0 4px 8px 0 black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+fieldset input, fieldset button{
+    box-sizing: border-box;
+    padding: .2em .4em;
+    margin: .2em 0;
+    outline: none;
+    box-shadow: none;
+}
+
+fieldset button {
+    max-width: 9em;
+    margin: 10px;
+    background-color: white;
+    border: none;
+    color: black;
+    box-shadow: 0 2px 4px 0 black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+    width: 100%;
+    cursor: pointer;
+}
+
+fieldset label {
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+}

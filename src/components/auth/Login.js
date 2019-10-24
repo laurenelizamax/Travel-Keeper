@@ -28,7 +28,6 @@ class Login extends Component {
                 this.props.setUser(loginUser);
                     sessionStorage.setItem("userId", loginUser.id);
                     sessionStorage.setItem("email", this.state.email);
-                    sessionStorage.setItem("name", this.state.name);
             } else {
                 window.alert("You have not registered yet")
             }
