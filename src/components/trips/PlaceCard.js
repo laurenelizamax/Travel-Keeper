@@ -4,17 +4,17 @@ import APIManager from "../../modules/APIManager"
 
 class PlaceCard extends Component {
     state = {
-        accomodations: [],
+        accommodations: [],
         transportations: [],
         activities: []
     }
 
     componentDidMount() {
-        console.log("placecard mounted")
+        // console.log("placecard mounted")
         const newState = {}
-            APIManager.getTripAccomodations(this.props.place.id)
+            APIManager.getTripAccommodations(this.props.place.id)
                 .then((lodging) => {
-                    newState.accomodations = lodging
+                    newState.Accommodations = lodging
                 })
             .then(() => APIManager.getTripTransportation(this.props.place.id)
                 .then((trans) => {
@@ -32,7 +32,6 @@ class PlaceCard extends Component {
     }
 
     render() {
-        console.log("placecard rendering")
         return (
             <>
             <div>
@@ -40,10 +39,10 @@ class PlaceCard extends Component {
                         <p>Description: {this.props.place.description}</p>
                     </div>
 
-                {this.state.accomodations.map(accomodation =>
+                {this.state.accommodations.map(accommodation =>
                     <div>
-                        <p>Accomodations: {accomodation.name}</p>
-                        <p>Description: {accomodation.description}</p>
+                        <p>Accommodations: {accommodation.name}</p>
+                        <p>Description: {accommodation.description}</p>
                     </div>
                 )}
 
