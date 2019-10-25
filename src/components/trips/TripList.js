@@ -44,9 +44,13 @@ class TripList extends Component {
                 </div>
                 <div className="container-cards">
                     {this.state.trips.map(trip =>
+
                         <TripCard key={trip.id}
                             trip={trip}
                             deleteTrip={this.deleteTrip}
+                        tripId={trip.id}
+                        {...this.props}
+
                         />
                     )}
                 </div>

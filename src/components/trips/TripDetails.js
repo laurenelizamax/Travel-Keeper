@@ -7,7 +7,9 @@ class TripDetails extends Component {
     state = {
         trip: "",
         places: [],
-        fellowTravelers: []
+        accommodations: [],
+        transportation: [],
+        activities: []
     }
     componentDidMount() {
         const setNewState = {}
@@ -27,6 +29,36 @@ class TripDetails extends Component {
             .then(() => {
                 this.setState(setNewState)
             })
+    }
+
+
+    activeUser = parseInt(sessionStorage.getItem("userId"))
+
+    handleFieldChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+    };
+    addToNewTrip = evt => {
+        evt.preventDefault();
+        if (this.state.tripTitle === "" || this.state.startDate === "" || this.state.endDate === "" ||
+            this.state.notes === "") {
+            window.alert("Please add trip details");
+        } else {
+            this.setState({ loadingStatus: true });
+            const trip = {
+                title: this.state.tripTitle,
+                startDate: this.state.startDate,
+                endDate: this.state.endDate,
+                notes: this.state.notes,
+                userId: this.activeUser,
+            }
+
+            APIManager.postTrip(trip)
+                .then(() => {this.props.history.push("/")});
+                // `/trips/${this.props.tripId}`
+                // {<Link to={`/trips/${this.props.trip.id}`}></Link>}
+        }
     }
 
     render() {
@@ -54,9 +86,6 @@ class TripDetails extends Component {
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
-
-
-
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>

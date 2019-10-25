@@ -5,6 +5,7 @@ import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
 import TripDetails from "./trips/TripDetails"
 import TripAddForm from "./trips/TripAddForm"
+import TripEditForm from "./trips/TripEditForm"
 
 class ApplicationViews extends Component {
 
@@ -34,6 +35,11 @@ class ApplicationViews extends Component {
         <Route exact path="/trip/new" render={(props) => {
           return <TripAddForm {...props} />
         }} />
+        <Route
+          exact path="/trips/:tripId(\d+)/edit" render={props => {
+            return <TripEditForm {...props} />
+          }}
+        />
             </React.Fragment>
         );
     }
