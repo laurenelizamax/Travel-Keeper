@@ -4,18 +4,24 @@
       "name": "Lauren",
       "email": "lauren@lauren.com",
       "password": "lauren",
+      "userPlace": "",
+      "userName": "",
       "id": 1
     },
     {
       "name": "sparkle",
       "email": "sparkle@sparkle.com",
       "password": "sparkle",
+      "userPlace": "",
+      "userName": "",
       "id": 2
     },
     {
       "name": "les",
       "email": "les@les.com",
       "password": "les",
+      "userPlace": "",
+      "userName": "",
       "id": 3
     }
   ],
@@ -27,31 +33,120 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
+    },
+    {
+      "title": "new trip",
+      "startDate": "2019-10-01",
+      "endDate": "2019-10-15",
+      "notes": "dfsdfdsfd",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "nss",
+      "startDate": "2019-09-30",
+      "endDate": "2019-10-15",
+      "notes": "today",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "title": "new trip",
+      "startDate": "2019-10-08",
+      "endDate": "2019-10-09",
+      "notes": "xcxzcz",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "title": "jhkjkj",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-09",
+      "notes": "ghjgjkh",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "title": "sfdsfds",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "dfdsfds",
+      "userId": 3,
+      "id": 6
     }
   ],
   "places": [
     {
       "id": 1,
-      "name": "France",
-      "description": "Visited Friends in Paris",
+      "placeName": "France",
+      "placeDescription": "Visited Friends in Paris",
       "tripId": 1
     },
     {
-      "id": 2
-      "name": "Spain",
-      "description": "Cool",
+      "id": 2,
+      "placeName": "Spain",
+      "placeDescription": "Cool",
       "tripId": 1
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 2,
+      "id": 3
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 4,
+      "id": 4
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 4,
+      "id": 5
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 3,
+      "id": 6
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 5,
+      "id": 7
+    },
+    {
+      "placeName": "nbjhjk",
+      "placeDescription": "jhjkhkj",
+      "tripId": 5,
+      "id": 8
+    },
+    {
+      "placeName": "jhhjghj",
+      "placeDescription": "jhkjhk",
+      "tripId": 5,
+      "id": 9
+    },
+    {
+      "placeName": "sdfsfsd",
+      "placeDescription": "fdsfs",
+      "tripId": 6,
+      "id": 10
+    },
+    {
+      "placeName": "sdfsfsddsfdsfdsfs",
+      "placeDescription": "fdsfsdsfdsfsdfds",
+      "tripId": 6,
+      "id": 11
     }
   ],
   "fellowTravelers": [
     {
       "id": 2,
       "name": "Renee",
-      "tripId": 1
-    },
-    {
-      "id": 1,
-      "name": "Ashley",
       "tripId": 1
     }
   ],
@@ -61,12 +156,6 @@
       "name": "Les Cedres",
       "description": "Rented a room",
       "placeId": 1
-    },
-    {
-      "id": 1,
-      "name": "Italian room",
-      "description": "airbnb",
-      "placeId": 2
     }
   ],
   "transportations": [
@@ -75,12 +164,6 @@
       "name": "airplane",
       "description": "Got a great deal with British Airways",
       "placeId": 1
-    },
-    {
-      "id": 2,
-      "name": "train",
-      "description": "from paris",
-      "placeId": 2
     }
   ],
   "activities": [
@@ -89,13 +172,6 @@
       "name": "La Tour Eiffel",
       "description": "Went to the Eiffel Tower. All the way to the top!",
       "placeId": 1,
-      "favorite": false
-    },
-    {
-      "id": 2,
-      "name": "fountain",
-      "description": "got wet",
-      "placeId": 2,
       "favorite": false
     }
   ]
