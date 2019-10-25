@@ -12,9 +12,9 @@ class PlaceCard extends Component {
     componentDidMount() {
         // console.log("placecard mounted")
         const newState = {}
-        APIManager.getTripAccomodations(this.props.place.id)
+        APIManager.getTripAccommodations(this.props.place.id)
             .then((lodging) => {
-                newState.accomodations = lodging
+                newState.accommodations = lodging
             })
       
             .then(() => APIManager.getTripTransportation(this.props.place.id)
