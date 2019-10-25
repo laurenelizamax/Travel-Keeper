@@ -1,5 +1,5 @@
 import React, {  Component } from "react"
-import APIManager from "../../modules/APIManager"
+// import APIManager from "../../modules/APIManager"
 import {Link, withRouter} from "react-router-dom"
 
 

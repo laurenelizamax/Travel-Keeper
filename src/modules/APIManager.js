@@ -17,13 +17,22 @@ export default {
             body: JSON.stringify(newTrip)
         }).then(data => data.json())
     },
-    postLocation(id, newLocation) {
-        return fetch(`${remoteURL}/trips/${id}`, {
+    postLocation(newLocation) {
+        return fetch(`${remoteURL}/places`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newLocation)
+        }).then(data => data.json())
+    },
+    postProfile(newProfile) {
+        return fetch(`${remoteURL}/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newProfile)
         }).then(data => data.json())
     },
     delete(id) {

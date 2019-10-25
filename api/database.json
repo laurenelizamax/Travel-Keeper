@@ -4,18 +4,24 @@
       "name": "Lauren",
       "email": "lauren@lauren.com",
       "password": "lauren",
+      "userPlace": "",
+      "userName": "",
       "id": 1
     },
     {
       "name": "sparkle",
       "email": "sparkle@sparkle.com",
       "password": "sparkle",
+      "userPlace": "",
+      "userName": "",
       "id": 2
     },
     {
       "name": "les",
       "email": "les@les.com",
       "password": "les",
+      "userPlace": "",
+      "userName": "",
       "id": 3
     }
   ],
@@ -33,22 +39,108 @@
       "startDate": "2019-10-01",
       "endDate": "2019-10-15",
       "notes": "dfsdfdsfd",
-      "userId": 3,
+      "userId": 1,
       "id": 2
+    },
+    {
+      "title": "nss",
+      "startDate": "2019-09-30",
+      "endDate": "2019-10-15",
+      "notes": "today",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "title": "new trip",
+      "startDate": "2019-10-08",
+      "endDate": "2019-10-09",
+      "notes": "xcxzcz",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "title": "jhkjkj",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-09",
+      "notes": "ghjgjkh",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "title": "sfdsfds",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "dfdsfds",
+      "userId": 3,
+      "id": 6
     }
   ],
   "places": [
     {
       "id": 1,
-      "name": "France",
-      "description": "Visited Friends in Paris",
+      "placeName": "France",
+      "placeDescription": "Visited Friends in Paris",
       "tripId": 1
     },
     {
-      "id": 1,
-      "name": "Spain",
-      "description": "Cool",
+      "id": 2,
+      "placeName": "Spain",
+      "placeDescription": "Cool",
       "tripId": 1
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 2,
+      "id": 3
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 4,
+      "id": 4
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 4,
+      "id": 5
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 3,
+      "id": 6
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 5,
+      "id": 7
+    },
+    {
+      "placeName": "nbjhjk",
+      "placeDescription": "jhjkhkj",
+      "tripId": 5,
+      "id": 8
+    },
+    {
+      "placeName": "jhhjghj",
+      "placeDescription": "jhkjhk",
+      "tripId": 5,
+      "id": 9
+    },
+    {
+      "placeName": "sdfsfsd",
+      "placeDescription": "fdsfs",
+      "tripId": 6,
+      "id": 10
+    },
+    {
+      "placeName": "sdfsfsddsfdsfdsfs",
+      "placeDescription": "fdsfsdsfdsfsdfds",
+      "tripId": 6,
+      "id": 11
     }
   ],
   "fellowTravelers": [
