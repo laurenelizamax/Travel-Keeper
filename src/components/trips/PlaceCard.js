@@ -12,10 +12,10 @@ class PlaceCard extends Component {
     componentDidMount() {
         console.log("placecard mounted")
         const newState = {}
-            APIManager.getTripAccomodations(this.props.place.id)
-                .then((lodging) => {
-                    newState.accomodations = lodging
-                })
+        APIManager.getTripAccomodations(this.props.place.id)
+            .then((lodging) => {
+                newState.accomodations = lodging
+            })
             .then(() => APIManager.getTripTransportation(this.props.place.id)
                 .then((trans) => {
                     newState.transportations = trans
@@ -35,10 +35,10 @@ class PlaceCard extends Component {
         console.log("placecard rendering")
         return (
             <>
-            <div>
-                        <p>Location: {this.props.place.name}</p>
-                        <p>Description: {this.props.place.description}</p>
-                    </div>
+                <div>
+                    <p>Location: {this.props.place.name}</p>
+                    <p>Description: {this.props.place.description}</p>
+                </div>
 
                 {this.state.accomodations.map(accomodation =>
                     <div>
@@ -55,12 +55,12 @@ class PlaceCard extends Component {
                     </div>
                 )}
 
-               {this.state.activities.map(activity =>
+                {this.state.activities.map(activity =>
                     <div>
                         <p>Activites: {activity.name}</p>
                         <p>Description: {activity.description}</p>
                     </div>
-                     )}
+                )}
 
             </>
         )

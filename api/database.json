@@ -35,20 +35,20 @@
       "notes": "Great Trip!"
     },
     {
-      "title": "new trip",
-      "startDate": "2019-10-16",
-      "endDate": "2019-10-22",
-      "notes": "works?",
+      "title": "Lauren's Trip",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-30",
+      "notes": "dsdfs",
       "userId": 3,
-      "id": 2
+      "id": 6
     },
     {
-      "title": "new trip!!!",
+      "title": "new trip",
       "startDate": "2019-10-02",
-      "endDate": "2019-10-09",
-      "notes": "dfsdfdsfd",
-      "userId": 5,
-      "id": 4
+      "endDate": "2019-10-16",
+      "notes": "testing",
+      "userId": 3,
+      "id": 7
     }
   ],
   "places": [
@@ -57,12 +57,23 @@
       "name": "France",
       "description": "Visited Friends in Paris",
       "tripId": 1
+    },
+    {
+      "id": 2,
+      "name": "Italy",
+      "description": "venice",
+      "tripId": 1
     }
   ],
   "fellowTravelers": [
     {
       "id": 2,
       "name": "Renee",
+      "tripId": 1
+    },
+    {
+      "id": 1,
+      "name": "Ashley",
       "tripId": 1
     }
   ],
@@ -72,6 +83,12 @@
       "name": "Les Cedres",
       "description": "Rented a room",
       "placeId": 1
+    },
+    {
+      "id": 1,
+      "name": "Italian room",
+      "description": "airbnb",
+      "placeId": 2
     }
   ],
   "transportations": [
@@ -80,6 +97,12 @@
       "name": "airplane",
       "description": "Got a great deal with British Airways",
       "placeId": 1
+    },
+    {
+      "id": 2,
+      "name": "train",
+      "description": "from paris",
+      "placeId": 2
     }
   ],
   "activities": [
@@ -88,6 +111,13 @@
       "name": "La Tour Eiffel",
       "description": "Went to the Eiffel Tower. All the way to the top!",
       "placeId": 1,
+      "favorite": false
+    },
+    {
+      "id": 2,
+      "name": "fountain",
+      "description": "got wet",
+      "placeId": 2,
       "favorite": false
     }
   ]

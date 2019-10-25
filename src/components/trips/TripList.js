@@ -9,7 +9,18 @@ class TripList extends Component {
         trips: [],
         loadingStatus: false
     }
- 
+    deleteTrip = id => {
+        APIManager.delete(id)
+            .then(() => {
+                APIManager.getAllTrips()
+                    .then((newTrips) => {
+                        this.setState({
+                            trips: newTrips
+                        })
+                    })
+            })
+    }
+
     getData = () => {
         APIManager.getAllTrips()
             .then((trips) => {
@@ -33,7 +44,9 @@ class TripList extends Component {
                 </div>
                 <div className="container-cards">
                     {this.state.trips.map(trip =>
-                        <TripCard key={trip.id} trip={trip}
+                        <TripCard key={trip.id}
+                            trip={trip}
+                            deleteTrip={this.deleteTrip}
                         />
                     )}
                 </div>

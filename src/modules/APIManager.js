@@ -17,8 +17,16 @@ export default {
             body: JSON.stringify(newTrip)
         }).then(data => data.json())
     },
-
-    deleteTrip(id) {
+    postLocation(id, newLocation) {
+        return fetch(`${remoteURL}/trips/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newLocation)
+        }).then(data => data.json())
+    },
+    delete(id) {
         return fetch(`http://localhost:5002/trips/${id}`, {
             method: "DELETE"
         })

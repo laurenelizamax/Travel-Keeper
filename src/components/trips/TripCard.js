@@ -4,6 +4,8 @@ import {Link, withRouter} from "react-router-dom"
 
 
 class TripCard extends Component {
+
+
     render() {
         return (
             <>
@@ -13,6 +15,7 @@ class TripCard extends Component {
             {/* <button onClick={() => this.props.history.push("/TripDetails")}
             className="cardButton">Details</button> */}
           <Link to={`/trips/${this.props.trip.id}`}><button>Details</button></Link>
+          <button type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</button>
             </>
         )
     }
