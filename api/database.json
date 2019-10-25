@@ -33,22 +33,6 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
-    },
-    {
-      "title": "Lauren's Trip",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-30",
-      "notes": "dsdfs",
-      "userId": 3,
-      "id": 6
-    },
-    {
-      "title": "new trip",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "testing",
-      "userId": 3,
-      "id": 7
     }
   ],
   "places": [
@@ -60,8 +44,8 @@
     },
     {
       "id": 2,
-      "name": "Italy",
-      "description": "venice",
+      "name": "Spain",
+      "description": "Cool",
       "tripId": 1
     }
   ],
