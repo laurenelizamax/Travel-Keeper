@@ -27,6 +27,14 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
+    },
+    {
+      "title": "new trip",
+      "startDate": "2019-10-01",
+      "endDate": "2019-10-15",
+      "notes": "dfsdfdsfd",
+      "userId": 3,
+      "id": 2
     }
   ],
   "places": [
