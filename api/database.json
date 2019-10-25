@@ -37,7 +37,7 @@
       "tripId": 1
     },
     {
-      "id": 2
+      "id": 1,
       "name": "Spain",
       "description": "Cool",
       "tripId": 1
@@ -48,11 +48,6 @@
       "id": 2,
       "name": "Renee",
       "tripId": 1
-    },
-    {
-      "id": 1,
-      "name": "Ashley",
-      "tripId": 1
     }
   ],
   "accommodations": [
@@ -61,12 +56,6 @@
       "name": "Les Cedres",
       "description": "Rented a room",
       "placeId": 1
-    },
-    {
-      "id": 1,
-      "name": "Italian room",
-      "description": "airbnb",
-      "placeId": 2
     }
   ],
   "transportations": [
@@ -75,12 +64,6 @@
       "name": "airplane",
       "description": "Got a great deal with British Airways",
       "placeId": 1
-    },
-    {
-      "id": 2,
-      "name": "train",
-      "description": "from paris",
-      "placeId": 2
     }
   ],
   "activities": [
@@ -89,13 +72,6 @@
       "name": "La Tour Eiffel",
       "description": "Went to the Eiffel Tower. All the way to the top!",
       "placeId": 1,
-      "favorite": false
-    },
-    {
-      "id": 2,
-      "name": "fountain",
-      "description": "got wet",
-      "placeId": 2,
       "favorite": false
     }
   ]
