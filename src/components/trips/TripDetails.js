@@ -30,10 +30,8 @@ class TripDetails extends Component {
                 this.setState(setNewState)
             })
     }
-    // handleDelete = (id) =>  {
-    //     APIManager.deleteTrip(id)
-    //     .then(() => this.props.getData());
-    //   }
+
+
     activeUser = parseInt(sessionStorage.getItem("userId"))
 
     handleFieldChange = evt => {
@@ -73,8 +71,6 @@ class TripDetails extends Component {
                     <p>Notes: {this.state.trip.notes}</p>
                 </div>
 
-
-
                 {this.state.places.map(place =>
                     <PlaceCard key={place.id}
                         place={place}
@@ -87,7 +83,6 @@ class TripDetails extends Component {
                     </div>
                 )}
 
-                <button className="tripDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete(this.props.trip.id)}>Delete</button>
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
