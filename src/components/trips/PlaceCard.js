@@ -1,5 +1,6 @@
-import React, { Component } from "react"
+import React, {  Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Link } from "react-router-dom"
 
 
 class PlaceCard extends Component {
@@ -38,6 +39,7 @@ class PlaceCard extends Component {
                 <div>
                     <p>Location: {this.props.place.placeName}</p>
                     <p>Description: {this.props.place.placeDescription}</p>
+                    <Link to={`/places/${this.props.placeId}`}>Location Details</Link>
                 </div>
 
                 {this.state.accommodations.map(accommodation =>

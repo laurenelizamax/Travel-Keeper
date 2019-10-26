@@ -7,6 +7,7 @@ import TripDetails from "./trips/TripDetails"
 import TripAddForm from "./trips/TripAddForm"
 import TripEditForm from "./trips/TripEditForm"
 import AddProfile from "./profile/AddProfile"
+import LocationDetails from "./trips/LocationDetails"
 
 class ApplicationViews extends Component {
 
@@ -33,6 +34,9 @@ class ApplicationViews extends Component {
                 {/* path for Animal Detail */}
                 <Route exact path="/trips/:tripId(\d+)" render={(props) => {
                     return <TripDetails tripId={parseInt(props.match.params.tripId)} {...props} />
+                }} />
+                 <Route exact path="/places/:placeId(\d+)" render={(props) => {
+                    return <LocationDetails placeId={parseInt(props.match.params.placeId)} {...props} />
                 }} />
                 <Route exact path="/trip/new" render={(props) => {
                     return <TripAddForm {...props} />

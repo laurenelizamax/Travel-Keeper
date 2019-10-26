@@ -76,6 +76,12 @@
       "stayName": "Les Cedres",
       "stayDescription": "Rented a room",
       "placeId": 1
+    },
+    {
+      "stayName": "les",
+      "stayDescription": "works?",
+      "placeId": 3,
+      "id": 2
     }
   ],
   "transportations": [
