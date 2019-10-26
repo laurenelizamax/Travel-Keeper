@@ -4,11 +4,11 @@ import "./TripForm.css"
 // import { Link } from "react-router-dom"
 
 
-class AddLocation extends Component {
+class AddLodging extends Component {
     state = {
-        tripId: this.props.tripId,
-        placeName: "",
-        placeDescription: "",
+        placeId: this.props.placeId,
+        stayName: "",
+        stayDescription: "",
         loadingStatus: false,
     };
 
@@ -19,27 +19,26 @@ class AddLocation extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        APIManager.getTripSpecificPlace()
-            .then((allPlaces) => {
+        APIManager.getTripAccommodations()
+            .then((allStays) => {
                 this.setState({
-                    places: allPlaces
-                }
-                )
+                    accommodations: allStays
+                })
             })
     }
-    constructNewLocation = evt => {
+    constructNewStay = evt => {
         evt.preventDefault();
-        if (this.state.placeName === "" || this.state.placeDescription === "") {
+        if (this.state.stayName === "" || this.state.stayDescription === "") {
             window.alert("Please add location");
         } else {
             this.setState({ loadingStatus: true });
-            const place = {
-               placeName: this.state.placeName,
-               placeDescription: this.state.placeDescription,
-                tripId: this.state.tripId
+            const stay = {
+               stayName: this.state.stayName,
+               stayDescription: this.state.stayDescription,
+                placeId: this.state.placeId
             }
 
-            APIManager.postLocation(place)
+            APIManager.postStay(stay)
             .then(() => {
                 this.props.getData()
                 this.setState({ loadingStatus: false});
@@ -56,30 +55,30 @@ class AddLocation extends Component {
                     <form className="tripAddForm">
                         <fieldset>
                             <div className="tripForm">
-                                {/* Location  input*/}
-                                <label htmlFor="placeName">Location:</label>
+                                {/* Accommodations  input*/}
+                                <label htmlFor="stayName">Accommodations:</label>
                                 <input
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="placeName"
-                                    placeholder="Location"
+                                    id="stayName"
+                                    placeholder="Accommodations"
                                 />
-                                {/* Location Description input*/}
-                                <label htmlFor="placeDescription">Location Description:</label>
+                                {/* Accommodations Description input*/}
+                                <label htmlFor="stayDescription">Accommodations Description:</label>
                                 <input
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="placeDescription"
-                                    placeholder="Location Description"
+                                    id="stayDescription"
+                                    placeholder="Accommodations Description"
                                 />
                                 {/* Button to create new location*/}
                                 <button
                                     type="submit"
                                     className="cardButton"
                                     disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewLocation}
+                                    onClick={this.constructNewStay}
                                 >Add Location</button>
 
                             </div>
@@ -90,4 +89,4 @@ class AddLocation extends Component {
         )
     }
 }
-export default AddLocation
+export default AddLodging

@@ -41,38 +41,6 @@
       "notes": "dfsdfdsfd",
       "userId": 1,
       "id": 2
-    },
-    {
-      "title": "nss",
-      "startDate": "2019-09-30",
-      "endDate": "2019-10-15",
-      "notes": "today",
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "title": "new trip",
-      "startDate": "2019-10-08",
-      "endDate": "2019-10-09",
-      "notes": "xcxzcz",
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "title": "jhkjkj",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-09",
-      "notes": "ghjgjkh",
-      "userId": 3,
-      "id": 5
-    },
-    {
-      "title": "sfdsfds",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "dfdsfds",
-      "userId": 3,
-      "id": 6
     }
   ],
   "places": [
@@ -93,54 +61,6 @@
       "placeDescription": "visited Erika",
       "tripId": 2,
       "id": 3
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 4,
-      "id": 4
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 4,
-      "id": 5
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 3,
-      "id": 6
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 5,
-      "id": 7
-    },
-    {
-      "placeName": "nbjhjk",
-      "placeDescription": "jhjkhkj",
-      "tripId": 5,
-      "id": 8
-    },
-    {
-      "placeName": "jhhjghj",
-      "placeDescription": "jhkjhk",
-      "tripId": 5,
-      "id": 9
-    },
-    {
-      "placeName": "sdfsfsd",
-      "placeDescription": "fdsfs",
-      "tripId": 6,
-      "id": 10
-    },
-    {
-      "placeName": "sdfsfsddsfdsfdsfs",
-      "placeDescription": "fdsfsdsfdsfsdfds",
-      "tripId": 6,
-      "id": 11
     }
   ],
   "fellowTravelers": [
@@ -153,8 +73,8 @@
   "accommodations": [
     {
       "id": 1,
-      "name": "Les Cedres",
-      "description": "Rented a room",
+      "stayName": "Les Cedres",
+      "stayDescription": "Rented a room",
       "placeId": 1
     }
   ],

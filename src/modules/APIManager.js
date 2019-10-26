@@ -26,6 +26,15 @@ export default {
             body: JSON.stringify(newLocation)
         }).then(data => data.json())
     },
+    postStay(newStay) {
+        return fetch(`${remoteURL}/accommodations`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newStay)
+        }).then(data => data.json())
+    },
     postProfile(newProfile) {
         return fetch(`${remoteURL}/users`, {
             method: "POST",

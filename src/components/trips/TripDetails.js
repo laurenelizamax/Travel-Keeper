@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
+import AddLodging from "./AddLodging"
 
 class TripDetails extends Component {
 
@@ -39,6 +40,10 @@ class TripDetails extends Component {
                 .then((places) => {
                     setNewState.places = places
                 })
+             ) .then(() => APIManager.postStay(this.props.placeId)
+                .then((accommodations) => {
+                    setNewState.accommodations = accommodations
+                })
             ).then(() => APIManager.getTripTravelers(this.props.tripId)
                 .then((travelers) => {
                     setNewState.fellowTravelers = travelers
@@ -62,6 +67,8 @@ class TripDetails extends Component {
                 {this.state.places.map(place =>
                     <PlaceCard key={place.id}
                         place={place}
+                        placeId={place.id}
+
                     />
                 )}
                 {this.state.fellowTravelers.map(fellowTraveler =>
@@ -71,6 +78,8 @@ class TripDetails extends Component {
                 )}
 
                     <AddLocation {...this.props} getData={this.getData}/>
+                    <AddLodging  {...this.props} getData={this.getData}/>
+
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
