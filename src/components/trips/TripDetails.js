@@ -3,6 +3,8 @@ import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
+import EditTripForm from "./EditTripForm"
+import EditLocationForm from "./EditLocationForm"
 
 class TripDetails extends Component {
 
@@ -17,7 +19,27 @@ class TripDetails extends Component {
             .then((trip) => {
                 setNewState.trip = trip
             })
-            .then(() => APIManager.getTripSpecificPlace(this.props.tripId)
+            .then(() => APIManager.getTripPlaces(this.props.tripId)
+                .then((places) => {
+                    console.log(places)
+                    setNewState.places = places
+                })
+            ).then(() => APIManager.getTripTravelers(this.props.tripId)
+                .then((travelers) => {
+                    setNewState.fellowTravelers = travelers
+                })
+            )
+            .then(() => {
+                this.setState(setNewState)
+            })
+    }
+    getData = () => {
+        const setNewState = {}
+        APIManager.getTrip(this.props.tripId)
+            .then((trip) => {
+                setNewState.trip = trip
+            })
+            .then(() => APIManager.getTripPlaces(this.props.tripId)
                 .then((places) => {
                     setNewState.places = places
                 })
@@ -30,25 +52,6 @@ class TripDetails extends Component {
                 this.setState(setNewState)
             })
     }
-    getData = ( ) => {
-        const setNewState = {}
-        APIManager.getTrip(this.props.tripId)
-            .then((trip) => {
-                setNewState.trip = trip
-            })
-            .then(() => APIManager.getTripSpecificPlace(this.props.tripId)
-                .then((places) => {
-                    setNewState.places = places
-                })
-             ) .then(() => APIManager.getTripTravelers(this.props.tripId)
-                .then((travelers) => {
-                    setNewState.fellowTravelers = travelers
-                })
-            )
-            .then(() => {
-                this.setState(setNewState)
-            })
-    } 
 
     render() {
         return (
@@ -72,14 +75,16 @@ class TripDetails extends Component {
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                     </div>
                 )}
-                    <AddTravelers {...this.props} getData={this.getData}/>
+                <AddTravelers {...this.props} getData={this.getData} />
 
-                    <AddLocation {...this.props} getData={this.getData}/>
+                <AddLocation {...this.props} getData={this.getData} />
 
                 <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push(`/trips/${this.props.tripl.id}/edit`) }}>Edit Trip</button>
+                    onClick={() => { this.props.history.push(`/trips/${this.props.trip.id}/edit`) }}>Edit Trip</button>
 
+                <EditTripForm {...this.props} getData={this.getData} />
 
+                <EditLocationForm {...this.props} getData={this.getData} />
 
 
                 <button type="button" className="cardButton"
