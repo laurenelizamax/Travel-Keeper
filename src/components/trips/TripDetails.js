@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
+import AddTravelers from "./AddTravelers"
 
 class TripDetails extends Component {
 
@@ -68,9 +69,10 @@ class TripDetails extends Component {
                 )}
                 {this.state.fellowTravelers.map(fellowTraveler =>
                     <div>
-                        <p>Fellow Travelers: {fellowTraveler.name}</p>
+                        <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                     </div>
                 )}
+                    <AddTravelers {...this.props} getData={this.getData}/>
 
                     <AddLocation {...this.props} getData={this.getData}/>
 

@@ -1,12 +1,16 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import AddLodging from "./AddLodging"
+import AddActivities from "./AddActivities"
+import AddTransportation from "./AddTransportation"
 
 class LocationDetails extends Component {
 
     state = {
         place: "",
-        accommodations: []
+        accommodations: [],
+        activities: [],
+        transportations: []
     }
     componentDidMount() {
         const setNewState = {}
@@ -17,6 +21,16 @@ class LocationDetails extends Component {
             .then(() => APIManager.postLocation(this.props.placeId)
                 .then((accommodations) => {
                     setNewState.accommodations = accommodations
+                })
+            )
+            .then(() => APIManager.postActivity(this.props.placeId)
+                .then((activities) => {
+                    setNewState.activities = activities
+                })
+            )
+            .then(() => APIManager.postTransportation(this.props.placeId)
+                .then((transportations) => {
+                    setNewState.transportations = transportations
                 })
             )
             .then(() => {
@@ -33,8 +47,15 @@ class LocationDetails extends Component {
                 .then((accommodations) => {
                     setNewState.accommodations = accommodations
                 })
-            )
-            .then(() => {
+            ).then(() => APIManager.postActivity(this.props.placeId)
+                .then((activities) => {
+                    setNewState.activities = activities
+                })
+            ).then(() => APIManager.postTransportation(this.props.placeId)
+                .then((transportations) => {
+                    setNewState.transportations = transportations
+                })
+            ).then(() => {
                 this.setState(setNewState)
             })
     }
@@ -49,12 +70,31 @@ class LocationDetails extends Component {
 
                 {this.state.accommodations.map(accommodation =>
                     <div>
-                        <p>Accommodations: {accommodation.name}</p>
-                        <p>Description: {accommodation.description}</p>
+                        <p>Accommodations: {accommodation.stayName}</p>
+                        <p>Description: {accommodation.stayDescription}</p>
                     </div>
                 )}
+
+                {this.state.activities.map(activity =>
+                    <div>
+                        <p>Activites: {activity.activityName}</p>
+                        <p>Description: {activity.activityDescription}</p>
+                    </div>
+                )}
+
+                {this.state.transportations.map(transportation =>
+                    <div>
+                        <p>Transportation: {transportation.transportationName}</p>
+                        <p>Description: {transportation.transportationDescription}</p>
+
+                    </div>
+                )}
+
                 <AddLodging  {...this.props} getData={this.getData} />
 
+                <AddActivities  {...this.props} getData={this.getData} />
+
+                <AddTransportation {...this.props} getData={this.getData} />
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push(`/trips/${this.props.place.id}/edit`) }}>Edit Trip</button>

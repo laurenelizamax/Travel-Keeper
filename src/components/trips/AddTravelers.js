@@ -4,11 +4,10 @@ import "./TripForm.css"
 // import { Link } from "react-router-dom"
 
 
-class AddLodging extends Component {
+class AddTravelers extends Component {
     state = {
-        placeId: this.props.placeId,
-        stayName: "",
-        stayDescription: "",
+        tripId: this.props.tripId,
+        travelerName: "",
         loadingStatus: false,
     };
 
@@ -19,26 +18,26 @@ class AddLodging extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        APIManager.getTripAccommodations()
-            .then((allStays) => {
+        APIManager.getTripTravelers()
+            .then((allTravelers) => {
                 this.setState({
-                    accommodations: allStays
-                })
+                    travelers: allTravelers
+                }
+                )
             })
     }
-    constructNewStay = evt => {
+    constructNewTraveler= evt => {
         evt.preventDefault();
-        if (this.state.stayName === "" || this.state.stayDescription === "") {
+        if (this.state.travelerName === "") {
             window.alert("Please add location");
         } else {
             this.setState({ loadingStatus: true });
-            const stay = {
-               stayName: this.state.stayName,
-               stayDescription: this.state.stayDescription,
-                placeId: this.state.placeId
+            const traveler = {
+               travelerName: this.state.travelerName,
+                tripId: this.state.tripId
             }
 
-            APIManager.postStay(stay)
+            APIManager.postTraveler(traveler)
             .then(() => {
                 this.props.getData()
                 this.setState({ loadingStatus: false});
@@ -55,31 +54,22 @@ class AddLodging extends Component {
                     <form className="tripAddForm">
                         <fieldset>
                             <div className="tripForm">
-                                {/* Accommodations  input*/}
-                                <label htmlFor="stayName">Accommodation:</label>
+                                {/* Fellow Travelers  input*/}
+                                <label htmlFor="travelerName">Fellow Traveler:</label>
                                 <input
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="stayName"
-                                    placeholder="Accommodation"
+                                    id="travelerName"
+                                    placeholder="Fellow Traveler"
                                 />
-                                {/* Accommodations Description input*/}
-                                <label htmlFor="stayDescription">Accommodation Description:</label>
-                                <input
-                                    type="text"
-                                    required
-                                    onChange={this.handleFieldChange}
-                                    id="stayDescription"
-                                    placeholder="Accommodation Description"
-                                />
-                                {/* Button to create new location*/}
+                                {/* Button to create new traveler*/}
                                 <button
                                     type="submit"
                                     className="cardButton"
                                     disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewStay}
-                                >Add Location</button>
+                                    onClick={this.constructNewTraveler}
+                                >Add A Traveler</button>
 
                             </div>
                         </fieldset>
@@ -89,4 +79,4 @@ class AddLodging extends Component {
         )
     }
 }
-export default AddLodging
+export default AddTravelers

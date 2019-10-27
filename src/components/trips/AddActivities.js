@@ -4,11 +4,11 @@ import "./TripForm.css"
 // import { Link } from "react-router-dom"
 
 
-class AddLodging extends Component {
+class AddActivities extends Component {
     state = {
         placeId: this.props.placeId,
-        stayName: "",
-        stayDescription: "",
+        activityName: "",
+        activityDescription: "",
         loadingStatus: false,
     };
 
@@ -19,26 +19,26 @@ class AddLodging extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        APIManager.getTripAccommodations()
-            .then((allStays) => {
+        APIManager.getTripActivities()
+            .then((allActivities) => {
                 this.setState({
-                    accommodations: allStays
+                    activities: allActivities
                 })
             })
     }
-    constructNewStay = evt => {
+    constructNewActivity = evt => {
         evt.preventDefault();
-        if (this.state.stayName === "" || this.state.stayDescription === "") {
-            window.alert("Please add location");
+        if (this.state.activityName === "" || this.state.activityDescription === "") {
+            window.alert("Please add an activity");
         } else {
             this.setState({ loadingStatus: true });
-            const stay = {
-               stayName: this.state.stayName,
-               stayDescription: this.state.stayDescription,
+            const activity = {
+               activityName: this.state.activityName,
+               activityDescription: this.state.activityDescription,
                 placeId: this.state.placeId
             }
 
-            APIManager.postStay(stay)
+            APIManager.postActivity(activity)
             .then(() => {
                 this.props.getData()
                 this.setState({ loadingStatus: false});
@@ -55,31 +55,31 @@ class AddLodging extends Component {
                     <form className="tripAddForm">
                         <fieldset>
                             <div className="tripForm">
-                                {/* Accommodations  input*/}
-                                <label htmlFor="stayName">Accommodation:</label>
+                                {/* Activities input*/}
+                                <label htmlFor="activityName">Activity:</label>
                                 <input
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="stayName"
-                                    placeholder="Accommodation"
+                                    id="activityName"
+                                    placeholder="Activities"
                                 />
-                                {/* Accommodations Description input*/}
-                                <label htmlFor="stayDescription">Accommodation Description:</label>
+                                {/* Activities Description input*/}
+                                <label htmlFor="activityDescription">Activity Description:</label>
                                 <input
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="stayDescription"
-                                    placeholder="Accommodation Description"
+                                    id="activityDescription"
+                                    placeholder="Activity Description"
                                 />
-                                {/* Button to create new location*/}
+                                {/* Button to create new activity*/}
                                 <button
                                     type="submit"
                                     className="cardButton"
                                     disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewStay}
-                                >Add Location</button>
+                                    onClick={this.constructNewActivity}
+                                >Add An Activity</button>
 
                             </div>
                         </fieldset>
@@ -89,4 +89,4 @@ class AddLodging extends Component {
         )
     }
 }
-export default AddLodging
+export default AddActivities

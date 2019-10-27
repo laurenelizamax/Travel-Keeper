@@ -35,6 +35,34 @@ export default {
             body: JSON.stringify(newStay)
         }).then(data => data.json())
     },
+    postTraveler(newTraveler) {
+        return fetch(`${remoteURL}/fellowTravelers`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newTraveler)
+        }).then(data => data.json())
+    },
+
+    postActivity(newActivity) {
+        return fetch(`${remoteURL}/activities`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newActivity)
+        }).then(data => data.json())
+    },
+    postTransportation(newTransportation) {
+        return fetch(`${remoteURL}/transportations`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newTransportation)
+        }).then(data => data.json())
+    },
     postProfile(newProfile) {
         return fetch(`${remoteURL}/users`, {
             method: "POST",
