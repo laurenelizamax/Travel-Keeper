@@ -33,17 +33,17 @@ class AddActivities extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const activity = {
-               activityName: this.state.activityName,
-               activityDescription: this.state.activityDescription,
+                activityName: this.state.activityName,
+                activityDescription: this.state.activityDescription,
                 placeId: this.state.placeId
             }
 
             APIManager.postActivity(activity)
-            .then(() => {
-                this.props.getData()
-                this.setState({ loadingStatus: false});
-            })
-                // .then(() => {this.props.history.push("/")});
+                .then(() => {
+                    this.props.getData()
+                    this.setState({ loadingStatus: false });
+                })
+            // .then(() => {this.props.history.push("/")});
         }
     }
 

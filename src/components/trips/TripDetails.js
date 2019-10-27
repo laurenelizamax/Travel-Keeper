@@ -3,6 +3,8 @@ import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
+import EditTripForm from "./EditTripForm"
+import EditLocationForm from "./EditLocationForm"
 
 class TripDetails extends Component {
 
@@ -30,7 +32,7 @@ class TripDetails extends Component {
                 this.setState(setNewState)
             })
     }
-    getData = ( ) => {
+    getData = () => {
         const setNewState = {}
         APIManager.getTrip(this.props.tripId)
             .then((trip) => {
@@ -40,7 +42,7 @@ class TripDetails extends Component {
                 .then((places) => {
                     setNewState.places = places
                 })
-             ) .then(() => APIManager.getTripTravelers(this.props.tripId)
+            ).then(() => APIManager.getTripTravelers(this.props.tripId)
                 .then((travelers) => {
                     setNewState.fellowTravelers = travelers
                 })
@@ -48,7 +50,7 @@ class TripDetails extends Component {
             .then(() => {
                 this.setState(setNewState)
             })
-    } 
+    }
 
     render() {
         return (
@@ -72,14 +74,16 @@ class TripDetails extends Component {
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                     </div>
                 )}
-                    <AddTravelers {...this.props} getData={this.getData}/>
+                <AddTravelers {...this.props} getData={this.getData} />
 
-                    <AddLocation {...this.props} getData={this.getData}/>
+                <AddLocation {...this.props} getData={this.getData} />
 
                 <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push(`/trips/${this.props.tripl.id}/edit`) }}>Edit Trip</button>
+                    onClick={() => { this.props.history.push(`/trips/${this.props.trip.id}/edit`) }}>Edit Trip</button>
 
+                <EditTripForm {...this.props} getData={this.getData} />
 
+                <EditLocationForm {...this.props} getData={this.getData} />
 
 
                 <button type="button" className="cardButton"

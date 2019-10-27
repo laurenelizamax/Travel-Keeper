@@ -88,6 +88,51 @@ export default {
             body: JSON.stringify(editedTrip)
         }).then(data => data.json());
     },
+    updateLocation(editedLocation) {
+        return fetch(`${remoteURL}/trips/${editedLocation.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedLocation)
+        }).then(data => data.json());
+    },
+    updateStay(editedStay) {
+        return fetch(`${remoteURL}/trips/${editedStay.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedStay)
+        }).then(data => data.json());
+    },
+    updateActivity(editedActivity) {
+        return fetch(`${remoteURL}/trips/${editedActivity.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedActivity)
+        }).then(data => data.json());
+    },
+    updateTransportation(editedTransportation) {
+        return fetch(`${remoteURL}/trips/${editedTransportation.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedTransportation)
+        }).then(data => data.json());
+    },
+    updateTraveler(editedTraveler) {
+        return fetch(`${remoteURL}/trips/${editedTraveler.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedTraveler)
+        }).then(data => data.json());
+    },
 
     getTripSpecificPlace(id) {
         return fetch(`${remoteURL}/places?tripId=${id}`).then(result => result.json())

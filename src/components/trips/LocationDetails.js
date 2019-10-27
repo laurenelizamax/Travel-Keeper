@@ -3,6 +3,9 @@ import APIManager from "../../modules/APIManager"
 import AddLodging from "./AddLodging"
 import AddActivities from "./AddActivities"
 import AddTransportation from "./AddTransportation"
+import EditLodgingForm from "./EditLodgingForm"
+import EditActivityForm from "./EditActivityForm"
+import EditTransportationForm from "./EditTransportationForm"
 
 class LocationDetails extends Component {
 
@@ -96,9 +99,12 @@ class LocationDetails extends Component {
 
                 <AddTransportation {...this.props} getData={this.getData} />
 
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push(`/trips/${this.props.place.id}/edit`) }}>Edit Trip</button>
 
+                <EditLodgingForm {...this.props} getData={this.getData} />
+
+                <EditActivityForm {...this.props} getData={this.getData} />
+
+                <EditTransportationForm {...this.props} getData={this.getData} />
 
                 <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>

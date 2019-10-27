@@ -35,28 +35,12 @@
       "notes": "Great Trip!"
     },
     {
-      "title": "new trip",
-      "startDate": "2019-10-01",
-      "endDate": "2019-10-15",
-      "notes": "dfsdfdsfd",
-      "userId": 1,
+      "title": "Home ",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "with my baby",
+      "userId": 3,
       "id": 2
-    },
-    {
-      "title": "today",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "dfsfsdfsdfsdfs",
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "title": "Home",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "Test",
-      "userId": 3,
-      "id": 4
     }
   ],
   "places": [
@@ -77,30 +61,6 @@
       "placeDescription": "visited Erika",
       "tripId": 2,
       "id": 3
-    },
-    {
-      "placeName": "eeeee",
-      "placeDescription": "jhjkhkj",
-      "tripId": 2,
-      "id": 4
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 3,
-      "id": 5
-    },
-    {
-      "placeName": "Toronto",
-      "placeDescription": "jhjkhkj",
-      "tripId": 2,
-      "id": 6
-    },
-    {
-      "placeName": "Nashville",
-      "placeDescription": "Party",
-      "tripId": 4,
-      "id": 7
     }
   ],
   "fellowTravelers": [
@@ -108,26 +68,6 @@
       "id": 2,
       "travelerName": "Renee",
       "tripId": 1
-    },
-    {
-      "travelerName": "Renee",
-      "tripId": 3,
-      "id": 3
-    },
-    {
-      "travelerName": "Jill",
-      "tripId": 3,
-      "id": 4
-    },
-    {
-      "travelerName": "Ashley",
-      "tripId": 4,
-      "id": 5
-    },
-    {
-      "travelerName": "Renee",
-      "tripId": 4,
-      "id": 6
     }
   ],
   "accommodations": [
@@ -138,22 +78,16 @@
       "placeId": 1
     },
     {
-      "stayName": "works?",
-      "stayDescription": "les",
-      "placeId": 5,
-      "id": 2
-    },
-    {
-      "stayName": "hello",
-      "stayDescription": "does it?",
-      "placeId": 6,
-      "id": 3
-    },
-    {
       "stayName": "At Home today",
       "stayDescription": "Free",
       "placeId": 7,
       "id": 4
+    },
+    {
+      "stayName": "les",
+      "stayDescription": "les",
+      "placeId": 3,
+      "id": 5
     }
   ],
   "transportations": [
@@ -162,12 +96,6 @@
       "transportationName": "airplane",
       "transportationDescription": "Got a great deal with British Airways",
       "placeId": 1
-    },
-    {
-      "transportationName": "bus",
-      "transportationDescription": "cheap",
-      "placeId": 7,
-      "id": 2
     }
   ],
   "activities": [
@@ -179,22 +107,10 @@
       "favorite": false
     },
     {
-      "activityName": "dfsd",
-      "activityDescription": "dfsdfs",
-      "placeId": 5,
-      "id": 2
-    },
-    {
       "activityName": "homework",
       "activityDescription": "breaking it all",
       "placeId": 7,
       "id": 3
-    },
-    {
-      "activityName": "walking",
-      "activityDescription": "mcgarrett",
-      "placeId": 7,
-      "id": 4
     }
   ]
 }
