@@ -19,7 +19,7 @@ class AddLocation extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        APIManager.getTripSpecificPlace()
+        APIManager.getTripPlaces()
             .then((allPlaces) => {
                 this.setState({
                     places: allPlaces

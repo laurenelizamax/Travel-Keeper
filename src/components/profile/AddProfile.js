@@ -25,7 +25,7 @@ class AddProfile extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const userProfile = {
-                uerName: this.state.userName,
+                userName: this.state.userName,
                 userPlace: this.state.userPlace,
                 userId: this.activeUser
             };
@@ -37,7 +37,7 @@ class AddProfile extends Component {
     };
 
     render() {
-
+   console.log(this.activeUser)
         return (
             <>
                 <form>

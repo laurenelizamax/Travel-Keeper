@@ -41,6 +41,14 @@
       "notes": "with my baby",
       "userId": 3,
       "id": 2
+    },
+    {
+      "title": "here",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "now",
+      "userId": 1,
+      "id": 3
     }
   ],
   "places": [
@@ -61,6 +69,24 @@
       "placeDescription": "visited Erika",
       "tripId": 2,
       "id": 3
+    },
+    {
+      "placeName": "nashville",
+      "placeDescription": "saw Dylan",
+      "tripId": 2,
+      "id": 4
+    },
+    {
+      "placeName": "jjgvjh",
+      "placeDescription": "hgj",
+      "tripId": 1,
+      "id": 5
+    },
+    {
+      "placeName": "states",
+      "placeDescription": "ok",
+      "tripId": 3,
+      "id": 6
     }
   ],
   "fellowTravelers": [
@@ -68,6 +94,11 @@
       "id": 2,
       "travelerName": "Renee",
       "tripId": 1
+    },
+    {
+      "travelerName": "Dylan",
+      "tripId": 3,
+      "id": 3
     }
   ],
   "accommodations": [
@@ -80,7 +111,7 @@
     {
       "stayName": "At Home today",
       "stayDescription": "Free",
-      "placeId": 7,
+      "placeId": 2,
       "id": 4
     },
     {
@@ -88,6 +119,36 @@
       "stayDescription": "les",
       "placeId": 3,
       "id": 5
+    },
+    {
+      "stayName": "home",
+      "stayDescription": "stayed home",
+      "placeId": 4,
+      "id": 6
+    },
+    {
+      "stayName": "les",
+      "stayDescription": "les",
+      "placeId": 4,
+      "id": 7
+    },
+    {
+      "stayName": "dfsdfdsfsd",
+      "stayDescription": "dsfdsfdsfds",
+      "placeId": 5,
+      "id": 8
+    },
+    {
+      "stayName": "home",
+      "stayDescription": "sleep",
+      "placeId": 6,
+      "id": 9
+    },
+    {
+      "stayName": "hi",
+      "stayDescription": "bye",
+      "placeId": 6,
+      "id": 10
     }
   ],
   "transportations": [
@@ -96,6 +157,12 @@
       "transportationName": "airplane",
       "transportationDescription": "Got a great deal with British Airways",
       "placeId": 1
+    },
+    {
+      "transportationName": "holla",
+      "transportationDescription": "wooo",
+      "placeId": 6,
+      "id": 2
     }
   ],
   "activities": [
@@ -111,6 +178,24 @@
       "activityDescription": "breaking it all",
       "placeId": 7,
       "id": 3
+    },
+    {
+      "activityName": "dfsdf",
+      "activityDescription": "dfsdfs",
+      "placeId": 4,
+      "id": 4
+    },
+    {
+      "activityName": "dfsdfds",
+      "activityDescription": "dfdsfds",
+      "placeId": 5,
+      "id": 5
+    },
+    {
+      "activityName": "yes",
+      "activityDescription": "yay",
+      "placeId": 6,
+      "id": 6
     }
   ]
 }

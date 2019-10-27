@@ -19,8 +19,9 @@ class TripDetails extends Component {
             .then((trip) => {
                 setNewState.trip = trip
             })
-            .then(() => APIManager.getTripSpecificPlace(this.props.tripId)
+            .then(() => APIManager.getTripPlaces(this.props.tripId)
                 .then((places) => {
+                    console.log(places)
                     setNewState.places = places
                 })
             ).then(() => APIManager.getTripTravelers(this.props.tripId)
@@ -38,7 +39,7 @@ class TripDetails extends Component {
             .then((trip) => {
                 setNewState.trip = trip
             })
-            .then(() => APIManager.getTripSpecificPlace(this.props.tripId)
+            .then(() => APIManager.getTripPlaces(this.props.tripId)
                 .then((places) => {
                     setNewState.places = places
                 })

@@ -134,8 +134,11 @@ export default {
         }).then(data => data.json());
     },
 
-    getTripSpecificPlace(id) {
+    getTripPlaces(id) {
         return fetch(`${remoteURL}/places?tripId=${id}`).then(result => result.json())
+    },
+    getOnePlace(id) {
+        return fetch(`${remoteURL}/places/${id}`).then(result => result.json())
     },
     getTripAccommodations(id) {
         return fetch(`${remoteURL}/accommodations?placeId=${id}`).then(result => result.json())

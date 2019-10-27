@@ -19,8 +19,9 @@ class AddLodging extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        APIManager.getTripAccommodations()
+        APIManager.getTripAccommodations(2)
             .then((allStays) => {
+                console.log(allStays)
                 this.setState({
                     accommodations: allStays
                 })
