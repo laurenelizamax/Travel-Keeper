@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
-import AddLodging from "./AddLodging"
+import AddTravelers from "./AddTravelers"
 
 class TripDetails extends Component {
 
@@ -40,11 +40,7 @@ class TripDetails extends Component {
                 .then((places) => {
                     setNewState.places = places
                 })
-             ) .then(() => APIManager.postStay(this.props.placeId)
-                .then((accommodations) => {
-                    setNewState.accommodations = accommodations
-                })
-            ).then(() => APIManager.getTripTravelers(this.props.tripId)
+             ) .then(() => APIManager.getTripTravelers(this.props.tripId)
                 .then((travelers) => {
                     setNewState.fellowTravelers = travelers
                 })
@@ -73,16 +69,15 @@ class TripDetails extends Component {
                 )}
                 {this.state.fellowTravelers.map(fellowTraveler =>
                     <div>
-                        <p>Fellow Travelers: {fellowTraveler.name}</p>
+                        <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                     </div>
                 )}
+                    <AddTravelers {...this.props} getData={this.getData}/>
 
                     <AddLocation {...this.props} getData={this.getData}/>
-                    <AddLodging  {...this.props} getData={this.getData}/>
-
 
                 <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push(`/trips/${this.props.animal.id}/edit`) }}>Edit Trip</button>
+                    onClick={() => { this.props.history.push(`/trips/${this.props.tripl.id}/edit`) }}>Edit Trip</button>
 
 
 
