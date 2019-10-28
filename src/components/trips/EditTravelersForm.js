@@ -4,7 +4,6 @@ import APIManager from "../../modules/APIManager"
 class EditTravelersForm extends Component {
     //set the initial state
     state = {
-        tripId: this.props.tripId,
         travelerName: "",
         loadingStatus: false,
     };
@@ -16,16 +15,29 @@ class EditTravelersForm extends Component {
     }
 
     updateExistingTraveler = evt => {
+        console.log(this.props)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTraveler = {
-            id: this.props.id,
             travelerName: this.state.travelerName,
-            tripId: this.state.tripId
+            id: this.props.fellowTravelerId,
+            tripId: this.props.tripId
         };
 
         APIManager.updateTraveler(editedTraveler)
-        // .then(() => this.props.history.push("/"))
+            .then(() => this.props.getData())
+            console.log(editedTraveler)
+    }
+    componentDidMount() {
+        console.log(this.props)
+        APIManager.getOneTraveler(this.props.fellowTravelerId)
+            .then(fellowTravelers => {
+                console.log(fellowTravelers)
+                this.setState({
+                    travelerName: fellowTravelers.travelerName,
+                    loadingStatus: false
+                });
+            });
     }
 
     render() {
@@ -50,7 +62,7 @@ class EditTravelersForm extends Component {
                                 type="button" disabled={this.state.loadingStatus}
                                 onClick={this.updateExistingTraveler}
                                 className="btn btn-primary"
-                            >Save Fellow Traveler</button>
+                            >Save Traveler</button>
                         </div>
                     </fieldset>
                 </form>
@@ -58,5 +70,4 @@ class EditTravelersForm extends Component {
         );
     }
 }
-
 export default EditTravelersForm

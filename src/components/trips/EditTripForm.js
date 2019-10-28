@@ -19,6 +19,7 @@ class EditTripForm extends Component {
     }
 
     updateExistingTrip = evt => {
+        console.log(this.props)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTrip = {
@@ -38,8 +39,7 @@ class EditTripForm extends Component {
     componentDidMount() {
         APIManager.getTrip(this.props.tripId)
         .then(trip => {
-            console.log(this.state.trip)
-
+            // console.log(this.state.trip)
             this.setState({
               tripTitle: trip.title,
               startDate: trip.startDate,

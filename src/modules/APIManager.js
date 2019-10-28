@@ -80,7 +80,6 @@ export default {
     },
 
     updateTrip(editedTrip) {
-        console.log("trip from api",editedTrip)
         return fetch(`${remoteURL}/trips/${editedTrip.id}`, {
             method: "PUT",
             headers: {
@@ -90,7 +89,7 @@ export default {
         }).then(data => data.json());
     },
     updateLocation(editedLocation) {
-        return fetch(`${remoteURL}/trips/${editedLocation.id}`, {
+        return fetch(`${remoteURL}/places/${editedLocation.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -99,7 +98,7 @@ export default {
         }).then(data => data.json());
     },
     updateStay(editedStay) {
-        return fetch(`${remoteURL}/trips/${editedStay.id}`, {
+        return fetch(`${remoteURL}/accommodations/${editedStay.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -108,7 +107,7 @@ export default {
         }).then(data => data.json());
     },
     updateActivity(editedActivity) {
-        return fetch(`${remoteURL}/trips/${editedActivity.id}`, {
+        return fetch(`${remoteURL}/activities/${editedActivity.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -117,7 +116,7 @@ export default {
         }).then(data => data.json());
     },
     updateTransportation(editedTransportation) {
-        return fetch(`${remoteURL}/trips/${editedTransportation.id}`, {
+        return fetch(`${remoteURL}/transportations/${editedTransportation.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -126,7 +125,7 @@ export default {
         }).then(data => data.json());
     },
     updateTraveler(editedTraveler) {
-        return fetch(`${remoteURL}/trips/${editedTraveler.id}`, {
+        return fetch(`${remoteURL}/fellowTravelers/${editedTraveler.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -152,5 +151,8 @@ export default {
     },
     getTripTravelers(id) {
         return fetch(`${remoteURL}/fellowTravelers?tripId=${id}`).then(result => result.json())
+    },
+    getOneTraveler(id) {
+        return fetch(`${remoteURL}/fellowTravelers/${id}`).then(result => result.json())
     }
 }

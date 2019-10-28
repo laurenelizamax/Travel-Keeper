@@ -11,7 +11,7 @@ class PlaceCard extends Component {
     }
 
     componentDidMount() {
-        // console.log("placecard mounted")
+        console.log(this.props)
         const newState = {}
         APIManager.getTripAccommodations(this.props.place.id)
             .then((lodging) => {

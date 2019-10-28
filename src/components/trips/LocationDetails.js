@@ -6,7 +6,6 @@ import AddTransportation from "./AddTransportation"
 import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
-// import Placecard from "./PlaceCard"
 
 class LocationDetails extends Component {
 
@@ -94,6 +93,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Accommodations: {accommodation.stayName}</p>
                         <p>Description: {accommodation.stayDescription}</p>
+                        <EditLodgingForm {...this.props} getData={this.getData} />
                     </div>
                 )} 
 
@@ -101,6 +101,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>
+                        <EditActivityForm {...this.props} getData={this.getData} />
                     </div>
                 )}
 
@@ -108,24 +109,15 @@ class LocationDetails extends Component {
                     <div>
                         <p>Transportation: {transportation.transportationName}</p>
                         <p>Description: {transportation.transportationDescription}</p>
-
+                        <EditTransportationForm {...this.props} getData={this.getData} />
                     </div>
                 )}
-
-                {/* <Placecard {...this.props} getData={this.getData}/> */}
 
                 <AddLodging  {...this.props} getData={this.getData} />
 
                 <AddActivities  {...this.props} getData={this.getData} />
 
                 <AddTransportation {...this.props} getData={this.getData} />
-
-
-                <EditLodgingForm {...this.props} getData={this.getData} />
-
-                <EditActivityForm {...this.props} getData={this.getData} />
-
-                <EditTransportationForm {...this.props} getData={this.getData} />
 
             </>
         )

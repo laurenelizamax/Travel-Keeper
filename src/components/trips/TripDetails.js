@@ -57,7 +57,7 @@ class TripDetails extends Component {
     render() {
         return (
             <>
-             <button type="button" className="cardButton"
+                <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
                 <div>
@@ -69,18 +69,19 @@ class TripDetails extends Component {
 
                 {this.state.places.map(place =>
                     <div>
-                    <PlaceCard key={place.id}
-                        place={place}
-                        placeId={place.id}
-                    />
-                    <EditLocationForm {...this.props} getData={this.getData} />
+                        <PlaceCard key={place.id}
+                            place={place}
+                            placeId={place.id}
+                        />
+                        <EditLocationForm placeId={place.id}
+                            {...this.props} getData={this.getData} />
                     </div>
                 )}
 
                 {this.state.fellowTravelers.map(fellowTraveler =>
                     <div>
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
-                        <EditTravelersForm {...this.props} getData={this.getData} />
+                        <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
                 <AddTravelers {...this.props} getData={this.getData} />

@@ -35,22 +35,6 @@
       "notes": "Great Trip!"
     },
     {
-      "title": "Home ",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "with my baby",
-      "userId": 3,
-      "id": 2
-    },
-    {
-      "title": "NSS",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-23",
-      "notes": "Testing",
-      "userId": 1,
-      "id": 4
-    },
-    {
       "id": 5,
       "title": "yes!",
       "startDate": "2019-10-02",
@@ -59,12 +43,28 @@
       "userId": 1
     },
     {
-      "id": 6,
-      "title": "trying to edit!!",
-      "startDate": "2019-10-02",
+      "title": "edit travelers",
+      "startDate": "2019-10-09",
       "endDate": "2019-10-16",
       "notes": "edit",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "id": 7,
+      "title": "cxzxcxzcz",
+      "startDate": "2019-10-09",
+      "endDate": "2019-10-15",
+      "notes": "xczxczc",
       "userId": 1
+    },
+    {
+      "title": "xvx",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-15",
+      "notes": "vx",
+      "userId": 1,
+      "id": 8
     }
   ],
   "places": [
@@ -81,34 +81,39 @@
       "tripId": 1
     },
     {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 2,
-      "id": 3
-    },
-    {
-      "placeName": "nashville",
-      "placeDescription": "saw Dylan",
-      "tripId": 2,
-      "id": 4
-    },
-    {
       "placeName": "jjgvjh",
       "placeDescription": "hgj",
       "tripId": 1,
       "id": 5
     },
     {
-      "placeName": "Nashville",
-      "placeDescription": "fall!",
-      "tripId": 4,
-      "id": 7
-    },
-    {
       "placeName": "Toronto",
       "placeDescription": "visited Erika",
       "tripId": 5,
       "id": 8
+    },
+    {
+      "placeName": "France",
+      "placeDescription": "Paris",
+      "tripId": 6,
+      "id": 9
+    },
+    {
+      "placeName": "cxcxc",
+      "placeDescription": "xcxcx",
+      "tripId": 6,
+      "id": 10
+    },
+    {
+      "id": 11,
+      "placeName": "Toronto",
+      "placeDescription": "TN"
+    },
+    {
+      "id": 12,
+      "placeName": "one",
+      "placeDescription": "two",
+      "tripId": 8
     }
   ],
   "fellowTravelers": [
@@ -118,9 +123,23 @@
       "tripId": 1
     },
     {
-      "travelerName": "Renee",
-      "tripId": 4,
-      "id": 4
+      "travelerName": "dy",
+      "tripId": 7,
+      "id": 7
+    },
+    {
+      "travelerName": "Beth",
+      "tripId": 7,
+      "id": 9
+    },
+    {
+      "travelerName": "ttttt",
+      "id": 10
+    },
+    {
+      "travelerName": "444444",
+      "id": 11,
+      "tripId": 8
     }
   ],
   "accommodations": [
@@ -137,28 +156,16 @@
       "id": 4
     },
     {
-      "stayName": "les",
-      "stayDescription": "les",
-      "placeId": 3,
-      "id": 5
-    },
-    {
-      "stayName": "home",
-      "stayDescription": "stayed home",
-      "placeId": 4,
-      "id": 6
-    },
-    {
-      "stayName": "les",
-      "stayDescription": "les",
-      "placeId": 4,
-      "id": 7
-    },
-    {
       "stayName": "dfsdfdsfsd",
       "stayDescription": "dsfdsfdsfds",
       "placeId": 5,
       "id": 8
+    },
+    {
+      "stayName": "les",
+      "stayDescription": "works?",
+      "placeId": 12,
+      "id": 9
     }
   ],
   "transportations": [
@@ -176,18 +183,6 @@
       "activityDescription": "Went to the Eiffel Tower. All the way to the top!",
       "placeId": 1,
       "favorite": false
-    },
-    {
-      "activityName": "homework",
-      "activityDescription": "breaking it all",
-      "placeId": 7,
-      "id": 3
-    },
-    {
-      "activityName": "dfsdf",
-      "activityDescription": "dfsdfs",
-      "placeId": 4,
-      "id": 4
     },
     {
       "activityName": "dfsdfds",

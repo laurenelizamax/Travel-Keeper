@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom"
 import React, { Component } from "react"
 import ProfileList from "./profile/ProfileCard"
-import FriendsList from "./friends/FriendsList"
+// import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
 import TripDetails from "./trips/TripDetails"
 import TripAddForm from "./trips/TripAddForm"
@@ -24,9 +24,9 @@ class ApplicationViews extends Component {
                                 <AddProfile />
                                 <TripList {...props} />
                             </section>
-                            <section className="rightSection">
+                            {/* <section className="rightSection">
                                 <FriendsList {...props} />
-                            </section>
+                            </section> */}
                         </div>
                     )
                 }
