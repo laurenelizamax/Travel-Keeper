@@ -15,7 +15,7 @@ class EditTravelersForm extends Component {
     }
 
     updateExistingTraveler = evt => {
-        console.log(this.props)
+        // console.log(this.props)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTraveler = {
@@ -26,13 +26,13 @@ class EditTravelersForm extends Component {
 
         APIManager.updateTraveler(editedTraveler)
             .then(() => this.props.getData())
-            console.log(editedTraveler)
+            // console.log(editedTraveler)
     }
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
         APIManager.getOneTraveler(this.props.fellowTravelerId)
             .then(fellowTravelers => {
-                console.log(fellowTravelers)
+                // console.log(fellowTravelers)
                 this.setState({
                     travelerName: fellowTravelers.travelerName,
                     loadingStatus: false

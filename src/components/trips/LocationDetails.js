@@ -93,7 +93,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Accommodations: {accommodation.stayName}</p>
                         <p>Description: {accommodation.stayDescription}</p>
-                        <EditLodgingForm {...this.props} getData={this.getData} />
+                        <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
                     </div>
                 )} 
 
@@ -101,7 +101,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>
-                        <EditActivityForm {...this.props} getData={this.getData} />
+                        <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
 
@@ -109,7 +109,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Transportation: {transportation.transportationName}</p>
                         <p>Description: {transportation.transportationDescription}</p>
-                        <EditTransportationForm {...this.props} getData={this.getData} />
+                        <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
 

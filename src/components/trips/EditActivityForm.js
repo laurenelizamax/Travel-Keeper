@@ -4,7 +4,6 @@ import APIManager from "../../modules/APIManager"
 class EditActivityForm extends Component {
     //set the initial state
     state = {
-        placeId: this.props.placeId,
         activityName: "",
         activityDescription: "",
         loadingStatus: false,
@@ -20,14 +19,27 @@ class EditActivityForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedActivity = {
-            id: this.props.id,
+            id: this.props.activityId,
             activityName: this.state.activityName,
             activityDescription: this.state.activityDescription,
-            placeId: this.state.placeId
+            placeId: this.props.placeId
         };
 
         APIManager.updateActivity(editedActivity)
-        // .then(() => this.props.history.push("/"))
+            .then(() => this.props.getData())
+
+    }
+    componentDidMount() {
+        // console.log(this.props)
+        APIManager.getOneActivity(this.props.activityId)
+            .then(activities => {
+                this.setState({
+                    activityName: activities.activityName,
+                    activityDescription: activities.activityDescription,
+                    placeId: this.props.placeId,
+                    loadingStatus: false
+                });
+            });
     }
 
     render() {
@@ -35,7 +47,7 @@ class EditActivityForm extends Component {
             <>
                 <form>
                     <fieldset>
-                    <h4>Edit Activities</h4>
+                        <h4>Edit Activities</h4>
                         <label htmlFor="activityName">Activity: </label>
                         <div className="formgrid">
                             <input
@@ -71,3 +83,4 @@ class EditActivityForm extends Component {
 }
 
 export default EditActivityForm
+

@@ -16,7 +16,7 @@ class EditLocationForm extends Component {
     }
 
     updateExistingLocation = evt => {
-        console.log(this.props.placeId)
+        // console.log(this.props.placeId)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedLocation = {

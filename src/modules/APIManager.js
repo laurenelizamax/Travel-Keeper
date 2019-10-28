@@ -143,11 +143,20 @@ export default {
     getTripAccommodations(id) {
         return fetch(`${remoteURL}/accommodations?placeId=${id}`).then(result => result.json())
     },
+    getOneAccommodation(id) {
+        return fetch(`${remoteURL}/accommodations/${id}`).then(result => result.json())
+    },
     getTripTransportation(id) {
         return fetch(`${remoteURL}/transportations?placeId=${id}`).then(result => result.json())
     },
+    getOneTransportation(id) {
+        return fetch(`${remoteURL}/transportations/${id}`).then(result => result.json())
+    },
     getTripActivities(id) {
         return fetch(`${remoteURL}/activities?placeId=${id}`).then(result => result.json())
+    },
+    getOneActivity(id) {
+        return fetch(`${remoteURL}/activities/${id}`).then(result => result.json())
     },
     getTripTravelers(id) {
         return fetch(`${remoteURL}/fellowTravelers?tripId=${id}`).then(result => result.json())

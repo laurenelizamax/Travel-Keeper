@@ -4,7 +4,6 @@ import APIManager from "../../modules/APIManager"
 class EditTransportationForm extends Component {
     //set the initial state
     state = {
-        placeId: this.props.placeId,
         transportationName: "",
         transportationDescription: "",
         loadingStatus: false,
@@ -20,15 +19,28 @@ class EditTransportationForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTransportation = {
-            id: this.props.id,
+            id: this.props.transportationId,
             transportationName: this.state.transportationName,
             transportationDescription: this.state.transportationDescription,
-            placeId: this.state.placeId
+            placeId: this.props.placeId
         };
 
         APIManager.updateTransportation(editedTransportation)
-        // .then(() => this.props.history.push("/"))
+        .then(() => this.props.getData())
     }
+
+    componentDidMount() {
+        // console.log(this.props)
+        APIManager.getOneTransportation(this.props.transportationId)
+            .then(transportations => {
+                this.setState({
+                    transportationName: transportations.transportationName,
+                    transportationDescription: transportations.transportationDescription,
+                    placeId: this.props.placeId,
+                    loadingStatus: false
+                });
+            });
+        }
 
     render() {
         return (

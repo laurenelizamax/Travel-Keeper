@@ -19,7 +19,7 @@ class EditTripForm extends Component {
     }
 
     updateExistingTrip = evt => {
-        console.log(this.props)
+        // console.log(this.props)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTrip = {

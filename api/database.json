@@ -41,30 +41,6 @@
       "endDate": "2019-10-16",
       "notes": "edit!!!!!!!",
       "userId": 1
-    },
-    {
-      "title": "edit travelers",
-      "startDate": "2019-10-09",
-      "endDate": "2019-10-16",
-      "notes": "edit",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "id": 7,
-      "title": "cxzxcxzcz",
-      "startDate": "2019-10-09",
-      "endDate": "2019-10-15",
-      "notes": "xczxczc",
-      "userId": 1
-    },
-    {
-      "title": "xvx",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-15",
-      "notes": "vx",
-      "userId": 1,
-      "id": 8
     }
   ],
   "places": [
@@ -87,33 +63,15 @@
       "id": 5
     },
     {
-      "placeName": "Toronto",
+      "id": 8,
+      "placeName": "Nashville",
       "placeDescription": "visited Erika",
-      "tripId": 5,
-      "id": 8
-    },
-    {
-      "placeName": "France",
-      "placeDescription": "Paris",
-      "tripId": 6,
-      "id": 9
-    },
-    {
-      "placeName": "cxcxc",
-      "placeDescription": "xcxcx",
-      "tripId": 6,
-      "id": 10
+      "tripId": 5
     },
     {
       "id": 11,
       "placeName": "Toronto",
       "placeDescription": "TN"
-    },
-    {
-      "id": 12,
-      "placeName": "one",
-      "placeDescription": "two",
-      "tripId": 8
     }
   ],
   "fellowTravelers": [
@@ -123,23 +81,18 @@
       "tripId": 1
     },
     {
-      "travelerName": "dy",
-      "tripId": 7,
-      "id": 7
-    },
-    {
-      "travelerName": "Beth",
-      "tripId": 7,
-      "id": 9
-    },
-    {
       "travelerName": "ttttt",
       "id": 10
     },
     {
-      "travelerName": "444444",
+      "travelerName": "Renee",
       "id": 11,
-      "tripId": 8
+      "tripId": 5
+    },
+    {
+      "travelerName": "dylan",
+      "tripId": 5,
+      "id": 12
     }
   ],
   "accommodations": [
@@ -160,12 +113,6 @@
       "stayDescription": "dsfdsfdsfds",
       "placeId": 5,
       "id": 8
-    },
-    {
-      "stayName": "les",
-      "stayDescription": "works?",
-      "placeId": 12,
-      "id": 9
     }
   ],
   "transportations": [
@@ -174,6 +121,11 @@
       "transportationName": "airplane",
       "transportationDescription": "Got a great deal with British Airways",
       "placeId": 1
+    },
+    {
+      "id": 4,
+      "transportationName": "eeee",
+      "transportationDescription": "eeeee"
     }
   ],
   "activities": [
