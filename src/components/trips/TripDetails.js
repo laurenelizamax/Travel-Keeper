@@ -5,6 +5,7 @@ import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
 import EditLocationForm from "./EditLocationForm"
+import EditTravelersForm from "./EditTravelersForm"
 
 class TripDetails extends Component {
 
@@ -21,7 +22,7 @@ class TripDetails extends Component {
             })
             .then(() => APIManager.getTripPlaces(this.props.tripId)
                 .then((places) => {
-                    console.log(places)
+                    // console.log(places)
                     setNewState.places = places
                 })
             ).then(() => APIManager.getTripTravelers(this.props.tripId)
@@ -56,6 +57,9 @@ class TripDetails extends Component {
     render() {
         return (
             <>
+                <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
+
                 <div>
                     <h4>Title: {this.state.trip.title}</h4>
                     <p>Start Date: {this.state.trip.startDate}</p>
@@ -64,31 +68,27 @@ class TripDetails extends Component {
                 </div>
 
                 {this.state.places.map(place =>
-                    <PlaceCard key={place.id}
-                        place={place}
-                        placeId={place.id}
-
-                    />
+                    <div>
+                        <PlaceCard key={place.id}
+                            place={place}
+                            placeId={place.id}
+                        />
+                        <EditLocationForm placeId={place.id}
+                            {...this.props} getData={this.getData} />
+                    </div>
                 )}
+
                 {this.state.fellowTravelers.map(fellowTraveler =>
                     <div>
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
+                        <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
                 <AddTravelers {...this.props} getData={this.getData} />
 
                 <AddLocation {...this.props} getData={this.getData} />
 
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push(`/trips/${this.props.trip.id}/edit`) }}>Edit Trip</button>
-
                 <EditTripForm {...this.props} getData={this.getData} />
-
-                <EditLocationForm {...this.props} getData={this.getData} />
-
-
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
             </>
         )

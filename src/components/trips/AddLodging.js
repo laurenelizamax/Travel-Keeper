@@ -21,7 +21,7 @@ class AddLodging extends Component {
     componentDidMount() {
         APIManager.getTripAccommodations(2)
             .then((allStays) => {
-                console.log(allStays)
+                // console.log(allStays)
                 this.setState({
                     accommodations: allStays
                 })
@@ -55,6 +55,7 @@ class AddLodging extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Accommodations</h4>
                             <div className="tripForm">
                                 {/* Accommodations  input*/}
                                 <label htmlFor="stayName">Accommodation:</label>

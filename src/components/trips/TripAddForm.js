@@ -54,6 +54,7 @@ class TripAddForm extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Trip</h4>
                             <div className="tripForm">
                                 {/* Trip Title input*/}
                                 <label htmlFor="tripTitle">Trip Title:</label>

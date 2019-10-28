@@ -4,7 +4,6 @@ import APIManager from "../../modules/APIManager"
 class EditLocationForm extends Component {
     //set the initial state
     state = {
-        tripId: this.props.tripId,
         placeName: "",
         placeDescription: "",
         loadingStatus: false,
@@ -17,17 +16,29 @@ class EditLocationForm extends Component {
     }
 
     updateExistingLocation = evt => {
+        // console.log(this.props.placeId)
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedLocation = {
-            id: this.props.id,
+            id: this.props.placeId,
             placeName: this.state.placeName,
             placeDescription: this.state.placeDescription,
-             tripId: this.state.tripId
+            tripId: this.props.tripId
         };
 
         APIManager.updateLocation(editedLocation)
-            // .then(() => this.props.history.push("/"))
+            .then(() => this.props.getData())
+    }
+    componentDidMount() {
+        APIManager.getOnePlace(this.props.placeId)
+            .then(place => {
+                // console.log(this.state.trip)
+                this.setState({
+                    placeName: place.placeName,
+                    placeDescription: place.placeDescription,
+                    loadingStatus: false
+                });
+            });
     }
 
     render() {
@@ -35,6 +46,7 @@ class EditLocationForm extends Component {
             <>
                 <form>
                     <fieldset>
+                        <h4>Edit Location</h4>
                         <label htmlFor="placeName">Location: </label>
                         <div className="formgrid">
                             <input

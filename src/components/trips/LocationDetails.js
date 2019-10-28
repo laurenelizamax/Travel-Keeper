@@ -6,7 +6,6 @@ import AddTransportation from "./AddTransportation"
 import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
-import Placecard from "./PlaceCard"
 
 class LocationDetails extends Component {
 
@@ -21,14 +20,14 @@ class LocationDetails extends Component {
         // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
             .then((places) => {
-                console.log(places)
+                // console.log(places)
                 this.setState({place: places})
 
                 //setNewStatethis.place = places
             })
             .then(() => { APIManager.getTripAccommodations(this.props.placeId)
                 .then((lodging) => {
-                    console.log(lodging)
+                    // console.log(lodging)
                     this.setState({accommodations: lodging})
                 })
             })
@@ -73,15 +72,18 @@ class LocationDetails extends Component {
                 })
             )
             .then(() => {
-                console.log(this.state)
+                // console.log(this.state)
                 // this.setState(setNewState)
             })
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <>
+              <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
+
                 <div>
                     <p>Location: {this.state.place.placeName}</p>
                     <p>Description: {this.state.place.placeDescription}</p>
@@ -91,6 +93,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Accommodations: {accommodation.stayName}</p>
                         <p>Description: {accommodation.stayDescription}</p>
+                        <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
                     </div>
                 )} 
 
@@ -98,6 +101,7 @@ class LocationDetails extends Component {
                     <div>
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>
+                        <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
 
@@ -105,27 +109,15 @@ class LocationDetails extends Component {
                     <div>
                         <p>Transportation: {transportation.transportationName}</p>
                         <p>Description: {transportation.transportationDescription}</p>
-
+                        <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
                     </div>
                 )}
-
-                {/* <Placecard {...this.props} getData={this.getData}/> */}
 
                 <AddLodging  {...this.props} getData={this.getData} />
 
                 <AddActivities  {...this.props} getData={this.getData} />
 
                 <AddTransportation {...this.props} getData={this.getData} />
-
-
-                <EditLodgingForm {...this.props} getData={this.getData} />
-
-                <EditActivityForm {...this.props} getData={this.getData} />
-
-                <EditTransportationForm {...this.props} getData={this.getData} />
-
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
             </>
         )

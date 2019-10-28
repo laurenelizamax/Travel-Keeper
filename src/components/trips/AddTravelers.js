@@ -53,6 +53,7 @@ class AddTravelers extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Travelers</h4>
                             <div className="tripForm">
                                 {/* Fellow Travelers  input*/}
                                 <label htmlFor="travelerName">Fellow Traveler:</label>

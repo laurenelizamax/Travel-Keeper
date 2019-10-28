@@ -4,7 +4,6 @@ import APIManager from "../../modules/APIManager"
 class EditLodgingForm extends Component {
     //set the initial state
     state = {
-        placeId: this.props.placeId,
         stayName: "",
         stayDescription: "",
         loadingStatus: false,
@@ -20,21 +19,34 @@ class EditLodgingForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedLodging = {
-            id: this.props.id,
+            id: this.props.accommodationId,
             stayName: this.state.stayName,
             stayDescription: this.state.stayDescription,
-            placeId: this.state.placeId
+            placeId: this.props.placeId
         };
 
         APIManager.updateStay(editedLodging)
-        // .then(() => this.props.history.push("/"))
+        .then(() => this.props.getData())
     }
 
+    componentDidMount() {
+        // console.log(this.props)
+        APIManager.getOneAccommodation(this.props.accommodationId)
+            .then(accommodations => {
+                this.setState({
+                    stayName: accommodations.stayName,
+                    stayDescription: accommodations.stayDescription,
+                    placeId: this.props.placeId,
+                    loadingStatus: false
+                });
+            });
+        }
     render() {
         return (
             <>
                 <form>
                     <fieldset>
+                    <h4>Edit Accommodations</h4>
                         <label htmlFor="stayName">Accommodation: </label>
                         <div className="formgrid">
                             <input

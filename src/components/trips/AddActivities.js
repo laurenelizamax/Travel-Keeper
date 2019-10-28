@@ -54,6 +54,7 @@ class AddActivities extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Activities</h4>
                             <div className="tripForm">
                                 {/* Activities input*/}
                                 <label htmlFor="activityName">Activity:</label>
