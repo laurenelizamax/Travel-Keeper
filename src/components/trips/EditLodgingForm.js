@@ -35,6 +35,7 @@ class EditLodgingForm extends Component {
             <>
                 <form>
                     <fieldset>
+                    <h4>Edit Accommodations</h4>
                         <label htmlFor="stayName">Accommodation: </label>
                         <div className="formgrid">
                             <input

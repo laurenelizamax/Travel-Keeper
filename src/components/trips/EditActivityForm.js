@@ -35,6 +35,7 @@ class EditActivityForm extends Component {
             <>
                 <form>
                     <fieldset>
+                    <h4>Edit Activities</h4>
                         <label htmlFor="activityName">Activity: </label>
                         <div className="formgrid">
                             <input

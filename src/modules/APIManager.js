@@ -80,6 +80,7 @@ export default {
     },
 
     updateTrip(editedTrip) {
+        console.log("trip from api",editedTrip)
         return fetch(`${remoteURL}/trips/${editedTrip.id}`, {
             method: "PUT",
             headers: {

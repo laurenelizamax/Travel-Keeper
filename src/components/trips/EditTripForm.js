@@ -8,9 +8,9 @@ class EditTripForm extends Component {
         endDate: "",
         userId: "",
         notes: "",
-        fellowTravelers: [],
         loadingStatus: false,
     };
+    activeUser = parseInt(sessionStorage.getItem("userId"))
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -22,26 +22,30 @@ class EditTripForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedTrip = {
-            id: this.props.id,
-            tripTitle: this.state.tripTitle,
+            id: this.props.tripId,
+            title: this.state.tripTitle,
             startDate: this.state.startDate,
             endDate: this.state.endDate,
             notes: this.state.notes,
             userId: this.activeUser
         };
-        
 
         APIManager.updateTrip(editedTrip)
-            // .then(() => this.props.history.push("/"))
+        // console.log(editedTrip)
+        .then(() => this.props.getData())
     }
+
     componentDidMount() {
-        APIManager.getTrip(this.props.match.params.tripId)
+        APIManager.getTrip(this.props.tripId)
         .then(trip => {
+            console.log(this.state.trip)
+
             this.setState({
-              tripTitle: trip.tripTitle,
+              tripTitle: trip.title,
               startDate: trip.startDate,
               endDate: trip.endDate,
               notes: trip.notes,
+              userId: this.activeUser,
               loadingStatus: false,
             });
         });
@@ -52,6 +56,7 @@ class EditTripForm extends Component {
             <>
                 <form>
                     <fieldset>
+                    <h4>Edit Trip</h4>
                         <label htmlFor="tripTitle">Title: </label>
                         <div className="formgrid">
                             <input

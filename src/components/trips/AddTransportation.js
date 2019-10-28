@@ -54,6 +54,7 @@ class AddTransportation extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Transportation</h4>
                             <div className="tripForm">
                                 {/* Transportation  input*/}
                                 <label htmlFor="transportationName">Transportation:</label>

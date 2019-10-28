@@ -37,11 +37,12 @@ class AddProfile extends Component {
     };
 
     render() {
-   console.log(this.activeUser)
+//    console.log(this.activeUser)
         return (
             <>
                 <form>
                     <fieldset>
+                    <h4>Add User Information</h4>
                         <div className="formgrid">
                             <label htmlFor="userName">Username:</label>
                             <input

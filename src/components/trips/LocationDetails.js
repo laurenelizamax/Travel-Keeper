@@ -6,7 +6,7 @@ import AddTransportation from "./AddTransportation"
 import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
-import Placecard from "./PlaceCard"
+// import Placecard from "./PlaceCard"
 
 class LocationDetails extends Component {
 
@@ -21,14 +21,14 @@ class LocationDetails extends Component {
         // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
             .then((places) => {
-                console.log(places)
+                // console.log(places)
                 this.setState({place: places})
 
                 //setNewStatethis.place = places
             })
             .then(() => { APIManager.getTripAccommodations(this.props.placeId)
                 .then((lodging) => {
-                    console.log(lodging)
+                    // console.log(lodging)
                     this.setState({accommodations: lodging})
                 })
             })
@@ -73,15 +73,18 @@ class LocationDetails extends Component {
                 })
             )
             .then(() => {
-                console.log(this.state)
+                // console.log(this.state)
                 // this.setState(setNewState)
             })
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <>
+              <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
+
                 <div>
                     <p>Location: {this.state.place.placeName}</p>
                     <p>Description: {this.state.place.placeDescription}</p>
@@ -123,9 +126,6 @@ class LocationDetails extends Component {
                 <EditActivityForm {...this.props} getData={this.getData} />
 
                 <EditTransportationForm {...this.props} getData={this.getData} />
-
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
             </>
         )

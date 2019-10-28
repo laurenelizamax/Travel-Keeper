@@ -35,6 +35,7 @@ class EditLocationForm extends Component {
             <>
                 <form>
                     <fieldset>
+                    <h4>Edit Location</h4>
                         <label htmlFor="placeName">Location: </label>
                         <div className="formgrid">
                             <input

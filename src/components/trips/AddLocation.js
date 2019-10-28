@@ -55,6 +55,7 @@ class AddLocation extends Component {
                 <div>
                     <form className="tripAddForm">
                         <fieldset>
+                        <h4>Add Location</h4>
                             <div className="tripForm">
                                 {/* Location  input*/}
                                 <label htmlFor="placeName">Location:</label>
