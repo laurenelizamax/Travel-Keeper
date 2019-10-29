@@ -30,10 +30,8 @@ class AddProfile extends Component {
                 userId: this.activeUser
             };
 
-            // Create the animal and redirect user to animal list
-            LogRegManager.postUserProfile(userProfile)
-                // .then(() => this.props.history.push(""));
-        }
+            LogRegManager.postUserProfile(this.props.userId)
+                }
     };
 
     render() {

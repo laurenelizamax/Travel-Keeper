@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-//import the components we will need
 import ProfileCard from './ProfileCard'
-import LogRegManager from '../../modules/AnimalManager'
+import LogRegManager from '../../modules/LogRegManager'
 
 class ProfileList extends Component {
     state = {
        users: [],
-        userId: ""
+       userId: ""
     }
     activeUser = parseInt(sessionStorage.getItem("userId"))
 
     componentDidMount() {
-        LogRegManager.getAllUsers()
+        LogRegManager.getAllUsers(this.activeUser)
             .then((users) => {
                 this.setState({
                     users: users
@@ -21,19 +20,15 @@ class ProfileList extends Component {
 
 
     render() {
+        // console.log(this.state)
+
         return (
             <>
-            < section className = "section-content" >
-            <button type="button"
-                className="btn"
-                onClick={() => { this.props.history.push("/users/new") }}>
-                Add User Info
-      </button>
-    </section >
             <div className="container-cards">
                 {this.state.users.map(user => <ProfileCard
                     key={user.id}
                     user={user}
+                    userId={user.id}
                     {...this.props}
                 />)}
             </div>

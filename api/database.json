@@ -4,25 +4,25 @@
       "name": "Lauren",
       "email": "lauren@lauren.com",
       "password": "lauren",
-      "userPlace": "",
-      "userName": "",
+      "userPlace": "Nashville",
+      "dreamTrip": "Hawaii",
       "id": 1
-    },
-    {
-      "name": "sparkle",
-      "email": "sparkle@sparkle.com",
-      "password": "sparkle",
-      "userPlace": "",
-      "userName": "",
-      "id": 2
     },
     {
       "name": "les",
       "email": "les@les.com",
       "password": "les",
-      "userPlace": "",
-      "userName": "",
+      "userPlace": "France",
+      "dreamTrip": "Eygpt",
       "id": 3
+    },
+    {
+      "name": "McGarrett",
+      "email": "mg@mg.com",
+      "password": "mg",
+      "userPlace": "Nashville",
+      "dreamTrip": "London",
+      "id": 4
     }
   ],
   "trips": [
@@ -41,6 +41,30 @@
       "endDate": "2019-10-16",
       "notes": "edit!!!!!!!",
       "userId": 1
+    },
+    {
+      "title": "Les Trip",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-01",
+      "notes": "dsfdsfds",
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "title": "Les Trip 2",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "Les",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "title": "Dog Store",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-16",
+      "notes": "bones",
+      "userId": 4,
+      "id": 8
     }
   ],
   "places": [

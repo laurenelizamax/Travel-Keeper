@@ -7,12 +7,15 @@ class TripList extends Component {
     //define what this component needs to render
     state = {
         trips: [],
+        // userId: "",
         loadingStatus: false
     }
+    activeUserId = parseInt(sessionStorage.getItem("userId"))
+
     deleteTrip = id => {
         APIManager.delete(id)
             .then(() => {
-                APIManager.getAllTrips()
+                APIManager.getAllTrips(this.activeUserId)
                     .then((newTrips) => {
                         this.setState({
                             trips: newTrips
@@ -22,7 +25,7 @@ class TripList extends Component {
     }
 
     getData = () => {
-        APIManager.getAllTrips()
+        APIManager.getAllTrips(this.activeUserId)
             .then((trips) => {
                 this.setState({
                     trips: trips

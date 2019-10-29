@@ -17,6 +17,9 @@ export default {
     getAllUsers() {
         return fetch(`${remoteURL}/users`).then(result => result.json())
     },
+    getOneUser(id) {
+        return fetch(`${remoteURL}/users/${id}`).then(result => result.json())
+    },
     postUserProfile(id, newProfile) {
         return fetch(`${remoteURL}/users/${id}`, {
             method: "POST",

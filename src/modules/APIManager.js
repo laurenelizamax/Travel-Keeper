@@ -4,10 +4,12 @@ export default {
     getTrip(id) {
         return fetch(`${remoteURL}/trips/${id}`).then(result => result.json())
     },
-    getAllTrips() {
-        return fetch(`${remoteURL}/trips`).then(result => result.json())
+    getAllTrips(userId) {
+        return fetch(`${remoteURL}/trips?userId=${userId}`).then(result => result.json())
     },
-
+    getAllTripsByUser(userId) {
+        return fetch(`${remoteURL}/trips?userId=${userId}`).then(result => result.json())
+    },
     postTrip(newTrip) {
         return fetch(`${remoteURL}/trips`, {
             method: "POST",
@@ -65,7 +67,7 @@ export default {
     },
     postProfile(newProfile) {
         return fetch(`${remoteURL}/users`, {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },

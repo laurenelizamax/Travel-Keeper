@@ -10,8 +10,9 @@ class ProfileCard extends Component {
 
                     <h1>My Profile</h1>
                         <div>
-                            <p>Name: {this.props.userName}</p>
-                            <p>Location: {this.props.userPlace}</p>
+                            <p>Name: <span className="card">{this.props.user.name}</span></p>
+                            <p>Location: {this.props.user.userPlace}</p>
+                            <p>Dream Destination: {this.props.user.dreamTrip}</p>
                             </div>
                 </div>
             </div>
