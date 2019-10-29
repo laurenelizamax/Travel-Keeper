@@ -5,7 +5,9 @@ class Register extends Component {
     state = {
         name: "",
         email: "",
-        password: ""
+        password: "",
+        userPlace: "",
+        url: ""
     }
     handleFieldChange = (evt) => {
         const stateToChange = {}
@@ -28,13 +30,17 @@ class Register extends Component {
                 let newUser = {
                     name: this.state.name,
                     email: this.state.email,
-                    password: this.state.password
+                    password: this.state.password,
+                    userPlace: this.state.userPlace,
+                    url: this.state.url
                 };
                 LogRegManager.createNewUser(newUser)
                     .then((createNewUser) => {
                         sessionStorage.setItem("userId", createNewUser.id);
                         sessionStorage.setItem("email", this.state.email);
                         sessionStorage.setItem("name", this.state.name);
+                        sessionStorage.setItem("place", this.state.userPlace);
+                        sessionStorage.setItem("url", this.state.url);
                         this.props.setUser(createNewUser)
                     }
                     )
@@ -54,6 +60,16 @@ class Register extends Component {
                         <input onChange={this.handleFieldChange} type="text"
                             id="name"
                             placeholder="Name"
+                            required="" autoFocus="" />
+                        <label htmlFor="userPlace">Location:</label>
+                        <input onChange={this.handleFieldChange} type="text"
+                            id="userPlace"
+                            placeholder="Location"
+                            required="" autoFocus="" />
+                        <label htmlFor="dreamTrip">Dream Destination:</label>
+                        <input onChange={this.handleFieldChange} type="text"
+                            id="dreamTrip"
+                            placeholder="Dream Destination"
                             required="" autoFocus="" />
                         <label htmlFor="email">Email:</label>
                         <input onChange={this.handleFieldChange} type="text"

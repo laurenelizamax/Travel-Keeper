@@ -1,12 +1,11 @@
 import { Route } from "react-router-dom"
 import React, { Component } from "react"
-import ProfileList from "./profile/ProfileCard"
+import ProfileList from "./profile/ProfileList"
 // import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
 import TripDetails from "./trips/TripDetails"
 import TripAddForm from "./trips/TripAddForm"
 import TripEditForm from "./trips/TripEditForm"
-import AddProfile from "./profile/AddProfile"
 import LocationDetails from "./trips/LocationDetails"
 
 class ApplicationViews extends Component {
@@ -21,7 +20,6 @@ class ApplicationViews extends Component {
                             </section>
                             <section className="mainSection">
                                 <ProfileList {...props} />
-                                <AddProfile />
                                 <TripList {...props} />
                             </section>
                             {/* <section className="rightSection">
