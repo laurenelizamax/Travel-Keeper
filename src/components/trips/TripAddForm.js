@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 
 class TripAddForm extends Component {
@@ -13,7 +15,14 @@ class TripAddForm extends Component {
         fellowTravelers: [],
         userId: this.props.activeUser,
         loadingStatus: false,
+        modal: false,
     };
+
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -22,6 +31,7 @@ class TripAddForm extends Component {
     };
     constructNewTrip = evt => {
         evt.preventDefault();
+        this.toggle();
         if (this.state.tripTitle === "" || this.state.startDate === "" || this.state.endDate === "" ||
             this.state.notes === "") {
             window.alert("Please add trip details");
@@ -34,27 +44,43 @@ class TripAddForm extends Component {
                 notes: this.state.notes,
                 userId: this.props.activeUser
             }
-
             APIManager.postTrip(trip)
-                .then(() => {this.props.history.push("/")});
-                // `/trips/${this.props.tripId}`
-                // {<Link to={`/trips/${this.props.trip.id}`}></Link>}
+            .then(() => {
+                this.props.getData()
+                this.setState({ loadingStatus: false });
+            })
         }
+    }
+    componentDidMount() {
+        APIManager.getAllTrips()
+            .then((allTrips) => {
+                this.setState({
+                    trips: allTrips
+                })
+            })
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <div>
-                    <button type="button" className="cardButton"
-                        onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
-                </div>
-
-                <div>
-                    <form className="tripAddForm">
-                        <fieldset>
-                        <h4>Add Trip</h4>
-                            <div className="tripForm">
+                {" "}
+                <Button color="info" className="addTrip" onClick={this.toggle} >
+                    Add A Trip</Button>
+                < Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Add A Trip
+					</ModalHeader>
+                    <ModalBody>
+                        <form className="tripAddForm">
+                            <fieldset>
                                 {/* Trip Title input*/}
                                 <label htmlFor="tripTitle">Trip Title:</label>
                                 <input
@@ -91,18 +117,23 @@ class TripAddForm extends Component {
                                     id="notes"
                                     placeholder="notes"
                                 />
-                                {/* Button to create new trip*/}
-                                <button
-                                    type="submit"
-                                    className="cardButton"
-                                    disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewTrip}
-                                >Submit</button>
-
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                                <ModalFooter>
+                                    {/* Button to create new trip*/}
+                                    <button
+                                        type="submit"
+                                        className="cardButton"
+                                        disabled={this.state.loadingStatus}
+                                        onClick={this.constructNewTrip}
+                                    >Submit</button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                    </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </ Modal>
             </>
         )
     }

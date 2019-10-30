@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
 class AddActivities extends Component {
@@ -10,7 +11,13 @@ class AddActivities extends Component {
         activityName: "",
         activityDescription: "",
         loadingStatus: false,
+        modal: false
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
 
     handleFieldChange = evt => {
@@ -28,6 +35,7 @@ class AddActivities extends Component {
     }
     constructNewActivity = evt => {
         evt.preventDefault();
+        this.toggle();
         if (this.state.activityName === "" || this.state.activityDescription === "") {
             window.alert("Please add an activity");
         } else {
@@ -48,14 +56,26 @@ class AddActivities extends Component {
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-
-                <div>
-                    <form className="tripAddForm">
-                        <fieldset>
-                        <h4>Add Activities</h4>
-                            <div className="tripForm">
+                {" "}
+                <Button color="info" className="addTraveler" onClick={this.toggle} >
+                    Add An Activity</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Add An Activity
+                </ModalHeader>
+                    <ModalBody>
+                        <form className="tripAddForm">
+                            <fieldset>
                                 {/* Activities input*/}
                                 <label htmlFor="activityName">Activity:</label>
                                 <input
@@ -74,20 +94,26 @@ class AddActivities extends Component {
                                     id="activityDescription"
                                     placeholder="Activity Description"
                                 />
-                                {/* Button to create new activity*/}
-                                <button
-                                    type="submit"
-                                    className="cardButton"
-                                    disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewActivity}
-                                >Add An Activity</button>
-
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                                <ModalFooter>
+                                    {/* Button to create new activity*/}
+                                    <Button
+                                        type="submit"
+                                        className="cardButton"
+                                        disabled={this.state.loadingStatus}
+                                        onClick={this.constructNewActivity}
+                                    >Add An Activity</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                    </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         )
     }
 }
 export default AddActivities
+

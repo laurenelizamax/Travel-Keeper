@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 class EditLodgingForm extends Component {
     //set the initial state
@@ -7,7 +9,13 @@ class EditLodgingForm extends Component {
         stayName: "",
         stayDescription: "",
         loadingStatus: false,
+        modal: false,
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -17,6 +25,7 @@ class EditLodgingForm extends Component {
 
     updateExistingStay = evt => {
         evt.preventDefault()
+        this.toggle();
         this.setState({ loadingStatus: true });
         const editedLodging = {
             id: this.props.accommodationId,
@@ -26,7 +35,7 @@ class EditLodgingForm extends Component {
         };
 
         APIManager.updateStay(editedLodging)
-        .then(() => this.props.getData())
+            .then(() => this.props.getData())
     }
 
     componentDidMount() {
@@ -40,45 +49,68 @@ class EditLodgingForm extends Component {
                     loadingStatus: false
                 });
             });
-        }
+    }
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <form>
-                    <fieldset>
-                    <h4>Edit Accommodations</h4>
-                        <label htmlFor="stayName">Accommodation: </label>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="stayName"
-                                value={this.state.stayName}
-                            />
-                            <label htmlFor="stayDescription">Accommodation Description: </label>
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="stayDescription"
-                                value={this.state.stayDescription}
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingStay}
-                                className="btn btn-primary"
-                            >Save Accommodation</button>
-                        </div>
-                    </fieldset>
-                </form>
+                {" "}
+                <Button color="success" className="editTrip" onClick={this.toggle}>
+                    Edit Accommodation</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Edit Trip
+					</ModalHeader>
+                    <ModalBody>
+                        <form>
+                            <fieldset>
+                                <label htmlFor="stayName">Accommodation: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="stayName"
+                                    value={this.state.stayName}
+                                />
+                                <label htmlFor="stayDescription">Accommodation Description: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="stayDescription"
+                                    value={this.state.stayDescription}
+                                />
+                                <ModalFooter>
+                                    <Button
+                                        type="button" disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingStay}
+                                        className="btn btn-primary"
+                                    >Save Accommodation</Button>
+                                    {" "}
+                                    < Button className="cancel" onClick={this.toggle} >
+                                        Cancel
+                                     </Button >
+                                </ModalFooter >
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         );
     }
 }
 
 export default EditLodgingForm
+
+
+
+

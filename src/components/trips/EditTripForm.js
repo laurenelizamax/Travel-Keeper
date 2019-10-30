@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 class EditTripForm extends Component {
     state = {
@@ -9,7 +11,13 @@ class EditTripForm extends Component {
         notes: "",
         userId: this.props.activeUser,
         loadingStatus: false,
+        modal: false,
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -20,6 +28,7 @@ class EditTripForm extends Component {
     updateExistingTrip = evt => {
         // console.log(this.props)
         evt.preventDefault()
+        this.toggle();
         this.setState({ loadingStatus: true });
         const editedTrip = {
             id: this.props.tripId,
@@ -31,81 +40,101 @@ class EditTripForm extends Component {
         };
 
         APIManager.updateTrip(editedTrip)
-        // console.log(editedTrip)
-        .then(() => this.props.getData())
+            // console.log(editedTrip)
+            .then(() => this.props.getData())
     }
 
     componentDidMount() {
         APIManager.getTrip(this.props.tripId)
-        .then(trip => {
-            // console.log(this.state.trip)
-            this.setState({
-              tripTitle: trip.title,
-              startDate: trip.startDate,
-              endDate: trip.endDate,
-              notes: trip.notes,
-              userId: this.props.activeUser,
-              loadingStatus: false,
+            .then(trip => {
+                // console.log(this.state.trip)
+                this.setState({
+                    tripTitle: trip.title,
+                    startDate: trip.startDate,
+                    endDate: trip.endDate,
+                    notes: trip.notes,
+                    userId: this.props.activeUser,
+                    loadingStatus: false,
+                });
             });
-        });
-      }
+    }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <form>
-                    <fieldset>
-                    <h4>Edit Trip</h4>
-                        <label htmlFor="tripTitle">Title: </label>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="tripTitle"
-                                value={this.state.tripTitle}
-                            />
-                            <label htmlFor="startDate">Start Date: </label>
-                            <input
-                                type="date"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="startDate"
-                                value={this.state.startDate}
-                            />
-                              <label htmlFor="endDate">End Date: </label>
-                            <input
-                                type="date"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="endDate"
-                                value={this.state.endDate}
-                            />
-                            <label htmlFor="notes">Notes: </label>
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="notes"
-                                value={this.state.notes}
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingTrip}
-                                className="btn btn-primary"
-                            >Save Trip</button>
-                        </div>
-                    </fieldset>
-                </form>
+                {" "}
+                <Button color="success" className="editTrip" onClick={this.toggle}>
+                    Edit Trip</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Edit Trip
+					</ModalHeader>
+                    <ModalBody>
+                        <form>
+                            <fieldset>
+                                <label htmlFor="tripTitle">Title: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="tripTitle"
+                                    value={this.state.tripTitle}
+                                />
+                                <label htmlFor="startDate">Start Date: </label>
+                                <input
+                                    type="date"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="startDate"
+                                    value={this.state.startDate}
+                                />
+                                <label htmlFor="endDate">End Date: </label>
+                                <input
+                                    type="date"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="endDate"
+                                    value={this.state.endDate}
+                                />
+                                <label htmlFor="notes">Notes: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="notes"
+                                    value={this.state.notes}
+                                />
+                                <ModalFooter>
+                                    <Button type="button" disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingTrip}
+                                        className="saveTrip"
+                                    >Save Trip</Button>
+                                     {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         );
     }
 }
 
 export default EditTripForm
+
+

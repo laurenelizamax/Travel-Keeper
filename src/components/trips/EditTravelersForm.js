@@ -1,12 +1,20 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 class EditTravelersForm extends Component {
     //set the initial state
     state = {
         travelerName: "",
         loadingStatus: false,
+        modal: false,
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -17,6 +25,7 @@ class EditTravelersForm extends Component {
     updateExistingTraveler = evt => {
         // console.log(this.props)
         evt.preventDefault()
+        this.toggle();
         this.setState({ loadingStatus: true });
         const editedTraveler = {
             travelerName: this.state.travelerName,
@@ -26,7 +35,7 @@ class EditTravelersForm extends Component {
 
         APIManager.updateTraveler(editedTraveler)
             .then(() => this.props.getData())
-            // console.log(editedTraveler)
+        // console.log(editedTraveler)
     }
     componentDidMount() {
         // console.log(this.props)
@@ -41,31 +50,50 @@ class EditTravelersForm extends Component {
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <form>
-                    <fieldset>
-                        <h4>Edit Fellow Travelers</h4>
-                        <label htmlFor="travelerName">Traveler: </label>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="travelerName"
-                                value={this.state.travelerName}
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingTraveler}
-                                className="btn btn-primary"
-                            >Save Traveler</button>
-                        </div>
-                    </fieldset>
-                </form>
+                {" "}
+                <Button color="success" className="addTraveler" onClick={this.toggle}>
+                    Edit Traveler</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Edit Fellow Traveler
+					</ModalHeader>
+                    <ModalBody>
+                        <form>
+                            <fieldset>
+                                <label htmlFor="travelerName">Traveler: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="travelerName"
+                                    value={this.state.travelerName}
+                                />
+                                <ModalFooter>
+                                    <Button
+                                        type="button" disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingTraveler}
+                                        className="btn btn-primary"
+                                    >Save Traveler</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         );
     }

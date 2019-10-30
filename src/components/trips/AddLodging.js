@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
 class AddLodging extends Component {
@@ -10,8 +11,14 @@ class AddLodging extends Component {
         stayName: "",
         stayDescription: "",
         loadingStatus: false,
+        modal: false,
     };
 
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -29,34 +36,48 @@ class AddLodging extends Component {
     }
     constructNewStay = evt => {
         evt.preventDefault();
+        this.toggle();
         if (this.state.stayName === "" || this.state.stayDescription === "") {
             window.alert("Please add location");
         } else {
             this.setState({ loadingStatus: true });
             const stay = {
-               stayName: this.state.stayName,
-               stayDescription: this.state.stayDescription,
+                stayName: this.state.stayName,
+                stayDescription: this.state.stayDescription,
                 placeId: this.state.placeId
             }
 
             APIManager.postStay(stay)
-            .then(() => {
-                this.props.getData()
-                this.setState({ loadingStatus: false});
-            })
-                // .then(() => {this.props.history.push("/")});
+                .then(() => {
+                    this.props.getData()
+                    this.setState({ loadingStatus: false });
+                })
+            // .then(() => {this.props.history.push("/")});
         }
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-
-                <div>
-                    <form className="tripAddForm">
-                        <fieldset>
-                        <h4>Add Accommodations</h4>
-                            <div className="tripForm">
+                {" "}
+                <Button color="info" className="addAccommodations" onClick={this.toggle} >
+                    Add Accommodation</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    < ModalHeader toggle={this.toggle} close={closeBtn} >
+                        Add An Accommodation
+					</ModalHeader >
+                    <ModalBody>
+                        <form className="tripAddForm">
+                            <fieldset>
+                                <h4>Add Accommodations</h4>
                                 {/* Accommodations  input*/}
                                 <label htmlFor="stayName">Accommodation:</label>
                                 <input
@@ -75,20 +96,25 @@ class AddLodging extends Component {
                                     id="stayDescription"
                                     placeholder="Accommodation Description"
                                 />
-                                {/* Button to create new location*/}
-                                <button
-                                    type="submit"
-                                    className="cardButton"
-                                    disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewStay}
-                                >Add Location</button>
-
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                                <ModalFooter>
+                                    {/* Button to create new location*/}
+                                    <Button
+                                        type="submit"
+                                        className="cardButton"
+                                        disabled={this.state.loadingStatus}
+                                        onClick={this.constructNewStay}
+                                    >Add Location</Button>
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                    </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         )
     }
 }
 export default AddLodging
+

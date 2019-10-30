@@ -12,7 +12,8 @@ class TripDetails extends Component {
     state = {
         trip: "",
         places: [],
-        fellowTravelers: []
+        fellowTravelers: [],
+        modal: false
     }
     componentDidMount() {
         const setNewState = {}
@@ -53,6 +54,12 @@ class TripDetails extends Component {
                 this.setState(setNewState)
             })
     }
+
+    toggle = () => {
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
+      };
 
     render() {
         return (
