@@ -5,7 +5,7 @@ import ProfileCard from "./profile/ProfileCard"
 // import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
 import TripDetails from "./trips/TripDetails"
-import TripAddForm from "./trips/TripAddForm"
+// import TripAddForm from "./trips/TripAddForm"
 import TripEditForm from "./trips/TripEditForm"
 import LocationDetails from "./trips/LocationDetails"
 
@@ -38,9 +38,9 @@ class ApplicationViews extends Component {
                  <Route exact path="/places/:placeId(\d+)" render={(props) => {
                     return <LocationDetails placeId={parseInt(props.match.params.placeId)} activeUser={this.props.activeUser} {...props} />
                 }} />
-                <Route exact path="/trip/new" render={(props) => {
+                {/* <Route exact path="/trip/new" render={(props) => {
                     return <TripAddForm activeUser={this.props.activeUser} {...props} />
-                }} />
+                }} /> */}
                 <Route
                     exact path="/trips/:tripId(\d+)/edit" render={props => {
                         return <TripEditForm activeUser={this.props.activeUser} {...props} />

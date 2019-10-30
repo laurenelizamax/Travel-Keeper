@@ -31,6 +31,14 @@
       "userPlace": "Nashville",
       "email": "lilo@lilo.com",
       "id": 5
+    },
+    {
+      "password": "mcgarrett",
+      "name": "McGarrett",
+      "dreamTrip": "The park",
+      "userPlace": "Nashville",
+      "email": "McGarrett@McGarrett.com",
+      "id": 6
     }
   ],
   "trips": [
@@ -41,14 +49,6 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
-    },
-    {
-      "id": 5,
-      "title": "yes!",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "edit!!!!!!!",
-      "userId": 1
     },
     {
       "title": "Les Trip",
@@ -91,12 +91,12 @@
       "userId": 5
     },
     {
-      "id": 12,
-      "title": "new today",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-08",
-      "notes": "edit",
-      "userId": 1
+      "id": 14,
+      "title": "Let's go to the park, please!",
+      "startDate": "2019-10-30",
+      "endDate": "2019-10-30",
+      "notes": "Play with friends",
+      "userId": 6
     }
   ],
   "places": [
@@ -119,28 +119,22 @@
       "id": 5
     },
     {
-      "id": 8,
-      "placeName": "Nashville",
-      "placeDescription": "visited Erika",
-      "tripId": 5
-    },
-    {
-      "id": 9,
-      "placeName": "Nashville!!",
-      "placeDescription": "Modals",
-      "tripId": 9
-    },
-    {
       "id": 10,
       "placeName": "Spring Hill Dog Park",
       "placeDescription": "TN",
       "tripId": 10
     },
     {
-      "placeName": "NSS",
+      "id": 11,
+      "placeName": "NSS!",
       "placeDescription": "today",
-      "tripId": 12,
-      "id": 11
+      "tripId": 12
+    },
+    {
+      "id": 12,
+      "placeName": "Ellington",
+      "placeDescription": "Best Park Ever!!!",
+      "tripId": 14
     }
   ],
   "fellowTravelers": [
@@ -150,32 +144,12 @@
       "tripId": 1
     },
     {
-      "travelerName": "dylan",
-      "tripId": 5,
-      "id": 12
-    },
-    {
-      "travelerName": "dsd",
-      "tripId": 5,
-      "id": 13
-    },
-    {
-      "travelerName": "Beth",
-      "tripId": 9,
-      "id": 14
-    },
-    {
-      "travelerName": "Heidi!!",
-      "id": 15,
-      "tripId": 9
-    },
-    {
       "travelerName": "Aryn!!",
       "id": 16,
       "tripId": 10
     },
     {
-      "travelerName": "Beth!!",
+      "travelerName": "Beth!!!!!!!",
       "id": 17,
       "tripId": 12
     },
@@ -188,6 +162,16 @@
       "travelerName": "Stephen!",
       "id": 19,
       "tripId": 12
+    },
+    {
+      "travelerName": "My momma!!",
+      "id": 20,
+      "tripId": 14
+    },
+    {
+      "travelerName": "Roxy",
+      "tripId": 14,
+      "id": 21
     }
   ],
   "accommodations": [
@@ -210,12 +194,6 @@
       "id": 8
     },
     {
-      "id": 9,
-      "stayName": "home!!",
-      "stayDescription": "warm",
-      "placeId": 9
-    },
-    {
       "id": 10,
       "stayName": "bed!!!",
       "stayDescription": "comfy",
@@ -228,10 +206,28 @@
       "id": 11
     },
     {
-      "stayName": "dfssd",
-      "stayDescription": "dsfsdf",
-      "placeId": 11,
-      "id": 12
+      "id": 12,
+      "stayName": "home",
+      "stayDescription": "blankets",
+      "placeId": 11
+    },
+    {
+      "id": 13,
+      "stayName": "At Home today!!",
+      "stayDescription": "yes",
+      "placeId": 11
+    },
+    {
+      "id": 14,
+      "stayName": "my bed",
+      "stayDescription": "well it's mom's, but mine",
+      "placeId": 12
+    },
+    {
+      "stayName": "My bed",
+      "stayDescription": "ok ok",
+      "placeId": 12,
+      "id": 15
     }
   ],
   "transportations": [
@@ -242,16 +238,22 @@
       "placeId": 1
     },
     {
-      "id": 2,
-      "transportationName": "car!!",
-      "transportationDescription": "need gas",
-      "placeId": 9
-    },
-    {
       "id": 3,
       "transportationName": "car!!",
       "transportationDescription": "mom drove",
       "placeId": 10
+    },
+    {
+      "id": 4,
+      "transportationName": "car!!",
+      "transportationDescription": "drove",
+      "placeId": 11
+    },
+    {
+      "id": 5,
+      "transportationName": "car, with the windows down",
+      "transportationDescription": "my momma drove",
+      "placeId": 12
     }
   ],
   "activities": [
@@ -268,12 +270,6 @@
       "id": 5
     },
     {
-      "id": 6,
-      "activityName": "Walked MG!!",
-      "activityDescription": "cold",
-      "placeId": 9
-    },
-    {
       "id": 7,
       "activityName": "FETCH!!",
       "activityDescription": "yay!",
@@ -284,6 +280,18 @@
       "activityDescription": "yes",
       "placeId": 10,
       "id": 8
+    },
+    {
+      "id": 9,
+      "activityName": "swimming!!",
+      "activityDescription": "hot heat",
+      "placeId": 11
+    },
+    {
+      "id": 10,
+      "activityName": "playing with friends",
+      "activityDescription": "no chase!",
+      "placeId": 12
     }
   ]
 }

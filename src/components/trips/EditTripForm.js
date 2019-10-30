@@ -121,6 +121,10 @@ class EditTripForm extends Component {
                                         onClick={this.updateExistingTrip}
                                         className="saveTrip"
                                     >Save Trip</Button>
+                                     {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

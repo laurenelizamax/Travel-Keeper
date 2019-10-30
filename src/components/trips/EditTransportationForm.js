@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 class EditTransportationForm extends Component {
     //set the initial state
@@ -7,7 +9,14 @@ class EditTransportationForm extends Component {
         transportationName: "",
         transportationDescription: "",
         loadingStatus: false,
+        modal: false,
     };
+
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -17,6 +26,7 @@ class EditTransportationForm extends Component {
 
     updateExistingTransportation = evt => {
         evt.preventDefault()
+        this.toggle();
         this.setState({ loadingStatus: true });
         const editedTransportation = {
             id: this.props.transportationId,
@@ -26,7 +36,7 @@ class EditTransportationForm extends Component {
         };
 
         APIManager.updateTransportation(editedTransportation)
-        .then(() => this.props.getData())
+            .then(() => this.props.getData())
     }
 
     componentDidMount() {
@@ -40,43 +50,64 @@ class EditTransportationForm extends Component {
                     loadingStatus: false
                 });
             });
-        }
+    }
 
     render() {
+        const closeBtn = (
+            <button color="success" className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <form>
-                    <fieldset>
-                    <h4>Edit Transportation</h4>
-                        <label htmlFor="transportationName">Transportation: </label>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="transportationName"
-                                value={this.state.transportationName}
-                            />
-                            <label htmlFor="transportationDescription">Transportation Description: </label>
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="transportationDescription"
-                                value={this.state.transportationDescription}
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingTransportation}
-                                className="btn btn-primary"
-                            >Save Transportation</button>
-                        </div>
-                    </fieldset>
-                </form>
+                {" "}
+                <Button color="success" className="editLocation" onClick={this.toggle}>
+                    Edit Transportation</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Edit Transportation
+					</ModalHeader>
+                    <ModalBody>
+                        <form>
+                            <fieldset>
+                                <label htmlFor="transportationName">Transportation: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="transportationName"
+                                    value={this.state.transportationName}
+                                />
+                                {/*input for transportation description*/}
+                                <label htmlFor="transportationDescription">Transportation Description: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="transportationDescription"
+                                    value={this.state.transportationDescription}
+                                />
+                                <ModalFooter>
+                                    {/*Button that saves updated transportation */}
+                                    <Button
+                                        type="button" disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingTransportation}
+                                        className="btn btn-primary"
+                                    >Save Transportation</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         );
     }

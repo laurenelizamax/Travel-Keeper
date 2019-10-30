@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 class EditActivityForm extends Component {
     //set the initial state
@@ -7,7 +9,14 @@ class EditActivityForm extends Component {
         activityName: "",
         activityDescription: "",
         loadingStatus: false,
+        modal: false,
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
+
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -17,6 +26,7 @@ class EditActivityForm extends Component {
 
     updateExistingActivity = evt => {
         evt.preventDefault()
+        this.toggle();
         this.setState({ loadingStatus: true });
         const editedActivity = {
             id: this.props.activityId,
@@ -43,44 +53,65 @@ class EditActivityForm extends Component {
     }
 
     render() {
+        const closeBtn = (
+            <button color="success" className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <form>
-                    <fieldset>
-                        <h4>Edit Activities</h4>
-                        <label htmlFor="activityName">Activity: </label>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="activityName"
-                                value={this.state.activityName}
-                            />
-                            <label htmlFor="activityDescription">Activity Description: </label>
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="activityDescription"
-                                value={this.state.activityDescription}
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingActivity}
-                                className="btn btn-primary"
-                            >Save Activity</button>
-                        </div>
-                    </fieldset>
-                </form>
+                {" "}
+                <Button color="success" className="editActivity" onClick={this.toggle}>
+                    Edit Activity</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Edit Activity
+					</ModalHeader>
+                    <ModalBody>
+                        <form>
+                            <fieldset>
+                                <label htmlFor="activityName">Activity: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="activityName"
+                                    value={this.state.activityName}
+                                />
+                                <label htmlFor="activityDescription">Activity Description: </label>
+                                <input
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="activityDescription"
+                                    value={this.state.activityDescription}
+                                />
+                                <ModalFooter>
+
+                                    <Button
+                                        type="button" disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingActivity}
+                                        className="btn btn-primary"
+                                    >Save Activity</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </>
         );
     }
 }
 
 export default EditActivityForm
+
 

@@ -72,8 +72,10 @@ class AddLocation extends Component {
                     toggle={this.toggle}
                     className={this.props.className}
                 >
+                        <ModalHeader toggle={this.toggle} close={closeBtn}>
+                            Add Location
+					</ModalHeader>
                     <ModalBody>
-                        <ModalHeader>Add Location</ModalHeader>
                         <form className="tripAddForm">
                             <fieldset>
                                 {/* Location  input*/}
@@ -106,7 +108,7 @@ class AddLocation extends Component {
                                     {" "}
                                     <Button className="cancel" onClick={this.toggle}>
                                         Cancel
-                    </Button>
+                                   </Button>
                                 </ModalFooter>
                             </fieldset>
                         </form>
