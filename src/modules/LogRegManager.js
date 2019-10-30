@@ -14,19 +14,10 @@ export default {
         return fetch(`${remoteURL}/users`)
             .then(data => data.json())
     },
-    getAllUsers() {
-        return fetch(`${remoteURL}/users`).then(result => result.json())
+    getOneUser(email) {
+        return fetch(`${remoteURL}/users?email=${email}`).then(result => result.json())
     },
-    getOneUser(id) {
+    getUserProfile(id) {
         return fetch(`${remoteURL}/users/${id}`).then(result => result.json())
-    },
-    postUserProfile(id, newProfile) {
-        return fetch(`${remoteURL}/users/${id}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newProfile)
-        }).then(data => data.json())
-    },
+    }
 }

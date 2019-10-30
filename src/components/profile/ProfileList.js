@@ -5,12 +5,11 @@ import LogRegManager from '../../modules/LogRegManager'
 class ProfileList extends Component {
     state = {
        users: [],
-       userId: ""
+       userId: "",
     }
-    activeUser = parseInt(sessionStorage.getItem("userId"))
 
     componentDidMount() {
-        LogRegManager.getAllUsers(this.activeUser)
+        LogRegManager.getUserInfo(this.props.activeUser)
             .then((users) => {
                 this.setState({
                     users: users

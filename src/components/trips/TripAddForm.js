@@ -9,12 +9,11 @@ class TripAddForm extends Component {
         tripTitle: "",
         startDate: "",
         endDate: "",
-        userId: "",
         notes: "",
         fellowTravelers: [],
+        userId: this.props.activeUser,
         loadingStatus: false,
     };
-    activeUser = parseInt(sessionStorage.getItem("userId"))
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -33,7 +32,7 @@ class TripAddForm extends Component {
                 startDate: this.state.startDate,
                 endDate: this.state.endDate,
                 notes: this.state.notes,
-                userId: this.activeUser,
+                userId: this.props.activeUser
             }
 
             APIManager.postTrip(trip)

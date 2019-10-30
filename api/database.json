@@ -23,6 +23,14 @@
       "userPlace": "Nashville",
       "dreamTrip": "London",
       "id": 4
+    },
+    {
+      "password": "lilo",
+      "name": "lilo",
+      "dreamTrip": "Bali",
+      "userPlace": "Nashville",
+      "email": "lilo@lilo.com",
+      "id": 5
     }
   ],
   "trips": [
@@ -65,6 +73,22 @@
       "notes": "bones",
       "userId": 4,
       "id": 8
+    },
+    {
+      "id": 10,
+      "title": "Lilo's Trip!!",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-10",
+      "notes": "Dog Park",
+      "userId": 5
+    },
+    {
+      "id": 11,
+      "title": "new trip",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-22",
+      "notes": "edit!!",
+      "userId": 5
     }
   ],
   "places": [
@@ -93,9 +117,16 @@
       "tripId": 5
     },
     {
-      "id": 11,
-      "placeName": "Toronto",
-      "placeDescription": "TN"
+      "id": 9,
+      "placeName": "Nashville!!",
+      "placeDescription": "Modals",
+      "tripId": 9
+    },
+    {
+      "id": 10,
+      "placeName": "Spring Hill Dog Park",
+      "placeDescription": "TN",
+      "tripId": 10
     }
   ],
   "fellowTravelers": [
@@ -105,18 +136,29 @@
       "tripId": 1
     },
     {
-      "travelerName": "ttttt",
-      "id": 10
-    },
-    {
-      "travelerName": "Renee",
-      "id": 11,
-      "tripId": 5
-    },
-    {
       "travelerName": "dylan",
       "tripId": 5,
       "id": 12
+    },
+    {
+      "travelerName": "dsd",
+      "tripId": 5,
+      "id": 13
+    },
+    {
+      "travelerName": "Beth",
+      "tripId": 9,
+      "id": 14
+    },
+    {
+      "travelerName": "Heidi!!",
+      "id": 15,
+      "tripId": 9
+    },
+    {
+      "travelerName": "Aryn!!",
+      "id": 16,
+      "tripId": 10
     }
   ],
   "accommodations": [
@@ -137,6 +179,24 @@
       "stayDescription": "dsfdsfdsfds",
       "placeId": 5,
       "id": 8
+    },
+    {
+      "id": 9,
+      "stayName": "home!!",
+      "stayDescription": "warm",
+      "placeId": 9
+    },
+    {
+      "id": 10,
+      "stayName": "bed!!!",
+      "stayDescription": "comfy",
+      "placeId": 10
+    },
+    {
+      "stayName": "bed",
+      "stayDescription": "comfy",
+      "placeId": 10,
+      "id": 11
     }
   ],
   "transportations": [
@@ -147,9 +207,16 @@
       "placeId": 1
     },
     {
-      "id": 4,
-      "transportationName": "eeee",
-      "transportationDescription": "eeeee"
+      "id": 2,
+      "transportationName": "car!!",
+      "transportationDescription": "need gas",
+      "placeId": 9
+    },
+    {
+      "id": 3,
+      "transportationName": "car!!",
+      "transportationDescription": "mom drove",
+      "placeId": 10
     }
   ],
   "activities": [
@@ -157,14 +224,31 @@
       "id": 1,
       "activityName": "La Tour Eiffel",
       "activityDescription": "Went to the Eiffel Tower. All the way to the top!",
-      "placeId": 1,
-      "favorite": false
+      "placeId": 1
     },
     {
       "activityName": "dfsdfds",
       "activityDescription": "dfdsfds",
       "placeId": 5,
       "id": 5
+    },
+    {
+      "id": 6,
+      "activityName": "Walked MG!!",
+      "activityDescription": "cold",
+      "placeId": 9
+    },
+    {
+      "id": 7,
+      "activityName": "FETCH!!",
+      "activityDescription": "yay!",
+      "placeId": 10
+    },
+    {
+      "activityName": "Fetching",
+      "activityDescription": "yes",
+      "placeId": 10,
+      "id": 8
     }
   ]
 }

@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 
 class AddTravelers extends Component {
@@ -9,8 +11,15 @@ class AddTravelers extends Component {
         tripId: this.props.tripId,
         travelerName: "",
         loadingStatus: false,
-    };
+        modal: false,
+        pageLoaded: false
 
+    };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -26,34 +35,54 @@ class AddTravelers extends Component {
                 )
             })
     }
-    constructNewTraveler= evt => {
+    constructNewTraveler = evt => {
         evt.preventDefault();
+        this.toggle();
         if (this.state.travelerName === "") {
             window.alert("Please add location");
         } else {
             this.setState({ loadingStatus: true });
             const traveler = {
-               travelerName: this.state.travelerName,
+                travelerName: this.state.travelerName,
                 tripId: this.state.tripId
             }
 
             APIManager.postTraveler(traveler)
+                .then(() => {
+                    this.props.getData()
+                    this.setState({ loadingStatus: false });
+                })
+            // .then(() => {this.props.history.push("/")});
             .then(() => {
-                this.props.getData()
-                this.setState({ loadingStatus: false});
+                this.setState({
+                    pageLoaded: true
+                })
+                console.log("userId2", this.state.userId);
             })
-                // .then(() => {this.props.history.push("/")});
         }
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
+
         return (
             <>
-
-                <div>
+                <Button className="addTraveler" onClick={this.toggle}>
+                    Add Travelers</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                ></Modal>
+                <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    Add Travelers
+					</ModalHeader>
+                <ModalBody>
                     <form className="tripAddForm">
                         <fieldset>
-                        <h4>Add Travelers</h4>
                             <div className="tripForm">
                                 {/* Fellow Travelers  input*/}
                                 <label htmlFor="travelerName">Fellow Traveler:</label>
@@ -64,20 +93,28 @@ class AddTravelers extends Component {
                                     id="travelerName"
                                     placeholder="Fellow Traveler"
                                 />
-                                {/* Button to create new traveler*/}
-                                <button
-                                    type="submit"
-                                    className="cardButton"
-                                    disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewTraveler}
-                                >Add A Traveler</button>
+
 
                             </div>
                         </fieldset>
                     </form>
-                </div>
+                </ModalBody>
+                <ModalFooter>
+                    {/* Button to create new traveler*/}
+                    <Button
+                        type="submit"
+                        className="cardButton"
+                        disabled={this.state.loadingStatus}
+                        onClick={this.constructNewTraveler}
+                    >Add A Traveler
+                     </Button>{" "}
+                    <Button className="cancel" onClick={this.toggle}>
+                        Cancel
+                    </Button>
+                </ModalFooter>
             </>
         )
     }
 }
 export default AddTravelers
+

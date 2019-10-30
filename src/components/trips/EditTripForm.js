@@ -6,11 +6,10 @@ class EditTripForm extends Component {
         tripTitle: "",
         startDate: "",
         endDate: "",
-        userId: "",
         notes: "",
+        userId: this.props.activeUser,
         loadingStatus: false,
     };
-    activeUser = parseInt(sessionStorage.getItem("userId"))
 
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -28,7 +27,7 @@ class EditTripForm extends Component {
             startDate: this.state.startDate,
             endDate: this.state.endDate,
             notes: this.state.notes,
-            userId: this.activeUser
+            userId: this.props.activeUser
         };
 
         APIManager.updateTrip(editedTrip)
@@ -45,7 +44,7 @@ class EditTripForm extends Component {
               startDate: trip.startDate,
               endDate: trip.endDate,
               notes: trip.notes,
-              userId: this.activeUser,
+              userId: this.props.activeUser,
               loadingStatus: false,
             });
         });

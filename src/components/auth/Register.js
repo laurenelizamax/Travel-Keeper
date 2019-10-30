@@ -3,63 +3,54 @@ import LogRegManager from "../../modules/LogRegManager"
 
 class Register extends Component {
     state = {
-        name: "",
-        email: "",
-        password: "",
+        regName: "",
+        regEmail: "",
+        regPassword: "",
         userPlace: "",
-        url: ""
+        dreamTrip: ""
     }
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-    handleRegisterUser = (e) => {
-        e.preventDefault()
-        LogRegManager.getUserInfo().then((users) => {
-            let validateUser = users.find(user => user.email.toLowerCase() === this.state.email.toLowerCase())
-            if (this.state.name === "") {
-                window.alert("Please enter your name")
-            } else if (this.state.email === "") {
-                window.alert("Please enter your email address")
-            } else if (this.state.password === "") {
-                window.alert("Please enter your password")
-            } else if (validateUser) {
-                window.alert("That email address already exists")
-            } else {
-                let newUser = {
-                    name: this.state.name,
-                    email: this.state.email,
-                    password: this.state.password,
-                    userPlace: this.state.userPlace,
-                    url: this.state.url
-                };
-                LogRegManager.createNewUser(newUser)
-                    .then((createNewUser) => {
-                        sessionStorage.setItem("userId", createNewUser.id);
-                        sessionStorage.setItem("email", this.state.email);
-                        sessionStorage.setItem("name", this.state.name);
-                        sessionStorage.setItem("place", this.state.userPlace);
-                        sessionStorage.setItem("url", this.state.url);
-                        this.props.setUser(createNewUser)
-                    }
-                    )
-            }
-        }
-        )
-    }
-
+    handleRegistration = e => {
+		e.preventDefault();
+		let name = this.state.regName;
+        let password = this.state.regPassword;
+        let email = this.state.regEmail;
+		let userPlace = this.state.userPlace;
+        let dreamTrip = this.state.dreamTrip;
+		// starting the if statement
+		if (name === ' ') {
+			alert('Please fill in name');
+		} else {
+			const newUser = {
+				password: password,
+                name: name,
+                dreamTrip: dreamTrip,
+                userPlace: userPlace,
+                email: email
+			};
+			LogRegManager.createNewUser(newUser).then(response => {
+				//response[0].id is the ID of the user you logged in with,
+				this.props.setUser(response.id);
+				// this.props.history.push(`/mytrips`);
+			});
+		}
+	};
 
     render() {
+        console.log(this.state.regName)
         return (
             <>
                 <div className="logRegForm">
                     <h3 className="logRegTitle">Register!</h3>
-                    <form onSubmit={this.handleRegisterUser}>
-                        <label htmlFor="name">Name:</label>
+                    <form onSubmit={this.handleRegistration}>
+                        <label htmlFor="regName">Name:</label>
                         <input onChange={this.handleFieldChange} type="text"
-                            id="name"
-                            placeholder="Name"
+                            id="regName"
+                            placeholder="Enter Name"
                             required="" autoFocus="" />
                         <label htmlFor="userPlace">Location:</label>
                         <input onChange={this.handleFieldChange} type="text"
@@ -71,15 +62,15 @@ class Register extends Component {
                             id="dreamTrip"
                             placeholder="Dream Destination"
                             required="" autoFocus="" />
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="regEmail">Email:</label>
                         <input onChange={this.handleFieldChange} type="text"
-                            id="email"
-                            placeholder="Email"
+                            id="regEmail"
+                            placeholder=" Enter Email"
                             required="" autoFocus="" />
-                        <label htmlFor="password">Password:</label>
+                        <label htmlFor="regPassword">Password:</label>
                         <input onChange={this.handleFieldChange} type="password"
-                            id="password"
-                            placeholder="Password"
+                            id="regPassword"
+                            placeholder=" regPassword"
                             required="" autoFocus="" />
                         <button type="submit" className="submit">Register</button>
                     </form>
