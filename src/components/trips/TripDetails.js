@@ -68,8 +68,8 @@ class TripDetails extends Component {
                 </div>
 
                 {this.state.places.map(place =>
-                    <div>
-                        <PlaceCard key={place.id}
+                    <div  key={place.id}>
+                        <PlaceCard
                             place={place}
                             placeId={place.id}
                         />
@@ -79,7 +79,7 @@ class TripDetails extends Component {
                 )}
 
                 {this.state.fellowTravelers.map(fellowTraveler =>
-                    <div>
+                    <div key={fellowTraveler.id}>
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                         <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
                     </div>

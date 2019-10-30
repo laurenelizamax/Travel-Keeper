@@ -8,7 +8,6 @@ class AddProfile extends Component {
         userId: "",
         loadingStatus: false,
     };
-    activeUser = parseInt(sessionStorage.getItem("userId"))
 
     handleFieldChange = evt => {
         const stateToChange = {};
