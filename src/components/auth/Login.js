@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
+import { withRouter} from "react-router-dom"
+
 
 class Login extends Component {
     state = {
@@ -29,9 +31,8 @@ class Login extends Component {
 				alert('Please enter a valid email address');
 			} else if (response[0].password === password) {
 				//response[0].id is the ID of the user you logged in with,
-				//in case of "Steve" it would be "1"
 				this.props.setUser(response[0].id);
-				// this.props.history.push("/");
+				this.props.history.push("/");
 			}
 		});
 	};
@@ -60,4 +61,4 @@ class Login extends Component {
         )
     }
 }
-export default Login
+export default withRouter(Login);

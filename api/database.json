@@ -39,6 +39,30 @@
       "userPlace": "Nashville",
       "email": "McGarrett@McGarrett.com",
       "id": 6
+    },
+    {
+      "password": "allie",
+      "name": "Allie",
+      "dreamTrip": "Italy",
+      "userPlace": "Nashville",
+      "email": "allie@allie.com",
+      "id": 7
+    },
+    {
+      "password": "madi",
+      "name": "madi",
+      "dreamTrip": "The park",
+      "userPlace": "Nashville",
+      "email": "madi@madi.com",
+      "id": 8
+    },
+    {
+      "password": "mo",
+      "name": "Mo",
+      "dreamTrip": "Uruguay",
+      "userPlace": "Nashville",
+      "email": "mo@mo.com",
+      "id": 9
     }
   ],
   "trips": [
@@ -97,6 +121,38 @@
       "endDate": "2019-10-30",
       "notes": "Play with friends",
       "userId": 6
+    },
+    {
+      "id": 15,
+      "title": "Italy",
+      "startDate": "2019-10-03",
+      "endDate": "2019-10-16",
+      "notes": "bootcamp in Italy",
+      "userId": 7
+    },
+    {
+      "title": "My New Trip",
+      "startDate": "2019-10-04",
+      "endDate": "2019-10-09",
+      "notes": "awesome!",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "title": "dsfs",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-30",
+      "notes": "dsfds",
+      "userId": 8,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "title": "Trip to Uruguay!!!",
+      "startDate": "2019-10-03",
+      "endDate": "2019-10-09",
+      "notes": "it's gonna be fun!",
+      "userId": 9
     }
   ],
   "places": [
@@ -125,16 +181,34 @@
       "tripId": 10
     },
     {
-      "id": 11,
-      "placeName": "NSS!",
-      "placeDescription": "today",
-      "tripId": 12
-    },
-    {
       "id": 12,
       "placeName": "Ellington",
       "placeDescription": "Best Park Ever!!!",
       "tripId": 14
+    },
+    {
+      "placeName": "Italy",
+      "placeDescription": "By the Ocean",
+      "tripId": 15,
+      "id": 13
+    },
+    {
+      "placeName": "Toronto",
+      "placeDescription": "visited Erika",
+      "tripId": 16,
+      "id": 14
+    },
+    {
+      "placeName": "dfsdfsdf",
+      "placeDescription": "sdfdsfs",
+      "tripId": 16,
+      "id": 15
+    },
+    {
+      "placeName": "Beach",
+      "placeDescription": "sandy",
+      "tripId": 18,
+      "id": 16
     }
   ],
   "fellowTravelers": [
@@ -149,21 +223,6 @@
       "tripId": 10
     },
     {
-      "travelerName": "Beth!!!!!!!",
-      "id": 17,
-      "tripId": 12
-    },
-    {
-      "travelerName": "Mark!!!!!!!!",
-      "id": 18,
-      "tripId": 12
-    },
-    {
-      "travelerName": "Stephen!",
-      "id": 19,
-      "tripId": 12
-    },
-    {
       "travelerName": "My momma!!",
       "id": 20,
       "tripId": 14
@@ -172,6 +231,21 @@
       "travelerName": "Roxy",
       "tripId": 14,
       "id": 21
+    },
+    {
+      "travelerName": "Phillip!!",
+      "id": 22,
+      "tripId": 15
+    },
+    {
+      "travelerName": "Lissa",
+      "tripId": 18,
+      "id": 23
+    },
+    {
+      "travelerName": "Loren",
+      "id": 24,
+      "tripId": 18
     }
   ],
   "accommodations": [
@@ -228,6 +302,18 @@
       "stayDescription": "ok ok",
       "placeId": 12,
       "id": 15
+    },
+    {
+      "stayName": "airbnb",
+      "stayDescription": "great price and location",
+      "placeId": 13,
+      "id": 16
+    },
+    {
+      "id": 17,
+      "stayName": "super fancy hotel",
+      "stayDescription": "just kinda fancy",
+      "placeId": 16
     }
   ],
   "transportations": [
@@ -254,6 +340,18 @@
       "transportationName": "car, with the windows down",
       "transportationDescription": "my momma drove",
       "placeId": 12
+    },
+    {
+      "transportationName": "flew britishair",
+      "transportationDescription": "great price",
+      "placeId": 13,
+      "id": 6
+    },
+    {
+      "id": 7,
+      "transportationName": "bike",
+      "transportationDescription": "bought a bike, for 10 dollas!",
+      "placeId": 16
     }
   ],
   "activities": [
@@ -292,6 +390,24 @@
       "activityName": "playing with friends",
       "activityDescription": "no chase!",
       "placeId": 12
+    },
+    {
+      "activityName": "snorkling ",
+      "activityDescription": "Italy",
+      "placeId": 13,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "activityName": "biking",
+      "activityDescription": "sweaty!!!",
+      "placeId": 16
+    },
+    {
+      "activityName": "rock climbing!",
+      "activityDescription": "it was hard!",
+      "placeId": 16,
+      "id": 13
     }
   ]
 }

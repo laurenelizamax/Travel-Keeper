@@ -19,29 +19,30 @@ class LocationDetails extends Component {
     componentDidMount() {
         // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
-            .then((places) => {
+            .then((place) => {
                 // console.log(places)
-                this.setState({place: places})
+                this.setState({ place: place })
 
                 //setNewStatethis.place = places
             })
-            .then(() => { APIManager.getTripAccommodations(this.props.placeId)
-                .then((lodging) => {
-                    // console.log(lodging)
-                    this.setState({accommodations: lodging})
-                })
+            .then(() => {
+                APIManager.getTripAccommodations(this.props.placeId)
+                    .then((lodging) => {
+                        // console.log(lodging)
+                        this.setState({ accommodations: lodging })
+                    })
             })
 
             .then(() => APIManager.getTripActivities(this.props.placeId)
                 .then((activities) => {
                     // setNewState.activities = activities
-                    this.setState({activities: activities})
+                    this.setState({ activities: activities })
                 })
             )
             .then(() => APIManager.getTripTransportation(this.props.placeId)
                 .then((transportations) => {
                     // setNewState.transportations = transportations
-                    this.setState({transportations: transportations})
+                    this.setState({ transportations: transportations })
                 })
             )
             .then(() => {
@@ -51,24 +52,25 @@ class LocationDetails extends Component {
     getData = () => {
         // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
-            .then((places) => {
+            .then((place) => {
                 // setNewState.place = places
-                this.setState({place: places})
+                this.setState({ place: place })
             })
-         .then(() => { APIManager.getTripAccommodations(this.props.placeId)
-            .then((lodging) => {
-                //newState.accommodations = 
-                this.setState({accommodations: lodging})
+            .then(() => {
+                APIManager.getTripAccommodations(this.props.placeId)
+                    .then((lodging) => {
+                        //newState.accommodations = 
+                        this.setState({ accommodations: lodging })
 
+                    })
             })
-        })
             .then(() => APIManager.getTripActivities(this.props.placeId)
                 .then((activities) => {
-                    this.setState({activities: activities})
+                    this.setState({ activities: activities })
                 })
             ).then(() => APIManager.getTripTransportation(this.props.placeId)
                 .then((transportations) => {
-                    this.setState({transportations: transportations})
+                    this.setState({ transportations: transportations })
                 })
             )
             .then(() => {
@@ -81,8 +83,17 @@ class LocationDetails extends Component {
         // console.log(this.state)
         return (
             <>
-              <button type="button" className="cardButton"
+                <button type="button" className="cardButton"
                     onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
+
+                <button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push(`/trips/${this.state.place.tripId}`) }}>
+                    Back to Trip Details</button>
+
+                {/* <button>
+                    <Route exact path="/trips/:tripId(\d+)" render={(props) => {
+                        return <TripDetails tripId={parseInt(props.match.params.tripId)} {...props} />
+                    }} /></button> */}
 
                 <div>
                     <p>Location: {this.state.place.placeName}</p>
@@ -95,9 +106,9 @@ class LocationDetails extends Component {
                         <p>Description: {accommodation.stayDescription}</p>
                         <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
                     </div>
-                )} 
+                )}
 
-                 {this.state.activities.map(activity =>
+                {this.state.activities.map(activity =>
                     <div key={activity.id}>
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>

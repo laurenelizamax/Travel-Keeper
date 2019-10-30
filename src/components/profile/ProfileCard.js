@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
-// import ModalTest from "../trips/ModalTest"
 
 class ProfileCard extends Component {
     state = {
@@ -31,7 +30,7 @@ class ProfileCard extends Component {
                     <div className="card-content">
                         <h1>My Profile</h1>
                         <div>
-                            <p>Name: <span className="card">{this.state.name}</span></p>
+                            <p>Name: {this.state.name}</p>
                             <p>Location: {this.state.userPlace}</p>
                             <p>Dream Destination: {this.state.dreamTrip}</p>
                         </div>
