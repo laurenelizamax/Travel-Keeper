@@ -12,7 +12,6 @@ class AddTravelers extends Component {
         travelerName: "",
         loadingStatus: false,
         modal: false,
-        pageLoaded: false
 
     };
     toggle = () => {
@@ -39,7 +38,7 @@ class AddTravelers extends Component {
         evt.preventDefault();
         this.toggle();
         if (this.state.travelerName === "") {
-            window.alert("Please add location");
+            window.alert("Please add  a name");
         } else {
             this.setState({ loadingStatus: true });
             const traveler = {
@@ -53,12 +52,11 @@ class AddTravelers extends Component {
                     this.setState({ loadingStatus: false });
                 })
             // .then(() => {this.props.history.push("/")});
-            .then(() => {
-                this.setState({
-                    pageLoaded: true
-                })
-                console.log("userId2", this.state.userId);
-            })
+            // .then(() => {
+            //     this.setState({
+            //     })
+            //     console.log("userId2", this.state.userId);
+            // })
         }
     }
 
@@ -70,15 +68,16 @@ class AddTravelers extends Component {
 
         return (
             <>
-                <Button className="addTraveler" onClick={this.toggle}>
+            {" "}
+                <Button color="info" className="addTraveler" onClick={this.toggle} >
                     Add Travelers</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
-                ></Modal>
+                >
                 <ModalHeader toggle={this.toggle} close={closeBtn}>
-                    Add Travelers
+                    Add A New Traveler
 					</ModalHeader>
                 <ModalBody>
                     <form className="tripAddForm">
@@ -93,8 +92,6 @@ class AddTravelers extends Component {
                                     id="travelerName"
                                     placeholder="Fellow Traveler"
                                 />
-
-
                             </div>
                         </fieldset>
                     </form>
@@ -106,12 +103,13 @@ class AddTravelers extends Component {
                         className="cardButton"
                         disabled={this.state.loadingStatus}
                         onClick={this.constructNewTraveler}
-                    >Add A Traveler
+                    >Add A New Traveler
                      </Button>{" "}
                     <Button className="cancel" onClick={this.toggle}>
                         Cancel
                     </Button>
                 </ModalFooter>
+                </Modal>
             </>
         )
     }

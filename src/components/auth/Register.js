@@ -41,7 +41,7 @@ class Register extends Component {
 	};
 
     render() {
-        console.log(this.state.regName)
+        // console.log(this.state.regName)
         return (
             <>
                 <div className="logRegForm">

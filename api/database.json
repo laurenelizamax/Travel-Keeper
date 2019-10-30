@@ -89,6 +89,14 @@
       "endDate": "2019-10-22",
       "notes": "edit!!",
       "userId": 5
+    },
+    {
+      "id": 12,
+      "title": "new today",
+      "startDate": "2019-10-02",
+      "endDate": "2019-10-08",
+      "notes": "edit",
+      "userId": 1
     }
   ],
   "places": [
@@ -127,6 +135,12 @@
       "placeName": "Spring Hill Dog Park",
       "placeDescription": "TN",
       "tripId": 10
+    },
+    {
+      "placeName": "NSS",
+      "placeDescription": "today",
+      "tripId": 12,
+      "id": 11
     }
   ],
   "fellowTravelers": [
@@ -159,6 +173,21 @@
       "travelerName": "Aryn!!",
       "id": 16,
       "tripId": 10
+    },
+    {
+      "travelerName": "Beth!!",
+      "id": 17,
+      "tripId": 12
+    },
+    {
+      "travelerName": "Mark!!!!!!!!",
+      "id": 18,
+      "tripId": 12
+    },
+    {
+      "travelerName": "Stephen!",
+      "id": 19,
+      "tripId": 12
     }
   ],
   "accommodations": [
@@ -197,6 +226,12 @@
       "stayDescription": "comfy",
       "placeId": 10,
       "id": 11
+    },
+    {
+      "stayName": "dfssd",
+      "stayDescription": "dsfsdf",
+      "placeId": 11,
+      "id": 12
     }
   ],
   "transportations": [

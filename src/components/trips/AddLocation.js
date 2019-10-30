@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
 class AddLocation extends Component {
@@ -10,7 +11,13 @@ class AddLocation extends Component {
         placeName: "",
         placeDescription: "",
         loadingStatus: false,
+        modal: false,
     };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
 
     handleFieldChange = evt => {
@@ -30,34 +37,45 @@ class AddLocation extends Component {
     }
     constructNewLocation = evt => {
         evt.preventDefault();
+        this.toggle();
         if (this.state.placeName === "" || this.state.placeDescription === "") {
             window.alert("Please add location");
         } else {
             this.setState({ loadingStatus: true });
             const place = {
-               placeName: this.state.placeName,
-               placeDescription: this.state.placeDescription,
+                placeName: this.state.placeName,
+                placeDescription: this.state.placeDescription,
                 tripId: this.state.tripId
             }
 
             APIManager.postLocation(place)
-            .then(() => {
-                this.props.getData()
-                this.setState({ loadingStatus: false});
-            })
-                // .then(() => {this.props.history.push("/")});
+                .then(() => {
+                    this.props.getData()
+                    this.setState({ loadingStatus: false });
+                })
+            // .then(() => {this.props.history.push("/")});
         }
     }
 
     render() {
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-
-                <div>
-                    <form className="tripAddForm">
-                        <fieldset>
-                        <h4>Add Location</h4>
-                            <div className="tripForm">
+                {" "}
+                <Button color="info" className="edit" onClick={this.toggle} >
+                    Add Location</Button>
+                < Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalBody>
+                        <ModalHeader>Add Location</ModalHeader>
+                        <form className="tripAddForm">
+                            <fieldset>
                                 {/* Location  input*/}
                                 <label htmlFor="placeName">Location:</label>
                                 <input
@@ -76,20 +94,27 @@ class AddLocation extends Component {
                                     id="placeDescription"
                                     placeholder="Location Description"
                                 />
-                                {/* Button to create new location*/}
-                                <button
-                                    type="submit"
-                                    className="cardButton"
-                                    disabled={this.state.loadingStatus}
-                                    onClick={this.constructNewLocation}
-                                >Add Location</button>
+                                <ModalFooter>
 
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                                    {/* Button to create new location*/}
+                                    <Button
+                                        type="submit"
+                                        className="cardButton"
+                                        disabled={this.state.loadingStatus}
+                                        onClick={this.constructNewLocation}
+                                    >Add Location</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                    </Button>
+                                </ModalFooter>
+                            </fieldset>
+                        </form>
+                    </ModalBody>
+                </ Modal>
             </>
         )
     }
 }
 export default AddLocation
+

@@ -11,10 +11,10 @@ class ProfileCard extends Component {
         loaded: false
     }
     componentDidMount = () => {
-        console.log("profilecard" ,this.props.activeUser)
+        // console.log("profilecard" ,this.props.activeUser)
         LogRegManager.getUserProfile(this.props.activeUser)
             .then((res) => {
-                console.log("res", res)
+                // console.log("res", res)
                 this.setState({ 
                     name: res.name,
                     userPlace: res.userPlace,

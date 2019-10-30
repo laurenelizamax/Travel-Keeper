@@ -4,6 +4,8 @@ import Navbar from './components/nav/Navbar'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import ApplicationViews from './components/ApplicationViews'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends Component {
   state = {
