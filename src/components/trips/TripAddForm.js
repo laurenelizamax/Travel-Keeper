@@ -119,12 +119,12 @@ class TripAddForm extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new trip*/}
-                                    <button
+                                    <Button
                                         type="submit"
                                         className="cardButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTrip}
-                                    >Submit</button>
+                                    >Submit</Button>
                                     {" "}
                                     <Button className="cancel" onClick={this.toggle}>
                                         Cancel

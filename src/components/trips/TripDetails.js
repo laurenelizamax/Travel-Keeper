@@ -5,6 +5,7 @@ import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
 import EditTravelersForm from "./EditTravelersForm"
+import { Button } from "reactstrap"
 
 class TripDetails extends Component {
 
@@ -58,10 +59,10 @@ class TripDetails extends Component {
 
     toggle = () => {
         this.setState(prevState => ({
-          modal: !prevState.modal
+            modal: !prevState.modal
         }));
-      };
-      deleteLocation = id => {
+    };
+    deleteLocation = id => {
         APIManager.deleteLocation(id)
             .then(() => {
                 APIManager.getTripPlaces(this.props.tripId)
@@ -79,53 +80,57 @@ class TripDetails extends Component {
                     .then((allTravelers) => {
                         this.setState({
                             travelers: allTravelers,
-                            fellowTraveler:""
+                            fellowTraveler: ""
                         })
                     })
             })
-            this.getData();
-        }
+        this.getData();
+    }
 
 
     render() {
         return (
             <>
-                <button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
+                <div className="card">
+                    <div className="card-content">
 
-                <div>
-                    <h4>Title: {this.state.trip.title}</h4>
-                    <p>Start Date: {this.state.trip.startDate}</p>
-                    <p>End Date: {this.state.trip.endDate}</p>
-                    <p>Notes: {this.state.trip.notes}</p>
+                        <Button type="button" className="cardButton"
+                            onClick={() => { this.props.history.push("/") }}>Back to Profile</Button>
+
+                        <div>
+                            <h4>Title: {this.state.trip.title}</h4>
+                            <p>Start Date: {this.state.trip.startDate}</p>
+                            <p>End Date: {this.state.trip.endDate}</p>
+                            <p>Notes: {this.state.trip.notes}</p>
+                        </div>
+
+                        {this.state.places.map(place =>
+                            <div key={place.id}>
+                                <PlaceCard
+                                    place={place}
+                                    placeId={place.id}
+                                    tripId={this.state.trip.id}
+                                    getData={this.getData}
+                                    deleteLocation={this.deleteLocation}
+                                />
+                            </div>
+                        )}
+
+                        {this.state.fellowTravelers.map(fellowTraveler =>
+                            <div key={fellowTraveler.id}>
+                                <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
+                                <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
+                                <Button type="button" onClick={() =>
+                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
+                            </div>
+                        )}
+                        <AddTravelers {...this.props} getData={this.getData} />
+
+                        <AddLocation {...this.props} getData={this.getData} />
+
+                        <EditTripForm {...this.props} getData={this.getData} />
+                    </div>
                 </div>
-
-                {this.state.places.map(place =>
-                    <div  key={place.id}>
-                        <PlaceCard
-                            place={place}
-                            placeId={place.id}
-                            tripId={this.state.trip.id}
-                            getData={this.getData}
-                            deleteLocation={this.deleteLocation}
-                        />
-                    </div>
-                )}
-
-                {this.state.fellowTravelers.map(fellowTraveler =>
-                    <div key={fellowTraveler.id}>
-                        <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
-                        <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData}  />
-                        <button type="button" onClick={() =>
-                            this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</button>
-                    </div>
-                )}
-                <AddTravelers {...this.props} getData={this.getData} />
-
-                <AddLocation {...this.props} getData={this.getData} />
-
-                <EditTripForm {...this.props} getData={this.getData} />
-
             </>
         )
     }

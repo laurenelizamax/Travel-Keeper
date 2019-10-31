@@ -49,14 +49,6 @@
       "id": 7
     },
     {
-      "password": "madi",
-      "name": "madi",
-      "dreamTrip": "The park",
-      "userPlace": "Nashville",
-      "email": "madi@madi.com",
-      "id": 8
-    },
-    {
       "password": "mo",
       "name": "Mo",
       "dreamTrip": "Uruguay",
@@ -107,14 +99,6 @@
       "userId": 5
     },
     {
-      "id": 11,
-      "title": "new trip",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-22",
-      "notes": "edit!!",
-      "userId": 5
-    },
-    {
       "id": 14,
       "title": "Let's go to the park, please!",
       "startDate": "2019-10-30",
@@ -131,28 +115,12 @@
       "userId": 7
     },
     {
-      "title": "dsfs",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-30",
-      "notes": "dsfds",
-      "userId": 8,
-      "id": 17
-    },
-    {
       "id": 18,
       "title": "Trip to Uruguay!!!",
       "startDate": "2019-10-03",
       "endDate": "2019-10-09",
       "notes": "it's gonna be fun!",
       "userId": 9
-    },
-    {
-      "title": "c vdcvdv",
-      "startDate": "2019-10-03",
-      "endDate": "2019-10-09",
-      "notes": "csfs",
-      "userId": 1,
-      "id": 19
     }
   ],
   "places": [
@@ -160,12 +128,6 @@
       "id": 1,
       "placeName": "France",
       "placeDescription": "Visited Friends in Paris",
-      "tripId": 1
-    },
-    {
-      "id": 2,
-      "placeName": "Spain",
-      "placeDescription": "Cool",
       "tripId": 1
     },
     {
@@ -202,20 +164,9 @@
       "placeDescription": "sandy",
       "tripId": 18,
       "id": 16
-    },
-    {
-      "placeName": "nnnn",
-      "placeDescription": "llll",
-      "tripId": 19,
-      "id": 17
     }
   ],
   "fellowTravelers": [
-    {
-      "id": 2,
-      "travelerName": "Renee",
-      "tripId": 1
-    },
     {
       "travelerName": "Aryn!!",
       "id": 16,
@@ -245,11 +196,6 @@
       "travelerName": "Loren",
       "id": 24,
       "tripId": 18
-    },
-    {
-      "travelerName": "mark!!",
-      "id": 25,
-      "tripId": 19
     }
   ],
   "accommodations": [
@@ -258,18 +204,6 @@
       "stayName": "Les Cedres",
       "stayDescription": "Rented a room",
       "placeId": 1
-    },
-    {
-      "stayName": "At Home today",
-      "stayDescription": "Free",
-      "placeId": 2,
-      "id": 4
-    },
-    {
-      "stayName": "dfsdfdsfsd",
-      "stayDescription": "dsfdsfdsfds",
-      "placeId": 5,
-      "id": 8
     },
     {
       "id": 10,
@@ -352,12 +286,6 @@
       "activityName": "La Tour Eiffel",
       "activityDescription": "Went to the Eiffel Tower. All the way to the top!",
       "placeId": 1
-    },
-    {
-      "activityName": "dfsdfds",
-      "activityDescription": "dfdsfds",
-      "placeId": 5,
-      "id": 5
     },
     {
       "id": 7,

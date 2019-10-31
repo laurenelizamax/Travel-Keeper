@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
-import { withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 
 class Register extends Component {
@@ -9,73 +11,109 @@ class Register extends Component {
         regEmail: "",
         regPassword: "",
         userPlace: "",
-        dreamTrip: ""
+        dreamTrip: "",
+        loadingStatus: false,
+        modal: false,
+    };
+    toggle = () => {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
     }
+
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
     handleRegistration = e => {
-		e.preventDefault();
-		let name = this.state.regName;
+        e.preventDefault();
+        this.toggle();
+        let name = this.state.regName;
         let password = this.state.regPassword;
         let email = this.state.regEmail;
-		let userPlace = this.state.userPlace;
+        let userPlace = this.state.userPlace;
         let dreamTrip = this.state.dreamTrip;
-		// starting the if statement
-		if (name === ' ') {
-			alert('Please fill in name');
-		} else {
-			const newUser = {
-				password: password,
+        // starting the if statement
+        if  (name === "") {
+            alert('Please enter a valid Email.');
+        } 
+         else {
+            const newUser = {
+                password: password,
                 name: name,
                 dreamTrip: dreamTrip,
                 userPlace: userPlace,
                 email: email
-			};
-			LogRegManager.createNewUser(newUser).then(response => {
-				this.props.setUser(response.id);
-				this.props.history.push("/");
-			});
-		}
-	};
+            };
+            LogRegManager.createNewUser(newUser).then(response => {
+                if (response.length === 0) {
+                    alert('Please enter a valid Email');
+                }  else  {
+                this.props.setUser(response.id);
+                this.props.history.push("/");
+                }
+            });
+        }
+    };
 
     render() {
-        // console.log(this.state.regName)
+        const closeBtn = (
+            <button className="close" onClick={this.toggle}>
+                &times;
+            </button>);
         return (
             <>
-                <div className="logRegForm">
-                    <h3 className="logRegTitle">Register!</h3>
-                    <form onSubmit={this.handleRegistration}>
-                        <label htmlFor="regName">Name:</label>
-                        <input onChange={this.handleFieldChange} type="text"
-                            id="regName"
-                            placeholder="Enter Name"
-                            required="" autoFocus="" />
-                        <label htmlFor="userPlace">Location:</label>
-                        <input onChange={this.handleFieldChange} type="text"
-                            id="userPlace"
-                            placeholder="Location"
-                            required="" autoFocus="" />
-                        <label htmlFor="dreamTrip">Dream Destination:</label>
-                        <input onChange={this.handleFieldChange} type="text"
-                            id="dreamTrip"
-                            placeholder="Dream Destination"
-                            required="" autoFocus="" />
-                        <label htmlFor="regEmail">Email:</label>
-                        <input onChange={this.handleFieldChange} type="text"
-                            id="regEmail"
-                            placeholder=" Enter Email"
-                            required="" autoFocus="" />
-                        <label htmlFor="regPassword">Password:</label>
-                        <input onChange={this.handleFieldChange} type="password"
-                            id="regPassword"
-                            placeholder=" regPassword"
-                            required="" autoFocus="" />
-                        <button type="submit" className="submit">Register</button>
-                    </form>
-                </div>
+                {" "}
+                <Button className="addTraveler" onClick={this.toggle} >
+                    Register</Button>
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}
+                >
+                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        Register
+					</ModalHeader>
+                    <ModalBody>
+                        <div className="logRegForm">
+                            <form onSubmit={this.handleRegistration}>
+                                <label htmlFor="regName">Name:</label>
+                                <input onChange={this.handleFieldChange} type="text"
+                                    id="regName"
+                                    placeholder="Enter Name"
+                                    required="" autoFocus="" />
+                                <label htmlFor="userPlace">Location:</label>
+                                <input onChange={this.handleFieldChange} type="text"
+                                    id="userPlace"
+                                    placeholder="Location"
+                                    required="" autoFocus="" />
+                                <label htmlFor="dreamTrip">Dream Destination:</label>
+                                <input onChange={this.handleFieldChange} type="text"
+                                    id="dreamTrip"
+                                    placeholder="Dream Destination"
+                                    required="" autoFocus="" />
+                                <label htmlFor="regEmail">Email:</label>
+                                <input onChange={this.handleFieldChange} type="text"
+                                    id="regEmail"
+                                    placeholder=" Enter Email"
+                                    required="" autoFocus="" />
+                                <label htmlFor="regPassword">Password:</label>
+                                <input onChange={this.handleFieldChange} type="password"
+                                    id="regPassword"
+                                    placeholder=" regPassword"
+                                    required="" autoFocus="" />
+                                <ModalFooter>
+                                    <Button type="submit" className="submit">Register</Button>
+                                    {" "}
+                                    <Button className="cancel" onClick={this.toggle}>
+                                        Cancel
+                                     </Button>
+                                </ModalFooter>
+                            </form>
+                        </div>
+                    </ModalBody>
+                </Modal>
             </>
 
         )

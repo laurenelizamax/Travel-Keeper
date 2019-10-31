@@ -12,7 +12,6 @@ class AddTravelers extends Component {
         travelerName: "",
         loadingStatus: false,
         modal: false,
-
     };
     toggle = () => {
         this.setState(prevState => ({

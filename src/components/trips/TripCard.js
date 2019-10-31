@@ -1,6 +1,7 @@
-import React, {  Component } from "react"
+import React, { Component } from "react"
 // import APIManager from "../../modules/APIManager"
-import {Link, withRouter} from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
+import { Button } from "reactstrap"
 
 
 class TripCard extends Component {
@@ -9,13 +10,18 @@ class TripCard extends Component {
     render() {
         return (
             <>
-            <h4>Title: <span>{this.props.trip.title}</span></h4>
-            <p>Start Date: {this.props.trip.startDate}</p>
-            <p>End Date: {this.props.trip.endDate}</p>
+                <div className="card">
+                    <div className="card-content">
 
-          <Link to={`/trips/${this.props.trip.id}`}><button>Details</button></Link>
+                        <h4>Title: <span>{this.props.trip.title}</span></h4>
+                        <p>Start Date: {this.props.trip.startDate}</p>
+                        <p>End Date: {this.props.trip.endDate}</p>
 
-          <button type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</button>
+                        <Link to={`/trips/${this.props.trip.id}`}><Button>Details</Button></Link>
+
+                        <Button type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
+                    </div>
+                </div>
             </>
         )
     }

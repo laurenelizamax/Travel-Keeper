@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
 import { withRouter} from "react-router-dom"
+import { Button } from "reactstrap"
 
 
 class Login extends Component {
@@ -53,7 +54,7 @@ class Login extends Component {
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
-                        <button type="submit" className="submit">Login</button>
+                        <Button type="submit" className="submit">Login</Button>
                     </form>
                 </div>
             </>
