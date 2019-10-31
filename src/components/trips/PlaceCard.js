@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Link } from "react-router-dom"
+import EditLocationForm from "./EditLocationForm"
 
 
 class PlaceCard extends Component {
@@ -39,6 +40,9 @@ class PlaceCard extends Component {
                     <p>Location: {this.props.place.placeName}</p>
                     <p>Description: {this.props.place.placeDescription}</p>
                     <Link to={`/places/${this.props.placeId}`}>Location Details</Link>
+                    <EditLocationForm 
+                            {...this.props} getData={this.props.getData} />
+                    <button type="button" onClick={() => this.props.deleteLocation(this.props.place.id)}>Delete Location</button>
                 </div>
 
                 {this.state.accommodations.map(accommodation =>

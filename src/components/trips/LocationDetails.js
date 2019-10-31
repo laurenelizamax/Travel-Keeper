@@ -13,7 +13,10 @@ class LocationDetails extends Component {
         place: "",
         accommodations: [],
         activities: [],
-        transportations: []
+        transportations: [],
+        accommodation: "",
+        activity: "",
+        transportation: ""
     }
 
     componentDidMount() {
@@ -77,7 +80,49 @@ class LocationDetails extends Component {
                 // console.log(this.state)
                 // this.setState(setNewState)
             })
-    }
+        }
+
+            deleteStay = id => {
+                APIManager.deleteStay(id)
+                    .then(() => {
+                        APIManager.getTripAccommodations(this.props.placeId)
+                            .then((allStays) => {
+                                this.setState({
+                                    accommodations: allStays,
+                                    accommodation: ""
+                                })
+                            })
+                    })
+                    this.getData();
+            }
+
+            deleteActivity = id => {
+                APIManager.deleteActivity(id)
+                    .then(() => {
+                        APIManager.getTripActivities(this.props.placeId)
+                            .then((allActivities) => {
+                                this.setState({
+                                    activites: allActivities,
+                                    activity: ""
+                                })
+                            })
+                    })
+                    this.getData();
+            }
+            deleteTransportation = id => {
+                APIManager.deleteTransportation(id)
+                    .then(() => {
+                        APIManager.getTripTransportation(this.props.placeId)
+                            .then((allTrans) => {
+                                this.setState({
+                                    transportations: allTrans,
+                                    transportation: ""
+                                })
+                            })
+                    })
+                    this.getData();
+            }
+    
 
     render() {
         // console.log(this.state)
@@ -90,11 +135,6 @@ class LocationDetails extends Component {
                     onClick={() => { this.props.history.push(`/trips/${this.state.place.tripId}`) }}>
                     Back to Trip Details</button>
 
-                {/* <button>
-                    <Route exact path="/trips/:tripId(\d+)" render={(props) => {
-                        return <TripDetails tripId={parseInt(props.match.params.tripId)} {...props} />
-                    }} /></button> */}
-
                 <div>
                     <p>Location: {this.state.place.placeName}</p>
                     <p>Description: {this.state.place.placeDescription}</p>
@@ -105,6 +145,7 @@ class LocationDetails extends Component {
                         <p>Accommodations: {accommodation.stayName}</p>
                         <p>Description: {accommodation.stayDescription}</p>
                         <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
+                        <button type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Accommodation</button>
                     </div>
                 )}
 
@@ -113,6 +154,8 @@ class LocationDetails extends Component {
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>
                         <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
+                        <button type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</button>
+
                     </div>
                 )}
 
@@ -121,6 +164,7 @@ class LocationDetails extends Component {
                         <p>Transportation: {transportation.transportationName}</p>
                         <p>Description: {transportation.transportationDescription}</p>
                         <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
+                        <button type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transportation</button>
                     </div>
                 )}
 

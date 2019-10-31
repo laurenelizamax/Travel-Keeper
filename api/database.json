@@ -131,14 +131,6 @@
       "userId": 7
     },
     {
-      "title": "My New Trip",
-      "startDate": "2019-10-04",
-      "endDate": "2019-10-09",
-      "notes": "awesome!",
-      "userId": 1,
-      "id": 16
-    },
-    {
       "title": "dsfs",
       "startDate": "2019-10-02",
       "endDate": "2019-10-30",
@@ -153,6 +145,14 @@
       "endDate": "2019-10-09",
       "notes": "it's gonna be fun!",
       "userId": 9
+    },
+    {
+      "title": "c vdcvdv",
+      "startDate": "2019-10-03",
+      "endDate": "2019-10-09",
+      "notes": "csfs",
+      "userId": 1,
+      "id": 19
     }
   ],
   "places": [
@@ -193,22 +193,21 @@
       "id": 13
     },
     {
-      "placeName": "Toronto",
-      "placeDescription": "visited Erika",
-      "tripId": 16,
-      "id": 14
-    },
-    {
-      "placeName": "dfsdfsdf",
-      "placeDescription": "sdfdsfs",
-      "tripId": 16,
-      "id": 15
+      "id": 15,
+      "placeName": "dfsdfsdfddddddd",
+      "placeDescription": "sdfdsfs"
     },
     {
       "placeName": "Beach",
       "placeDescription": "sandy",
       "tripId": 18,
       "id": 16
+    },
+    {
+      "placeName": "nnnn",
+      "placeDescription": "llll",
+      "tripId": 19,
+      "id": 17
     }
   ],
   "fellowTravelers": [
@@ -246,6 +245,11 @@
       "travelerName": "Loren",
       "id": 24,
       "tripId": 18
+    },
+    {
+      "travelerName": "mark!!",
+      "id": 25,
+      "tripId": 19
     }
   ],
   "accommodations": [
@@ -280,18 +284,6 @@
       "id": 11
     },
     {
-      "id": 12,
-      "stayName": "home",
-      "stayDescription": "blankets",
-      "placeId": 11
-    },
-    {
-      "id": 13,
-      "stayName": "At Home today!!",
-      "stayDescription": "yes",
-      "placeId": 11
-    },
-    {
       "id": 14,
       "stayName": "my bed",
       "stayDescription": "well it's mom's, but mine",
@@ -314,6 +306,12 @@
       "stayName": "super fancy hotel",
       "stayDescription": "just kinda fancy",
       "placeId": 16
+    },
+    {
+      "stayName": "nnn",
+      "stayDescription": "jjj",
+      "placeId": 17,
+      "id": 18
     }
   ],
   "transportations": [
@@ -328,12 +326,6 @@
       "transportationName": "car!!",
       "transportationDescription": "mom drove",
       "placeId": 10
-    },
-    {
-      "id": 4,
-      "transportationName": "car!!",
-      "transportationDescription": "drove",
-      "placeId": 11
     },
     {
       "id": 5,
@@ -378,12 +370,6 @@
       "activityDescription": "yes",
       "placeId": 10,
       "id": 8
-    },
-    {
-      "id": 9,
-      "activityName": "swimming!!",
-      "activityDescription": "hot heat",
-      "placeId": 11
     },
     {
       "id": 10,

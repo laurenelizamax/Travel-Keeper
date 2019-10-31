@@ -80,6 +80,36 @@ export default {
         })
             .then(result => result.json())
     },
+    deleteLocation(id) {
+        return fetch(`http://localhost:5002/places/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
+    deleteTraveler(id) {
+        return fetch(`http://localhost:5002/fellowTravelers/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
+    deleteStay(id) {
+        return fetch(`http://localhost:5002/accommodations/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
+    deleteActivity(id) {
+        return fetch(`http://localhost:5002/activities/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
+    deleteTransportation(id) {
+        return fetch(`http://localhost:5002/transportations/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
 
     updateTrip(editedTrip) {
         return fetch(`${remoteURL}/trips/${editedTrip.id}`, {

@@ -36,7 +36,8 @@ class ApplicationViews extends Component {
                     return <TripDetails tripId={parseInt(props.match.params.tripId)} activeUser={this.props.activeUser} {...props} />
                 }} />
                  <Route exact path="/places/:placeId(\d+)" render={(props) => {
-                    return <LocationDetails placeId={parseInt(props.match.params.placeId)} activeUser={this.props.activeUser} {...props} />
+                    return <LocationDetails placeId={parseInt(props.match.params.placeId)} activeUser={this.props.activeUser} 
+                    {...props} />
                 }} />
                 {/* <Route exact path="/trip/new" render={(props) => {
                     return <TripAddForm activeUser={this.props.activeUser} {...props} />
