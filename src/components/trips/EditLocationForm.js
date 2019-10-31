@@ -48,7 +48,10 @@ class EditLocationForm extends Component {
                     loadingStatus: false
                 });
             });
+            APIManager.getOnePlace(this.props.placeId)
+            .then(() => this.props.getData())
     }
+
 
     render() {
         const closeBtn = (

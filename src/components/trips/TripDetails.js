@@ -4,7 +4,6 @@ import PlaceCard from "./PlaceCard"
 import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
-import EditLocationForm from "./EditLocationForm"
 import EditTravelersForm from "./EditTravelersForm"
 
 class TripDetails extends Component {
@@ -13,6 +12,8 @@ class TripDetails extends Component {
         trip: "",
         places: [],
         fellowTravelers: [],
+        fellowTraveler: "",
+        // loadingStatus: false,
         modal: false
     }
     componentDidMount() {
@@ -60,6 +61,31 @@ class TripDetails extends Component {
           modal: !prevState.modal
         }));
       };
+      deleteLocation = id => {
+        APIManager.deleteLocation(id)
+            .then(() => {
+                APIManager.getTripPlaces(this.props.tripId)
+                    .then((allPlaces) => {
+                        this.setState({
+                            places: allPlaces
+                        })
+                    })
+            })
+    }
+    deleteTraveler = id => {
+        APIManager.deleteTraveler(id)
+            .then(() => {
+                APIManager.getTripTravelers(this.props.tripId)
+                    .then((allTravelers) => {
+                        this.setState({
+                            travelers: allTravelers,
+                            fellowTraveler:""
+                        })
+                    })
+            })
+            this.getData();
+        }
+
 
     render() {
         return (
@@ -79,16 +105,19 @@ class TripDetails extends Component {
                         <PlaceCard
                             place={place}
                             placeId={place.id}
+                            tripId={this.state.trip.id}
+                            getData={this.getData}
+                            deleteLocation={this.deleteLocation}
                         />
-                        <EditLocationForm placeId={place.id}
-                            {...this.props} getData={this.getData} />
                     </div>
                 )}
 
                 {this.state.fellowTravelers.map(fellowTraveler =>
                     <div key={fellowTraveler.id}>
                         <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
-                        <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
+                        <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData}  />
+                        <button type="button" onClick={() =>
+                            this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</button>
                     </div>
                 )}
                 <AddTravelers {...this.props} getData={this.getData} />

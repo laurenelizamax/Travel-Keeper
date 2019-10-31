@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
+import { withRouter} from "react-router-dom"
+
 
 class Register extends Component {
     state = {
@@ -33,9 +35,8 @@ class Register extends Component {
                 email: email
 			};
 			LogRegManager.createNewUser(newUser).then(response => {
-				//response[0].id is the ID of the user you logged in with,
 				this.props.setUser(response.id);
-				// this.props.history.push(`/mytrips`);
+				this.props.history.push("/");
 			});
 		}
 	};
@@ -80,4 +81,4 @@ class Register extends Component {
         )
     }
 }
-export default Register
+export default withRouter(Register);
