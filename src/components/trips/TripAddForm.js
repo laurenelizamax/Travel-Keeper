@@ -124,7 +124,7 @@ class TripAddForm extends Component {
                                         className="cardButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTrip}
-                                    >Submit</Button>
+                                    >Add A Trip</Button>
                                     {" "}
                                     <Button className="cancel" onClick={this.toggle}>
                                         Cancel

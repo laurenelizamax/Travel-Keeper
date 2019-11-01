@@ -9,14 +9,6 @@
       "id": 1
     },
     {
-      "name": "les",
-      "email": "les@les.com",
-      "password": "les",
-      "userPlace": "France",
-      "dreamTrip": "Eygpt",
-      "id": 3
-    },
-    {
       "name": "McGarrett",
       "email": "mg@mg.com",
       "password": "mg",
@@ -55,6 +47,14 @@
       "userPlace": "Nashville",
       "email": "mo@mo.com",
       "id": 9
+    },
+    {
+      "password": "madi",
+      "name": "madi",
+      "dreamTrip": "The park",
+      "userPlace": "Nashville",
+      "email": "madi@madi.com",
+      "id": 10
     }
   ],
   "trips": [
@@ -65,22 +65,6 @@
       "startDate": "10/15/19",
       "endDate": "10/18/19",
       "notes": "Great Trip!"
-    },
-    {
-      "title": "Les Trip",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-01",
-      "notes": "dsfdsfds",
-      "userId": 3,
-      "id": 6
-    },
-    {
-      "title": "Les Trip 2",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "Les",
-      "userId": 3,
-      "id": 7
     },
     {
       "title": "Dog Store",
@@ -121,6 +105,14 @@
       "endDate": "2019-10-09",
       "notes": "it's gonna be fun!",
       "userId": 9
+    },
+    {
+      "title": "Beach Trip with Steph",
+      "startDate": "2019-07-03",
+      "endDate": "2019-07-05",
+      "notes": "We took the dogs too!",
+      "userId": 1,
+      "id": 19
     }
   ],
   "places": [
@@ -164,6 +156,12 @@
       "placeDescription": "sandy",
       "tripId": 18,
       "id": 16
+    },
+    {
+      "placeName": "Gulf Shores",
+      "placeDescription": "Alabama",
+      "tripId": 19,
+      "id": 17
     }
   ],
   "fellowTravelers": [
@@ -196,6 +194,16 @@
       "travelerName": "Loren",
       "id": 24,
       "tripId": 18
+    },
+    {
+      "travelerName": "Steph",
+      "tripId": 19,
+      "id": 25
+    },
+    {
+      "travelerName": "Kaia",
+      "tripId": 19,
+      "id": 26
     }
   ],
   "accommodations": [
@@ -242,8 +250,8 @@
       "placeId": 16
     },
     {
-      "stayName": "nnn",
-      "stayDescription": "jjj",
+      "stayName": "The Pink House",
+      "stayDescription": "family beach house",
       "placeId": 17,
       "id": 18
     }
@@ -278,6 +286,12 @@
       "transportationName": "bike",
       "transportationDescription": "bought a bike, for 10 dollas!",
       "placeId": 16
+    },
+    {
+      "transportationName": "car!!",
+      "transportationDescription": "We drove from Nashville",
+      "placeId": 17,
+      "id": 8
     }
   ],
   "activities": [
@@ -322,6 +336,18 @@
       "activityDescription": "it was hard!",
       "placeId": 16,
       "id": 13
+    },
+    {
+      "activityName": "Swimming at the beach",
+      "activityDescription": "water was perfect!",
+      "placeId": 17,
+      "id": 14
+    },
+    {
+      "activityName": "Went to dinner",
+      "activityDescription": "We went to YoHo Tacos and got the Salmon, it was delicious!",
+      "placeId": 17,
+      "id": 15
     }
   ]
 }

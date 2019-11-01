@@ -16,6 +16,7 @@ class TripCard extends Component {
                         <h4>Title: <span>{this.props.trip.title}</span></h4>
                         <p>Start Date: {this.props.trip.startDate}</p>
                         <p>End Date: {this.props.trip.endDate}</p>
+                        <p>Notes: {this.props.trip.notes}</p>
 
                         <Link to={`/trips/${this.props.trip.id}`}><Button>Details</Button></Link>
 

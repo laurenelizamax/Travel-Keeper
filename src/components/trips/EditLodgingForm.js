@@ -58,7 +58,7 @@ class EditLodgingForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="editTrip" onClick={this.toggle}>
+                <Button color="success" className="editAccommodation" onClick={this.toggle}>
                     Edit Accommodation</Button>
                 <Modal
                     isOpen={this.state.modal}
@@ -66,7 +66,7 @@ class EditLodgingForm extends Component {
                     className={this.props.className}
                 >
                     <ModalHeader toggle={this.toggle} close={closeBtn}>
-                        Edit Trip
+                        Edit Accommodation
 					</ModalHeader>
                     <ModalBody>
                         <form>
