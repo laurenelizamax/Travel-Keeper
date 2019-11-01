@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom"
 import React, { Component } from "react"
-// import ProfileList from "./profile/ProfileList"
 import ProfileCard from "./profile/ProfileCard"
 // import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
@@ -20,7 +19,6 @@ class ApplicationViews extends Component {
                             <section className="leftSection">
                             </section>
                             <section className="mainSection">
-                                {/* <ProfileList {...props} /> */}
                                 <ProfileCard activeUser={this.props.activeUser}/>
                                 <TripList activeUser={this.props.activeUser}{...props} />
                             </section>

@@ -72,12 +72,12 @@ class AddLodging extends Component {
                     className={this.props.className}
                 >
                     < ModalHeader toggle={this.toggle} close={closeBtn} >
-                        Add An Accommodation
+                        Add Accommodation
 					</ModalHeader >
                     <ModalBody>
                         <form className="tripAddForm">
                             <fieldset>
-                                <h4>Add Accommodations</h4>
+                                <h4>Add An Accommodation</h4>
                                 {/* Accommodations  input*/}
                                 <label htmlFor="stayName">Accommodation:</label>
                                 <input
@@ -103,7 +103,7 @@ class AddLodging extends Component {
                                         className="cardButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewStay}
-                                    >Add Location</Button>
+                                    >Add Accommodation</Button>
                                     <Button className="cancel" onClick={this.toggle}>
                                         Cancel
                                     </Button>

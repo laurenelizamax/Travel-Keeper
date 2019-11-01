@@ -65,7 +65,7 @@ class EditTravelersForm extends Component {
                     className={this.props.className}
                 >
                     <ModalHeader toggle={this.toggle} close={closeBtn}>
-                        Edit Fellow Traveler
+                        Edit Traveler
 					</ModalHeader>
                     <ModalBody>
                         <form>

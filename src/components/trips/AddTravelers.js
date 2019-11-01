@@ -12,7 +12,6 @@ class AddTravelers extends Component {
         travelerName: "",
         loadingStatus: false,
         modal: false,
-
     };
     toggle = () => {
         this.setState(prevState => ({
@@ -70,14 +69,14 @@ class AddTravelers extends Component {
             <>
             {" "}
                 <Button color="info" className="addTraveler" onClick={this.toggle} >
-                    Add Travelers</Button>
+                    Add A Traveler</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
                 <ModalHeader toggle={this.toggle} close={closeBtn}>
-                    Add A New Traveler
+                Add A Traveler
 					</ModalHeader>
                 <ModalBody>
                     <form className="tripAddForm">
@@ -103,7 +102,7 @@ class AddTravelers extends Component {
                         className="cardButton"
                         disabled={this.state.loadingStatus}
                         onClick={this.constructNewTraveler}
-                    >Add A New Traveler
+                    >Add A Traveler
                      </Button>{" "}
                     <Button className="cancel" onClick={this.toggle}>
                         Cancel

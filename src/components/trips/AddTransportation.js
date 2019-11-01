@@ -73,7 +73,7 @@ class AddTransportation extends Component {
                     className={this.props.className}
                 >
                     <ModalHeader toggle={this.toggle} close={closeBtn}>
-                        Add A Mode of Transportation
+                        Add Transportation
 					</ModalHeader>
                     <ModalBody>
                         <form className="tripAddForm">
@@ -103,7 +103,7 @@ class AddTransportation extends Component {
                                         className="cardButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTransportation}
-                                    >Add A Transportation</Button>
+                                    >Add Transportation</Button>
                                     {" "}
                                     <Button className="cancel" onClick={this.toggle}>
                                         Cancel
