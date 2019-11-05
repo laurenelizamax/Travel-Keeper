@@ -120,7 +120,7 @@ class TripDetails extends Component {
                             <div key={fellowTraveler.id}>
                                 <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
                                 <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
-                                <Button type="button" onClick={() =>
+                                <Button color="danger" type="button" onClick={() =>
                                     this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
                             </div>
                         )}

@@ -1,0 +1,7 @@
+nav span {
+    cursor: pointer;
+    text-decoration: underline;
+ }
+ nav span:hover {
+  color: rgb(8, 101, 8);
+ }

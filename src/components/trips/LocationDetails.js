@@ -146,7 +146,7 @@ class LocationDetails extends Component {
                         <p>Accommodations: {accommodation.stayName}</p>
                         <p>Description: {accommodation.stayDescription}</p>
                         <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
-                        <Button type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Accommodation</Button>
+                        <Button color="danger" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Accommodation</Button>
                     </div>
                 )}
 
@@ -155,7 +155,7 @@ class LocationDetails extends Component {
                         <p>Activites: {activity.activityName}</p>
                         <p>Description: {activity.activityDescription}</p>
                         <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
-                        <Button type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</Button>
+                        <Button color="danger" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</Button>
 
                     </div>
                 )}
@@ -165,7 +165,7 @@ class LocationDetails extends Component {
                         <p>Transportation: {transportation.transportationName}</p>
                         <p>Description: {transportation.transportationDescription}</p>
                         <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
-                        <Button type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transportation</Button>
+                        <Button color="danger" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transportation</Button>
                     </div>
                 )}
 

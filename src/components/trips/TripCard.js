@@ -20,7 +20,7 @@ class TripCard extends Component {
 
                         <Link to={`/trips/${this.props.trip.id}`}><Button>Details</Button></Link>
 
-                        <Button type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
+                        <Button color="danger" type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
                     </div>
                 </div>
             </>

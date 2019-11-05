@@ -55,6 +55,22 @@
       "userPlace": "Nashville",
       "email": "madi@madi.com",
       "id": 10
+    },
+    {
+      "password": "madi",
+      "name": "madi",
+      "dreamTrip": "nashville",
+      "userPlace": "Nashville",
+      "email": "madi@madi.com",
+      "id": 11
+    },
+    {
+      "password": "bat",
+      "name": "batman",
+      "dreamTrip": "Bali, caves",
+      "userPlace": "gotham",
+      "email": "bat@bat.com",
+      "id": 12
     }
   ],
   "trips": [
@@ -113,6 +129,14 @@
       "notes": "We took the dogs too!",
       "userId": 1,
       "id": 19
+    },
+    {
+      "id": 20,
+      "title": "Bali",
+      "startDate": "2019-10-31",
+      "endDate": "2019-11-20",
+      "notes": "Don't forget belt and batrings and sunscreen!",
+      "userId": 12
     }
   ],
   "places": [
@@ -196,14 +220,19 @@
       "tripId": 18
     },
     {
-      "travelerName": "Steph",
-      "tripId": 19,
-      "id": 25
-    },
-    {
       "travelerName": "Kaia",
       "tripId": 19,
       "id": 26
+    },
+    {
+      "travelerName": "Catwoman",
+      "tripId": 20,
+      "id": 28
+    },
+    {
+      "travelerName": "Joker",
+      "id": 29,
+      "tripId": 20
     }
   ],
   "accommodations": [
@@ -251,7 +280,7 @@
     },
     {
       "stayName": "The Pink House",
-      "stayDescription": "family beach house",
+      "stayDescription": "slept in the heart room",
       "placeId": 17,
       "id": 18
     }
