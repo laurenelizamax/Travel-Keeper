@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 class EditLocationForm extends Component {
     //set the initial state
@@ -48,7 +49,7 @@ class EditLocationForm extends Component {
                     loadingStatus: false
                 });
             });
-            APIManager.getOnePlace(this.props.placeId)
+        APIManager.getOnePlace(this.props.placeId)
             .then(() => this.props.getData())
     }
 
@@ -61,14 +62,14 @@ class EditLocationForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="editLocation" onClick={this.toggle}>
+                <Button color="success" className="button" onClick={this.toggle}>
                     Edit Location</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Edit Location
 					</ModalHeader>
                     <ModalBody>
@@ -96,10 +97,10 @@ class EditLocationForm extends Component {
                                     <Button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingLocation}
-                                        className="btn btn-primary"
+                                        className="button"
                                     >Save Location</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                      </Button>
                                 </ModalFooter>

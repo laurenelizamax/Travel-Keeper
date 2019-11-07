@@ -3,6 +3,7 @@ import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class AddActivities extends Component {
@@ -63,14 +64,14 @@ class AddActivities extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="addTraveler" onClick={this.toggle} >
+                <Button color="info" className="button" onClick={this.toggle} >
                     Add An Activity</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Add An Activity
                 </ModalHeader>
                     <ModalBody>
@@ -98,12 +99,12 @@ class AddActivities extends Component {
                                     {/* Button to create new activity*/}
                                     <Button
                                         type="submit"
-                                        className="cardButton"
+                                        className="button"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewActivity}
                                     >Add An Activity</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                     </Button>
                                 </ModalFooter>

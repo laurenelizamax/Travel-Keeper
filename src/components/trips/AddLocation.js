@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./TripForm.css"
-// import { Link } from "react-router-dom"
+import "./Trip.css"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
@@ -65,14 +64,14 @@ class AddLocation extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="edit" onClick={this.toggle} >
+                <Button color="info" className="button" onClick={this.toggle} >
                     Add Location</Button>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                        <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                             Add Location
 					</ModalHeader>
                     <ModalBody>
@@ -101,12 +100,12 @@ class AddLocation extends Component {
                                     {/* Button to create new location*/}
                                     <Button
                                         type="submit"
-                                        className="cardButton"
+                                        className="button"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewLocation}
                                     >Add Location</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                    </Button>
                                 </ModalFooter>

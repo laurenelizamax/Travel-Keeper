@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Montserrat&display=swap");
+
+h1 {
+    font-family: "Cinzel", serif;
+}
+p {
+    font-family: "Montserrat", sans-serif;
+}
+.button {
+    font-family: "Montserrat", sans-serif;
+}
+.card {
+    /* display: flex;
+    flex-direction: row; */
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    background:white;
+    margin-bottom: 2em;
+    flex: 0 1 24%;
+    width: 30%;
+  }
+  
+  .card-content {
+    padding: .5em;
+  }
+  
+  .card-content p {
+    font-size: 100%;
+    color:black;
+  }
+
+  /* .card button:hover {
+    background-color:#146173;
+  } */

@@ -3,6 +3,8 @@ import APIManager from "../../modules/APIManager"
 import { Link } from "react-router-dom"
 import EditLocationForm from "./EditLocationForm"
 import { Button } from "reactstrap"
+import "./Trip.css"
+
 
 
 class PlaceCard extends Component {
@@ -38,32 +40,35 @@ class PlaceCard extends Component {
         return (
             <>
                 <div>
-                    <p>Location: {this.props.place.placeName}</p>
-                    <p>Description: {this.props.place.placeDescription}</p>
+                    <p><strong>Location: </strong>{this.props.place.placeName}</p>
+                    <p><strong>Description: </strong>{this.props.place.placeDescription}</p>
                     <Link to={`/places/${this.props.placeId}`}>Location Details</Link>
                     <EditLocationForm 
                             {...this.props} getData={this.props.getData} />
-                    <Button color="danger" type="button" onClick={() => this.props.deleteLocation(this.props.place.id)}>Delete Location</Button>
+                    <Button className="button" color="danger" type="button" onClick={() => this.props.deleteLocation(this.props.place.id)}>Delete Location</Button>
                 </div>
 
                 {this.state.accommodations.map(accommodation =>
                     <div key={accommodation.id}>
-                        <p>Accommodations: {accommodation.stayName}</p>
-                        <p>Description: {accommodation.stayDescription}</p>
+                        <h5>Where You Stayed</h5>
+                        <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
+                        <p><strong>Description: </strong>{accommodation.stayDescription}</p>
                     </div>
                 )}
 
                 {this.state.activities.map(activity =>
                     <div key={activity.id}>
-                        <p>Activites: {activity.activityName}</p>
-                        <p>Description: {activity.activityDescription}</p>
+                        <h5>What You Did</h5>
+                        <p><strong>Activity:</strong> {activity.activityName}</p>
+                        <p><strong>Description:</strong> {activity.activityDescription}</p>
                     </div>
                 )}
 
                 {this.state.transportations.map(transportation =>
                     <div key={transportation.id}>
-                        <p>Transportation: {transportation.transportationName}</p>
-                        <p>Description: {transportation.transportationDescription}</p>
+                        <h5>How You Got There</h5>
+                        <p><strong>Transportation:</strong> {transportation.transportationName}</p>
+                        <p><strong>Description: </strong>{transportation.transportationDescription}</p>
 
                     </div>
                 )}

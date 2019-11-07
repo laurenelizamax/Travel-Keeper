@@ -180,6 +180,12 @@
       "placeDescription": "Finally got there!",
       "tripId": 1,
       "id": 18
+    },
+    {
+      "placeName": "here",
+      "placeDescription": "now",
+      "tripId": 19,
+      "id": 19
     }
   ],
   "fellowTravelers": [
@@ -232,6 +238,11 @@
       "travelerName": "Ashley",
       "tripId": 1,
       "id": 30
+    },
+    {
+      "travelerName": "Steph",
+      "tripId": 19,
+      "id": 31
     }
   ],
   "accommodations": [
@@ -282,6 +293,12 @@
       "stayDescription": "works?",
       "placeId": 18,
       "id": 19
+    },
+    {
+      "stayName": "dfdsdf",
+      "stayDescription": "sdfsfsd",
+      "placeId": 19,
+      "id": 20
     }
   ],
   "transportations": [
@@ -320,6 +337,12 @@
       "transportationDescription": "sd",
       "placeId": 18,
       "id": 9
+    },
+    {
+      "transportationName": "fsdfds",
+      "transportationDescription": "sdfsd",
+      "placeId": 19,
+      "id": 10
     }
   ],
   "activities": [
@@ -361,7 +384,7 @@
     },
     {
       "id": 14,
-      "activityName": "Swimming at the beach",
+      "activityName": "Swimming at the beach....",
       "activityDescription": "The water was perfect!",
       "placeId": 17
     },
@@ -376,6 +399,12 @@
       "activityDescription": "sd",
       "placeId": 18,
       "id": 16
+    },
+    {
+      "activityName": "dsfsf",
+      "activityDescription": "sdfsd",
+      "placeId": 19,
+      "id": 17
     }
   ]
 }

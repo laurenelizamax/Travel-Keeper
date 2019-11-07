@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
+import "./Profile.css"
 
 class ProfileCard extends Component {
     state = {

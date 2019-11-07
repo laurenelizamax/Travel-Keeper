@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import TripCard from "./TripCard"
 import APIManager from "../../modules/APIManager"
 import TripAddForm from "./TripAddForm"
+import "./TripList.css"
 
 
 class TripList extends Component {

@@ -1,29 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap");
 
 nav span {
-    cursor: pointer;
-    text-decoration: underline;
- }
- nav span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+nav span:hover {
   color: rgb(8, 101, 8);
- }
-  
-  .siteTitle {
-    font-family: 'Cinzel', serif;
-    color: black;
-    text-align: center;
-    font-size: 4em;
-  }
-  
-  .logout {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0;
-    margin-bottom: 0;
-  }
+}
 
-  nav {
-    margin-bottom: 2em;
-    margin-top: 1em;
-  }
-  
+.siteTitle {
+  font-family: "Cinzel", serif;
+  color: black;
+  text-align: center;
+  font-size: 4em;
+  padding-top: 0px;
+  margin-top: -10px;
+  background-color: white;
+  margin-bottom: 0px;
+}
+
+.logout {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+}
+
+nav {
+  margin-bottom: 2em;
+  margin-top: 0px;
+  font-family: "Cinzel", serif;
+  font-size: 1.2em;
+  background-image: url("../Images/bigben1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1290px;
+  height: 200px;
+}
+.bigben {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1290px;
+  height: 200px;
+}

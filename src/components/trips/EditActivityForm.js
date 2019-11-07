@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class EditActivityForm extends Component {
@@ -60,14 +61,14 @@ class EditActivityForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="editActivity" onClick={this.toggle}>
+                <Button color="success" className="button" onClick={this.toggle}>
                     Edit Activity</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Edit Activity
 					</ModalHeader>
                     <ModalBody>
@@ -96,10 +97,10 @@ class EditActivityForm extends Component {
                                     <Button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingActivity}
-                                        className="btn btn-primary"
+                                        className="button"
                                     >Save Activity</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                      </Button>
                                 </ModalFooter>

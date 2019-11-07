@@ -2,6 +2,7 @@ import React, { Component } from "react"
 // import APIManager from "../../modules/APIManager"
 import { Link, withRouter } from "react-router-dom"
 import { Button } from "reactstrap"
+import "./TripCard.css"
 
 
 class TripCard extends Component {
@@ -18,9 +19,9 @@ class TripCard extends Component {
                         <p>End Date: {this.props.trip.endDate}</p>
                         <p>Notes: {this.props.trip.notes}</p>
 
-                        <Link to={`/trips/${this.props.trip.id}`}><Button>Details</Button></Link>
+                        <Link to={`/trips/${this.props.trip.id}`}><Button className="button">Details</Button></Link>
 
-                        <Button color="danger" type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
+                        <Button className="button" color="danger" type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
                     </div>
                 </div>
             </>

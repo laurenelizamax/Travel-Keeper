@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class EditTravelersForm extends Component {
@@ -57,14 +58,14 @@ class EditTravelersForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="addTraveler" onClick={this.toggle}>
+                <Button color="success" className="button" onClick={this.toggle}>
                     Edit Traveler</Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader  className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Edit Traveler
 					</ModalHeader>
                     <ModalBody>
@@ -83,10 +84,10 @@ class EditTravelersForm extends Component {
                                     <Button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingTraveler}
-                                        className="btn btn-primary"
-                                    >Save Traveler</Button>
+                                        className="button"
+                                              >Save Traveler</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                      </Button>
                                 </ModalFooter>

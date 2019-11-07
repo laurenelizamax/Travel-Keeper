@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Montserrat&display=swap");
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Cinzel", serif;
+}
+p {
+    font-family: "Montserrat", sans-serif;
+}
+input {
+    font-family: "Montserrat", sans-serif;
+}
+label {
+    font-family: "Montserrat", sans-serif;
+}
+textarea {
+    font-family: "Montserrat", sans-serif;
+}
+.modalHeader {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
