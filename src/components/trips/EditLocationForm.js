@@ -75,7 +75,7 @@ class EditLocationForm extends Component {
                         <form>
                             <fieldset>
                                 <label htmlFor="placeName">Location: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"
@@ -84,7 +84,7 @@ class EditLocationForm extends Component {
                                     value={this.state.placeName}
                                 />
                                 <label htmlFor="placeDescription">Location Description: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"

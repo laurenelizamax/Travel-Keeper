@@ -91,19 +91,35 @@ class TripDetails extends Component {
     render() {
         return (
             <>
+                <Button type="button" className="cardButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</Button>
+
+                <AddTravelers {...this.props} getData={this.getData} />
+
+                <AddLocation {...this.props} getData={this.getData} />
+
                 <div className="card">
                     <div className="card-content">
-
-                        <Button type="button" className="cardButton"
-                            onClick={() => { this.props.history.push("/") }}>Back to Profile</Button>
-
                         <div>
                             <h4>Title: {this.state.trip.title}</h4>
                             <p>Start Date: {this.state.trip.startDate}</p>
                             <p>End Date: {this.state.trip.endDate}</p>
                             <p>Notes: {this.state.trip.notes}</p>
+                            <EditTripForm {...this.props} getData={this.getData} />
                         </div>
+                        {this.state.fellowTravelers.map(fellowTraveler =>
+                            <div key={fellowTraveler.id}>
+                                <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
+                                <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
+                                <Button color="danger" type="button" onClick={() =>
+                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
+                            </div>
+                        )}
+                    </div>
+                </div>
 
+                <div className="card">
+                    <div className="card-content">
                         {this.state.places.map(place =>
                             <div key={place.id}>
                                 <PlaceCard
@@ -115,22 +131,9 @@ class TripDetails extends Component {
                                 />
                             </div>
                         )}
-
-                        {this.state.fellowTravelers.map(fellowTraveler =>
-                            <div key={fellowTraveler.id}>
-                                <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
-                                <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
-                                <Button type="button" onClick={() =>
-                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
-                            </div>
-                        )}
-                        <AddTravelers {...this.props} getData={this.getData} />
-
-                        <AddLocation {...this.props} getData={this.getData} />
-
-                        <EditTripForm {...this.props} getData={this.getData} />
                     </div>
                 </div>
+
             </>
         )
     }

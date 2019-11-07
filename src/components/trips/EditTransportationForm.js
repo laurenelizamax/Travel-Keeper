@@ -74,7 +74,7 @@ class EditTransportationForm extends Component {
                         <form>
                             <fieldset>
                                 <label htmlFor="transportationName">Transportation: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"
@@ -84,7 +84,7 @@ class EditTransportationForm extends Component {
                                 />
                                 {/*input for transportation description*/}
                                 <label htmlFor="transportationDescription">Transportation Description: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"

@@ -49,22 +49,30 @@
       "id": 9
     },
     {
-      "password": "madi",
-      "name": "madi",
-      "dreamTrip": "The park",
-      "userPlace": "Nashville",
-      "email": "madi@madi.com",
-      "id": 10
+      "password": "bat",
+      "name": "batman",
+      "dreamTrip": "Bali, caves",
+      "userPlace": "gotham",
+      "email": "bat@bat.com",
+      "id": 12
+    },
+    {
+      "password": "kaia",
+      "name": "kaia",
+      "dreamTrip": "here",
+      "userPlace": "home",
+      "email": "kaia@kaia",
+      "id": 13
     }
   ],
   "trips": [
     {
       "id": 1,
       "title": "Europe Trip",
-      "userId": 1,
-      "startDate": "10/15/19",
-      "endDate": "10/18/19",
-      "notes": "Great Trip!"
+      "startDate": "2019-11-07",
+      "endDate": "2019-11-12",
+      "notes": "Great Trip!",
+      "userId": 1
     },
     {
       "title": "Dog Store",
@@ -113,21 +121,25 @@
       "notes": "We took the dogs too!",
       "userId": 1,
       "id": 19
+    },
+    {
+      "id": 20,
+      "title": "Bali",
+      "startDate": "2019-10-31",
+      "endDate": "2019-11-20",
+      "notes": "Don't forget belt and batrings and sunscreen!",
+      "userId": 12
+    },
+    {
+      "title": "Beach Trip With Sue",
+      "startDate": "2019-08-01",
+      "endDate": "2019-08-04",
+      "notes": "Sue's mom came with us!",
+      "userId": 1,
+      "id": 21
     }
   ],
   "places": [
-    {
-      "id": 1,
-      "placeName": "France",
-      "placeDescription": "Visited Friends in Paris",
-      "tripId": 1
-    },
-    {
-      "placeName": "jjgvjh",
-      "placeDescription": "hgj",
-      "tripId": 1,
-      "id": 5
-    },
     {
       "id": 10,
       "placeName": "Spring Hill Dog Park",
@@ -158,10 +170,16 @@
       "id": 16
     },
     {
+      "id": 17,
       "placeName": "Gulf Shores",
-      "placeDescription": "Alabama",
-      "tripId": 19,
-      "id": 17
+      "placeDescription": "Alabama ",
+      "tripId": 19
+    },
+    {
+      "placeName": "Hawaii",
+      "placeDescription": "Finally got there!",
+      "tripId": 1,
+      "id": 18
     }
   ],
   "fellowTravelers": [
@@ -196,23 +214,27 @@
       "tripId": 18
     },
     {
-      "travelerName": "Steph",
-      "tripId": 19,
-      "id": 25
-    },
-    {
       "travelerName": "Kaia",
       "tripId": 19,
       "id": 26
+    },
+    {
+      "travelerName": "Catwoman",
+      "tripId": 20,
+      "id": 28
+    },
+    {
+      "travelerName": "Joker",
+      "id": 29,
+      "tripId": 20
+    },
+    {
+      "travelerName": "Ashley",
+      "tripId": 1,
+      "id": 30
     }
   ],
   "accommodations": [
-    {
-      "id": 1,
-      "stayName": "Les Cedres",
-      "stayDescription": "Rented a room",
-      "placeId": 1
-    },
     {
       "id": 10,
       "stayName": "bed!!!",
@@ -250,19 +272,19 @@
       "placeId": 16
     },
     {
+      "id": 18,
       "stayName": "The Pink House",
-      "stayDescription": "family beach house",
-      "placeId": 17,
-      "id": 18
+      "stayDescription": "I slept in the heart room",
+      "placeId": 17
+    },
+    {
+      "stayName": "les",
+      "stayDescription": "works?",
+      "placeId": 18,
+      "id": 19
     }
   ],
   "transportations": [
-    {
-      "id": 1,
-      "transportationName": "airplane",
-      "transportationDescription": "Got a great deal with British Airways",
-      "placeId": 1
-    },
     {
       "id": 3,
       "transportationName": "car!!",
@@ -288,19 +310,19 @@
       "placeId": 16
     },
     {
+      "id": 8,
       "transportationName": "car!!",
       "transportationDescription": "We drove from Nashville",
-      "placeId": 17,
-      "id": 8
+      "placeId": 17
+    },
+    {
+      "transportationName": "sdfsd",
+      "transportationDescription": "sd",
+      "placeId": 18,
+      "id": 9
     }
   ],
   "activities": [
-    {
-      "id": 1,
-      "activityName": "La Tour Eiffel",
-      "activityDescription": "Went to the Eiffel Tower. All the way to the top!",
-      "placeId": 1
-    },
     {
       "id": 7,
       "activityName": "FETCH!!",
@@ -338,16 +360,22 @@
       "id": 13
     },
     {
+      "id": 14,
       "activityName": "Swimming at the beach",
-      "activityDescription": "water was perfect!",
-      "placeId": 17,
-      "id": 14
+      "activityDescription": "The water was perfect!",
+      "placeId": 17
     },
     {
       "activityName": "Went to dinner",
       "activityDescription": "We went to YoHo Tacos and got the Salmon, it was delicious!",
       "placeId": 17,
       "id": 15
+    },
+    {
+      "activityName": "dfsd",
+      "activityDescription": "sd",
+      "placeId": 18,
+      "id": 16
     }
   ]
 }

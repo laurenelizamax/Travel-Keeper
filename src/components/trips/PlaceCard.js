@@ -43,7 +43,7 @@ class PlaceCard extends Component {
                     <Link to={`/places/${this.props.placeId}`}>Location Details</Link>
                     <EditLocationForm 
                             {...this.props} getData={this.props.getData} />
-                    <Button type="button" onClick={() => this.props.deleteLocation(this.props.place.id)}>Delete Location</Button>
+                    <Button color="danger" type="button" onClick={() => this.props.deleteLocation(this.props.place.id)}>Delete Location</Button>
                 </div>
 
                 {this.state.accommodations.map(accommodation =>

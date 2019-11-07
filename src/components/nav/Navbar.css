@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+
+nav span {
+    cursor: pointer;
+    text-decoration: underline;
+ }
+ nav span:hover {
+  color: rgb(8, 101, 8);
+ }
+  
+  .siteTitle {
+    font-family: 'Cinzel', serif;
+    color: black;
+    text-align: center;
+    font-size: 4em;
+  }
+  
+  .logout {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  nav {
+    margin-bottom: 2em;
+    margin-top: 1em;
+  }
+  

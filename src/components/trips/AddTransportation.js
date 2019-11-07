@@ -80,7 +80,7 @@ class AddTransportation extends Component {
                             <fieldset>
                                 {/* Transportation  input*/}
                                 <label htmlFor="transportationName">Transportation:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
@@ -89,7 +89,7 @@ class AddTransportation extends Component {
                                 />
                                 {/* Transportation Description input*/}
                                 <label htmlFor="transportationDescription">Transportation Description:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}

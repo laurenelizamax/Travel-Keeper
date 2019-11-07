@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
 import { withRouter} from "react-router-dom"
 import { Button } from "reactstrap"
+import "./LogReg.css"
+// import Register from './Register'
+
 
 
 class Login extends Component {
@@ -42,7 +45,8 @@ class Login extends Component {
         return (
             <>
                 <div className="logRegForm">
-                    <h3 className="logRegTitle">Login!</h3>
+                    <h1>T R A V E L &nbsp; K E E P E R</h1>
+                    <h3 className="logRegTitle">Login</h3>
                     <form onSubmit={this.handleLogin}>
                         <label htmlFor="email">Email:</label>
                         <input onChange={this.handleFieldChange} type="text"
@@ -54,8 +58,16 @@ class Login extends Component {
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
-                        <Button type="submit" className="submit">Login</Button>
-                    </form>
+                        <Button className="logBtn" type="submit">Login</Button>
+                  
+                {/* <Register
+              getUser={this.getUser}
+              setUser={this.setUser}
+              user={this.state.user}
+              {...this.props}
+              activeUser={this.state.activeUser}
+            /> */}
+              </form>
                 </div>
             </>
 
