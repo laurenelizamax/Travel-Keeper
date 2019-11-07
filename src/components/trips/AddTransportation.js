@@ -64,8 +64,8 @@ class AddTransportation extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="button" onClick={this.toggle} >
-                    Add Transportation</Button>
+                <button  className="addButtonModal" onClick={this.toggle} >
+                    Add Transportation</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -97,16 +97,16 @@ class AddTransportation extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new location*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="button"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTransportation}
-                                    >Add Transportation</Button>
+                                    >Add Transportation</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                    </Button>
+                                    </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

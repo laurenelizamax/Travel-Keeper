@@ -58,8 +58,8 @@ class EditTravelersForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="button" onClick={this.toggle}>
-                    Edit Traveler</Button>
+                <button  className="editButtonModal" onClick={this.toggle}>
+                    Edit Traveler</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -81,15 +81,15 @@ class EditTravelersForm extends Component {
                                     value={this.state.travelerName}
                                 />
                                 <ModalFooter>
-                                    <Button
-                                        type="button" disabled={this.state.loadingStatus}
+                                    <button
+                                        type="submit" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingTraveler}
-                                        className="button"
-                                              >Save Traveler</Button>
+                                        className="submitButton"
+                                              >Save Traveler</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

@@ -61,8 +61,8 @@ class EditActivityForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="button" onClick={this.toggle}>
-                    Edit Activity</Button>
+                <button  className="editButtonModal" onClick={this.toggle}>
+                    Edit Activity</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -94,15 +94,15 @@ class EditActivityForm extends Component {
                                 />
                                 <ModalFooter>
 
-                                    <Button
+                                    <button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingActivity}
-                                        className="button"
-                                    >Save Activity</Button>
+                                        className="submitButton"
+                                    >Save Activity</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

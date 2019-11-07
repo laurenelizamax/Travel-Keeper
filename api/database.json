@@ -176,12 +176,6 @@
       "tripId": 19
     },
     {
-      "placeName": "Hawaii",
-      "placeDescription": "Finally got there!",
-      "tripId": 1,
-      "id": 18
-    },
-    {
       "placeName": "here",
       "placeDescription": "now",
       "tripId": 19,
@@ -221,8 +215,8 @@
     },
     {
       "travelerName": "Kaia",
-      "tripId": 19,
-      "id": 26
+      "id": 26,
+      "tripId": 19
     },
     {
       "travelerName": "Catwoman",
@@ -289,12 +283,6 @@
       "placeId": 17
     },
     {
-      "stayName": "les",
-      "stayDescription": "works?",
-      "placeId": 18,
-      "id": 19
-    },
-    {
       "stayName": "dfdsdf",
       "stayDescription": "sdfsfsd",
       "placeId": 19,
@@ -331,12 +319,6 @@
       "transportationName": "car!!",
       "transportationDescription": "We drove from Nashville",
       "placeId": 17
-    },
-    {
-      "transportationName": "sdfsd",
-      "transportationDescription": "sd",
-      "placeId": 18,
-      "id": 9
     },
     {
       "transportationName": "fsdfds",
@@ -393,12 +375,6 @@
       "activityDescription": "We went to YoHo Tacos and got the Salmon, it was delicious!",
       "placeId": 17,
       "id": 15
-    },
-    {
-      "activityName": "dfsd",
-      "activityDescription": "sd",
-      "placeId": 18,
-      "id": 16
     },
     {
       "activityName": "dsfsf",

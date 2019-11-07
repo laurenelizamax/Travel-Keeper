@@ -64,8 +64,8 @@ class AddLocation extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="button" onClick={this.toggle} >
-                    Add Location</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add Location</button>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -86,6 +86,7 @@ class AddLocation extends Component {
                                     id="placeName"
                                     placeholder="Location"
                                 />
+                                <br></br>
                                 {/* Location Description input*/}
                                 <label htmlFor="placeDescription">Location Description:</label>
                                 <textarea
@@ -98,16 +99,16 @@ class AddLocation extends Component {
                                 <ModalFooter>
 
                                     {/* Button to create new location*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="button"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewLocation}
-                                    >Add Location</Button>
+                                    >Add Location</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                   </Button>
+                                   </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

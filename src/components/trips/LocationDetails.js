@@ -129,12 +129,12 @@ class LocationDetails extends Component {
     render() {
         return (
             <>
-                <Button type="button" className="button"
-                    onClick={() => { this.props.history.push("/") }}>Go to Profile</Button>
+                <button type="button" className="profileButton"
+                    onClick={() => { this.props.history.push("/") }}>Go to Profile</button>
 
-                <Button type="button" className="button"
+                <button type="button" className="tripDetailsButton"
                     onClick={() => { this.props.history.push(`/trips/${this.state.place.tripId}`) }}>
-                    Back to Trip Details</Button>
+                    Back to Trip Details</button>
 
                 <AddLodging  {...this.props} getData={this.getData} />
 
@@ -158,7 +158,7 @@ class LocationDetails extends Component {
                                 <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
                                 <p><strong>Description:</strong> {accommodation.stayDescription}</p>
                                 <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
-                                <Button className="button" color="danger" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Accommodation</Button>
+                                <button className="deleteButton" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Stay</button>
                             </div>
                         )}
                     </div>
@@ -172,7 +172,7 @@ class LocationDetails extends Component {
                                 <p><strong>Activity:</strong> {activity.activityName}</p>
                                 <p><strong>Description:</strong> {activity.activityDescription}</p>
                                 <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
-                                <Button className="button" color="danger" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</Button>
+                                <button className="deleteButton" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</button>
 
                             </div>
                         )}
@@ -187,7 +187,7 @@ class LocationDetails extends Component {
                                 <p><strong>Transportation: </strong>{transportation.transportationName}</p>
                                 <p><strong>Description:</strong> {transportation.transportationDescription}</p>
                                 <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
-                                <Button  className="button" color="danger" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transportation</Button>
+                                <button  className="deleteButton" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transport</button>
                             </div>
                         )}
                     </div>

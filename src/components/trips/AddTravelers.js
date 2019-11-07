@@ -67,8 +67,8 @@ class AddTravelers extends Component {
         return (
             <>
             {" "}
-                <Button color="info" className="button" onClick={this.toggle} >
-                    Add A Traveler</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add A Traveler</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -96,16 +96,16 @@ class AddTravelers extends Component {
                 </ModalBody>
                 <ModalFooter>
                     {/* Button to create new traveler*/}
-                    <Button
+                    <button
                         type="submit"
-                        className="button"
+                        className="submitButton"
                         disabled={this.state.loadingStatus}
                         onClick={this.constructNewTraveler}
                     >Add A Traveler
-                     </Button>{" "}
-                    <Button className="button" onClick={this.toggle}>
+                     </button>{" "}
+                    <button className="cancelButton" onClick={this.toggle}>
                         Cancel
-                    </Button>
+                    </button>
                 </ModalFooter>
                 </Modal>
             </>

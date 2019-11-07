@@ -7,6 +7,7 @@ import EditTripForm from "./EditTripForm"
 import EditTravelersForm from "./EditTravelersForm"
 import { Button } from "reactstrap"
 import "./TripList.css"
+import "./Trip.css"
 
 class TripDetails extends Component {
 
@@ -92,8 +93,8 @@ class TripDetails extends Component {
     render() {
         return (
             <>
-                <Button type="button" className="button"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</Button>
+                <button type="button" className="profileButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
                 <AddTravelers {...this.props} getData={this.getData} />
 
@@ -112,18 +113,16 @@ class TripDetails extends Component {
                             <div key={fellowTraveler.id}>
                                 <p><strong>Fellow Traveler: </strong>{fellowTraveler.travelerName}</p>
                                 <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
-                                <Button className="button" color="danger" type="button" onClick={() =>
-                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
+                                <button className="deleteButton" type="button" onClick={() =>
+                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</button>
                             </div>
                         )}
                     </div>
                 </div>
 
-                <div className="card">
-                    <div className="card-content">
+               
                         {this.state.places.map(place =>
                             <div key={place.id}>
-                                <h4>Location Details</h4>
                                 <PlaceCard
                                     place={place}
                                     placeId={place.id}
@@ -133,8 +132,7 @@ class TripDetails extends Component {
                                 />
                             </div>
                         )}
-                    </div>
-                </div>
+                
 
             </>
         )

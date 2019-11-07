@@ -62,8 +62,8 @@ class EditLocationForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="button" onClick={this.toggle}>
-                    Edit Location</Button>
+                <button className="editButtonModal" onClick={this.toggle}>
+                    Edit Location</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}

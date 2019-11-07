@@ -65,8 +65,8 @@ class AddLodging extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="button" onClick={this.toggle} >
-                    Add Accommodation</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add Accommodation</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -98,15 +98,15 @@ class AddLodging extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new location*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="button"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewStay}
-                                    >Add Accommodation</Button>
-                                    <Button className="button" onClick={this.toggle}>
+                                    >Save Stay</button>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                    </Button>
+                                    </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

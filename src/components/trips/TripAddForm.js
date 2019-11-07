@@ -69,8 +69,8 @@ class TripAddForm extends Component {
         return (
             <>
                 {" "}
-                <Button className="button" color="info" className="addTrip" onClick={this.toggle} >
-                    Add A Trip</Button>
+                <button  className="addButtonModal" onClick={this.toggle} >
+                    Add A Trip</button>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}

@@ -19,9 +19,9 @@ class TripCard extends Component {
                         <p>End Date: {this.props.trip.endDate}</p>
                         <p>Notes: {this.props.trip.notes}</p>
 
-                        <Link to={`/trips/${this.props.trip.id}`}><Button className="button">Details</Button></Link>
+                        <Link to={`/trips/${this.props.trip.id}`}><button className="detailsButton">Details</button></Link>
 
-                        <Button className="button" color="danger" type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</Button>
+                        <button className="deleteButton"  type="button" onClick={() => this.props.deleteTrip(this.props.trip.id)}>Delete Trip</button>
                     </div>
                 </div>
             </>

@@ -10,8 +10,8 @@ p {
     font-family: "Montserrat", sans-serif;
 }
 .card {
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
     /* Add shadows to create the "card" effect */
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */

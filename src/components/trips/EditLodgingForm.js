@@ -59,8 +59,8 @@ class EditLodgingForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="button" onClick={this.toggle}>
-                    Edit Accommodation</Button>
+                <button  className="editButtonModal" onClick={this.toggle}>
+                    Edit Stay</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -91,15 +91,15 @@ class EditLodgingForm extends Component {
                                     value={this.state.stayDescription}
                                 />
                                 <ModalFooter>
-                                    <Button
+                                    <button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingStay}
-                                        className="button"
-                                    >Save Accommodation</Button>
+                                        className="submitButton"
+                                    >Save Stay</button>
                                     {" "}
-                                    < Button className="buttonl" onClick={this.toggle} >
+                                    <button className="cancelButton" onClick={this.toggle} >
                                         Cancel
-                                     </Button >
+                                     </button >
                                 </ModalFooter >
                             </fieldset>
                         </form>

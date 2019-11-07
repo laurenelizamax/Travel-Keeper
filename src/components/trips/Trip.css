@@ -1,21 +1,102 @@
 @import url("https://fonts.googleapis.com/css?family=Cinzel|Montserrat&display=swap");
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Cinzel", serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
 }
 p {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-input {
-    font-family: "Montserrat", sans-serif;
+input, textarea {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  padding-top: 5px;
+  margin-left: 5px;
 }
 label {
-    font-family: "Montserrat", sans-serif;
-}
-textarea {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 .modalHeader {
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+.addButtonModal {
+  font-family: "Montserrat", sans-serif;
+  background-color: #015939;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+.editButtonModal {
+  font-family: "Montserrat", sans-serif;
+  background-color: #027272;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  max-width: 140px;
+}
+
+.tripDetailsButton {
+  background-color: #03343f;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
+.profileButton {
+  background-color: #03343f;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+}
+.cancelButton {
+  font-family: "Montserrat", sans-serif;
+  background-color: #032226;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  max-width: 155px;
+}
+.submitButton {
+  font-family: "Montserrat", sans-serif;
+  background-color: #015939;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  max-width: 155px;
+}
+.deleteButton {
+  font-family: "Montserrat", sans-serif;
+  background-color: #032226;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  max-width: 155px;
+}
+.detailsButton {
+  background-color: #03343f;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 5px;
 }

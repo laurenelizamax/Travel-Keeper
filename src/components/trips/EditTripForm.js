@@ -69,8 +69,8 @@ class EditTripForm extends Component {
         return (
             <>
                 {" "}
-                <Button className="button" color="success" onClick={this.toggle}>
-                    Edit Trip</Button>
+                <button className="editButtonModal"  onClick={this.toggle}>
+                    Edit Trip</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -119,14 +119,14 @@ class EditTripForm extends Component {
                                     value={this.state.notes}
                                 />
                                 <ModalFooter>
-                                    <Button type="button" disabled={this.state.loadingStatus}
+                                    <button type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingTrip}
-                                        className="button"
-                                    >Save Trip</Button>
+                                        className="submitButton"
+                                    >Save Trip</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>
