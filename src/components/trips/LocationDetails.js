@@ -7,6 +7,7 @@ import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
 import { Button } from "reactstrap"
+import "./Trip.css"
 
 class LocationDetails extends Component {
 
@@ -128,12 +129,12 @@ class LocationDetails extends Component {
     render() {
         return (
             <>
-                <Button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Go to Profile</Button>
+                <button type="button" className="profileButton"
+                    onClick={() => { this.props.history.push("/") }}>Go to Profile</button>
 
-                <Button type="button" className="cardButton"
+                <button type="button" className="tripDetailsButton"
                     onClick={() => { this.props.history.push(`/trips/${this.state.place.tripId}`) }}>
-                    Back to Trip Details</Button>
+                    Back to Trip Details</button>
 
                 <AddLodging  {...this.props} getData={this.getData} />
 
@@ -143,8 +144,9 @@ class LocationDetails extends Component {
 
                 <div className="card">
                     <div className="card-content">
-                        <p>Location: {this.state.place.placeName}</p>
-                        <p>Description: {this.state.place.placeDescription}</p>
+                        <h4>Location Details</h4>
+                        <p><strong>Location:</strong> {this.state.place.placeName}</p>
+                        <p><strong>Description:</strong> {this.state.place.placeDescription}</p>
                     </div>
                 </div>
 
@@ -152,10 +154,11 @@ class LocationDetails extends Component {
                     <div className="card-content">
                         {this.state.accommodations.map(accommodation =>
                             <div key={accommodation.id}>
-                                <p>Accommodations: {accommodation.stayName}</p>
-                                <p>Description: {accommodation.stayDescription}</p>
+                                <h5>Where You Stayed</h5>
+                                <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
+                                <p><strong>Description:</strong> {accommodation.stayDescription}</p>
                                 <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
-                                <Button color="danger" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Accommodation</Button>
+                                <button className="deleteButton" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Stay</button>
                             </div>
                         )}
                     </div>
@@ -165,10 +168,11 @@ class LocationDetails extends Component {
                     <div className="card-content">
                         {this.state.activities.map(activity =>
                             <div key={activity.id}>
-                                <p>Activites: {activity.activityName}</p>
-                                <p>Description: {activity.activityDescription}</p>
+                                <h5>What You Did</h5>
+                                <p><strong>Activity:</strong> {activity.activityName}</p>
+                                <p><strong>Description:</strong> {activity.activityDescription}</p>
                                 <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
-                                <Button color="danger" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</Button>
+                                <button className="deleteButton" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</button>
 
                             </div>
                         )}
@@ -179,10 +183,11 @@ class LocationDetails extends Component {
                     <div className="card-content">
                         {this.state.transportations.map(transportation =>
                             <div key={transportation.id}>
-                                <p>Transportation: {transportation.transportationName}</p>
-                                <p>Description: {transportation.transportationDescription}</p>
+                                <h5>How You Got There</h5>
+                                <p><strong>Transportation: </strong>{transportation.transportationName}</p>
+                                <p><strong>Description:</strong> {transportation.transportationDescription}</p>
                                 <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
-                                <Button color="danger" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transportation</Button>
+                                <button  className="deleteButton" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transport</button>
                             </div>
                         )}
                     </div>

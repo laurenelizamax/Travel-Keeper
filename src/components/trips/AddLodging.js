@@ -3,6 +3,7 @@ import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class AddLodging extends Component {
@@ -64,14 +65,14 @@ class AddLodging extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="addAccommodations" onClick={this.toggle} >
-                    Add Accommodation</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add Accommodation</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    < ModalHeader toggle={this.toggle} close={closeBtn} >
+                    < ModalHeader  className="modalHeader" toggle={this.toggle} close={closeBtn} >
                         Add Accommodation
 					</ModalHeader >
                     <ModalBody>
@@ -97,15 +98,15 @@ class AddLodging extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new location*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="cardButton"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewStay}
-                                    >Add Accommodation</Button>
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    >Save Stay</button>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                    </Button>
+                                    </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

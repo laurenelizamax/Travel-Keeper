@@ -3,6 +3,7 @@ import APIManager from "../../modules/APIManager"
 import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 
@@ -68,8 +69,8 @@ class TripAddForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="addTrip" onClick={this.toggle} >
-                    Add A Trip</Button>
+                <button  className="addButtonModal" onClick={this.toggle} >
+                    Add A Trip</button>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -119,14 +120,13 @@ class TripAddForm extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new trip*/}
-                                    <Button
+                                    <Button className="button"
                                         type="submit"
-                                        className="cardButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTrip}
                                     >Add A Trip</Button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <Button className="button" onClick={this.toggle}>
                                         Cancel
                                     </Button>
                                 </ModalFooter>

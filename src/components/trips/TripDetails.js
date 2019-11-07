@@ -6,6 +6,8 @@ import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
 import EditTravelersForm from "./EditTravelersForm"
 import { Button } from "reactstrap"
+import "./TripList.css"
+import "./Trip.css"
 
 class TripDetails extends Component {
 
@@ -91,8 +93,8 @@ class TripDetails extends Component {
     render() {
         return (
             <>
-                <Button type="button" className="cardButton"
-                    onClick={() => { this.props.history.push("/") }}>Back to Profile</Button>
+                <button type="button" className="profileButton"
+                    onClick={() => { this.props.history.push("/") }}>Back to Profile</button>
 
                 <AddTravelers {...this.props} getData={this.getData} />
 
@@ -101,25 +103,24 @@ class TripDetails extends Component {
                 <div className="card">
                     <div className="card-content">
                         <div>
-                            <h4>Title: {this.state.trip.title}</h4>
-                            <p>Start Date: {this.state.trip.startDate}</p>
-                            <p>End Date: {this.state.trip.endDate}</p>
-                            <p>Notes: {this.state.trip.notes}</p>
+                            <h4><strong>Title: </strong>{this.state.trip.title}</h4>
+                            <p><strong>Start Date: </strong>{this.state.trip.startDate}</p>
+                            <p><strong>End Date: </strong>{this.state.trip.endDate}</p>
+                            <p><strong>Notes:</strong> {this.state.trip.notes}</p>
                             <EditTripForm {...this.props} getData={this.getData} />
                         </div>
                         {this.state.fellowTravelers.map(fellowTraveler =>
                             <div key={fellowTraveler.id}>
-                                <p>Fellow Travelers: {fellowTraveler.travelerName}</p>
+                                <p><strong>Fellow Traveler: </strong>{fellowTraveler.travelerName}</p>
                                 <EditTravelersForm fellowTravelerId={fellowTraveler.id} {...this.props} getData={this.getData} />
-                                <Button color="danger" type="button" onClick={() =>
-                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</Button>
+                                <button className="deleteButton" type="button" onClick={() =>
+                                    this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</button>
                             </div>
                         )}
                     </div>
                 </div>
 
-                <div className="card">
-                    <div className="card-content">
+               
                         {this.state.places.map(place =>
                             <div key={place.id}>
                                 <PlaceCard
@@ -131,8 +132,7 @@ class TripDetails extends Component {
                                 />
                             </div>
                         )}
-                    </div>
-                </div>
+                
 
             </>
         )

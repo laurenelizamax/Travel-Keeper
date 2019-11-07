@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class EditActivityForm extends Component {
@@ -60,14 +61,14 @@ class EditActivityForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="editActivity" onClick={this.toggle}>
-                    Edit Activity</Button>
+                <button  className="editButtonModal" onClick={this.toggle}>
+                    Edit Activity</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Edit Activity
 					</ModalHeader>
                     <ModalBody>
@@ -93,15 +94,15 @@ class EditActivityForm extends Component {
                                 />
                                 <ModalFooter>
 
-                                    <Button
+                                    <button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingActivity}
-                                        className="btn btn-primary"
-                                    >Save Activity</Button>
+                                        className="submitButton"
+                                    >Save Activity</button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

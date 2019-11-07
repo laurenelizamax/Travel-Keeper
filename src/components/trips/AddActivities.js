@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class AddActivities extends Component {
@@ -63,14 +63,14 @@ class AddActivities extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="addTraveler" onClick={this.toggle} >
-                    Add An Activity</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add An Activity</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Add An Activity
                 </ModalHeader>
                     <ModalBody>
@@ -85,6 +85,7 @@ class AddActivities extends Component {
                                     id="activityName"
                                     placeholder="Activities"
                                 />
+                                <br></br>
                                 {/* Activities Description input*/}
                                 <label htmlFor="activityDescription">Activity Description:</label>
                                 <textarea
@@ -96,16 +97,16 @@ class AddActivities extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new activity*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="cardButton"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewActivity}
-                                    >Add An Activity</Button>
+                                    >Add An Activity</button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                    </Button>
+                                    </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

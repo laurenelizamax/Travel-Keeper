@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./TripForm.css"
-// import { Link } from "react-router-dom"
+import "./Trip.css"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
@@ -65,14 +64,14 @@ class AddLocation extends Component {
         return (
             <>
                 {" "}
-                <Button color="info" className="edit" onClick={this.toggle} >
-                    Add Location</Button>
+                <button className="addButtonModal" onClick={this.toggle} >
+                    Add Location</button>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                        <ModalHeader toggle={this.toggle} close={closeBtn}>
+                        <ModalHeader className="modalHeader" toggle={this.toggle} close={closeBtn}>
                             Add Location
 					</ModalHeader>
                     <ModalBody>
@@ -87,6 +86,7 @@ class AddLocation extends Component {
                                     id="placeName"
                                     placeholder="Location"
                                 />
+                                <br></br>
                                 {/* Location Description input*/}
                                 <label htmlFor="placeDescription">Location Description:</label>
                                 <textarea
@@ -99,16 +99,16 @@ class AddLocation extends Component {
                                 <ModalFooter>
 
                                     {/* Button to create new location*/}
-                                    <Button
+                                    <button
                                         type="submit"
-                                        className="cardButton"
+                                        className="submitButton"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewLocation}
-                                    >Add Location</Button>
+                                    >Add Location</button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                   </Button>
+                                   </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

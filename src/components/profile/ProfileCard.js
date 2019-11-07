@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import LogRegManager from "../../modules/LogRegManager"
+import "./Profile.css"
 
 class ProfileCard extends Component {
     state = {
@@ -26,8 +27,8 @@ class ProfileCard extends Component {
     render() {
         return (
             <>{this.state.loaded &&
-                <div className="card">
-                    <div className="card-content">
+                // <div className="card">
+                    <div>
                         <h1>My Profile</h1>
                         <div>
                             <p>Name: {this.state.name}</p>
@@ -35,7 +36,7 @@ class ProfileCard extends Component {
                             <p>Dream Destination: {this.state.dreamTrip}</p>
                         </div>
                     </div>
-                </div>
+                // </div>
             }
             </>
         )

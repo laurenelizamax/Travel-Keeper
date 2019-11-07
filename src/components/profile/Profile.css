@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Montserrat&display=swap");
+
+h1 {
+    font-family: "Cinzel", serif;
+}
+p {
+    font-family: "Montserrat", sans-serif;
+}
+.button {
+    font-family: "Montserrat", sans-serif;
+}

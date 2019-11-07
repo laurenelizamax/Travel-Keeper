@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import "./Trip.css"
 
 
 class EditTravelersForm extends Component {
@@ -57,14 +58,14 @@ class EditTravelersForm extends Component {
         return (
             <>
                 {" "}
-                <Button color="success" className="addTraveler" onClick={this.toggle}>
-                    Edit Traveler</Button>
+                <button  className="editButtonModal" onClick={this.toggle}>
+                    Edit Traveler</button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                     className={this.props.className}
                 >
-                    <ModalHeader toggle={this.toggle} close={closeBtn}>
+                    <ModalHeader  className="modalHeader" toggle={this.toggle} close={closeBtn}>
                         Edit Traveler
 					</ModalHeader>
                     <ModalBody>
@@ -80,15 +81,15 @@ class EditTravelersForm extends Component {
                                     value={this.state.travelerName}
                                 />
                                 <ModalFooter>
-                                    <Button
-                                        type="button" disabled={this.state.loadingStatus}
+                                    <button
+                                        type="submit" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingTraveler}
-                                        className="btn btn-primary"
-                                    >Save Traveler</Button>
+                                        className="submitButton"
+                                              >Save Traveler</button>
                                     {" "}
-                                    <Button className="cancel" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>

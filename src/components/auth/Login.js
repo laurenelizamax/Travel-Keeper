@@ -6,7 +6,6 @@ import "./LogReg.css"
 // import Register from './Register'
 
 
-
 class Login extends Component {
     state = {
         email: "",
