@@ -78,7 +78,7 @@ class AddActivities extends Component {
                             <fieldset>
                                 {/* Activities input*/}
                                 <label htmlFor="activityName">Activity:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
@@ -87,7 +87,7 @@ class AddActivities extends Component {
                                 />
                                 {/* Activities Description input*/}
                                 <label htmlFor="activityDescription">Activity Description:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}

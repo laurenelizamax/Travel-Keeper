@@ -74,7 +74,7 @@ class EditActivityForm extends Component {
                         <form>
                             <fieldset>
                                 <label htmlFor="activityName">Activity: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"
@@ -83,7 +83,7 @@ class EditActivityForm extends Component {
                                     value={this.state.activityName}
                                 />
                                 <label htmlFor="activityDescription">Activity Description: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"

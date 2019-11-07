@@ -34,7 +34,6 @@ class Register extends Component {
         let email = this.state.regEmail;
         let userPlace = this.state.userPlace;
         let dreamTrip = this.state.dreamTrip;
-        // starting the if statement
         if  (name === "") {
             alert('Please enter a valid Email.');
         } 
@@ -65,7 +64,7 @@ class Register extends Component {
         return (
             <>
                 {" "}
-                <Button className="addTraveler" onClick={this.toggle} >
+                <Button className="regModalBtn" onClick={this.toggle} >
                     Register</Button>
                 <Modal
                     isOpen={this.state.modal}
@@ -76,7 +75,7 @@ class Register extends Component {
                         Register
 					</ModalHeader>
                     <ModalBody>
-                        <div className="logRegForm">
+                        <div>
                             <form onSubmit={this.handleRegistration}>
                                 <label htmlFor="regName">Name:</label>
                                 <input onChange={this.handleFieldChange} type="text"

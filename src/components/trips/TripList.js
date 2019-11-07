@@ -12,6 +12,7 @@ class TripList extends Component {
         loadingStatus: false
     }
 
+
     deleteTrip = id => {
         APIManager.delete(id)
             .then(() => {
@@ -45,10 +46,8 @@ class TripList extends Component {
                 getData={this.getData}
                 activeUser={this.props.activeUser} 
                 {...this.props} />
-                    {/* <button type="button"
-                        className="formButton"
-                        onClick={() => { this.props.history.push("/trip/new") }}>Add A Trip</button> */}
                 </div>
+
                 <div className="container-cards">
                     {this.state.trips.map(trip =>
 

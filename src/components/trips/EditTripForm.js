@@ -108,7 +108,7 @@ class EditTripForm extends Component {
                                     value={this.state.endDate}
                                 />
                                 <label htmlFor="notes">Notes: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"

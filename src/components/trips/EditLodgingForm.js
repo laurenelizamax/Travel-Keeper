@@ -72,7 +72,7 @@ class EditLodgingForm extends Component {
                         <form>
                             <fieldset>
                                 <label htmlFor="stayName">Accommodation: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"
@@ -81,7 +81,7 @@ class EditLodgingForm extends Component {
                                     value={this.state.stayName}
                                 />
                                 <label htmlFor="stayDescription">Accommodation Description: </label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     className="form-control"

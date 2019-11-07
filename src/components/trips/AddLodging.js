@@ -77,10 +77,9 @@ class AddLodging extends Component {
                     <ModalBody>
                         <form className="tripAddForm">
                             <fieldset>
-                                <h4>Add An Accommodation</h4>
                                 {/* Accommodations  input*/}
                                 <label htmlFor="stayName">Accommodation:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
@@ -89,7 +88,7 @@ class AddLodging extends Component {
                                 />
                                 {/* Accommodations Description input*/}
                                 <label htmlFor="stayDescription">Accommodation Description:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}

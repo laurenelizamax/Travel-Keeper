@@ -80,7 +80,7 @@ class AddLocation extends Component {
                             <fieldset>
                                 {/* Location  input*/}
                                 <label htmlFor="placeName">Location:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
@@ -89,7 +89,7 @@ class AddLocation extends Component {
                                 />
                                 {/* Location Description input*/}
                                 <label htmlFor="placeDescription">Location Description:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}

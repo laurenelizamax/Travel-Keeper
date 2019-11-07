@@ -110,7 +110,7 @@ class TripAddForm extends Component {
                                 />
                                 {/* Notes input*/}
                                 <label htmlFor="notes">Notes:</label>
-                                <input
+                                <textarea
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
