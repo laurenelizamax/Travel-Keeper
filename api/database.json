@@ -137,6 +137,14 @@
       "notes": "Sue's mom came with us!",
       "userId": 1,
       "id": 21
+    },
+    {
+      "id": 22,
+      "title": "new trip",
+      "startDate": "2019-11-06",
+      "endDate": "2019-11-20",
+      "notes": "ok?",
+      "userId": 1
     }
   ],
   "places": [
@@ -180,6 +188,18 @@
       "placeDescription": "now",
       "tripId": 19,
       "id": 19
+    },
+    {
+      "id": 20,
+      "placeName": "Paris",
+      "placeDescription": "Awesome",
+      "tripId": 22
+    },
+    {
+      "id": 21,
+      "placeName": "Paris",
+      "placeDescription": "went back to see everyone at Les Cedres",
+      "tripId": 1
     }
   ],
   "fellowTravelers": [
@@ -229,14 +249,19 @@
       "tripId": 20
     },
     {
-      "travelerName": "Ashley",
-      "tripId": 1,
-      "id": 30
+      "travelerName": "Erika",
+      "id": 30,
+      "tripId": 1
     },
     {
       "travelerName": "Steph",
       "tripId": 19,
       "id": 31
+    },
+    {
+      "travelerName": "Dylan",
+      "id": 33,
+      "tripId": 22
     }
   ],
   "accommodations": [
@@ -287,6 +312,24 @@
       "stayDescription": "sdfsfsd",
       "placeId": 19,
       "id": 20
+    },
+    {
+      "id": 21,
+      "stayName": "Les Cedres",
+      "stayDescription": "cheap!",
+      "placeId": 20
+    },
+    {
+      "id": 22,
+      "stayName": "Les Cedres",
+      "stayDescription": "got to stay in a room at a discount rate",
+      "placeId": 21
+    },
+    {
+      "stayName": "Airbnb",
+      "stayDescription": "We also rented an airbnb in Paris",
+      "placeId": 21,
+      "id": 23
     }
   ],
   "transportations": [
@@ -325,6 +368,18 @@
       "transportationDescription": "sdfsd",
       "placeId": 19,
       "id": 10
+    },
+    {
+      "transportationName": "metro",
+      "transportationDescription": "fast",
+      "placeId": 20,
+      "id": 12
+    },
+    {
+      "id": 13,
+      "transportationName": "Air Canada and British Air",
+      "transportationDescription": "flew to Toronto on Air Canada and then to London on British Airways",
+      "placeId": 21
     }
   ],
   "activities": [
@@ -381,6 +436,18 @@
       "activityDescription": "sdfsd",
       "placeId": 19,
       "id": 17
+    },
+    {
+      "activityName": "la tour eiffel",
+      "activityDescription": "high up",
+      "placeId": 20,
+      "id": 19
+    },
+    {
+      "id": 20,
+      "activityName": "We went to Chez Papa",
+      "activityDescription": "It was just as delicious as I remember",
+      "placeId": 21
     }
   ]
 }

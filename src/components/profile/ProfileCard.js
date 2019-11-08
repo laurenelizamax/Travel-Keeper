@@ -31,9 +31,9 @@ class ProfileCard extends Component {
                     <div>
                         <h1>My Profile</h1>
                         <div>
-                            <p>Name: {this.state.name}</p>
-                            <p>Location: {this.state.userPlace}</p>
-                            <p>Dream Destination: {this.state.dreamTrip}</p>
+                            <h6><strong>Name:</strong> {this.state.name}</h6>
+                            <h6><strong>Location: </strong>{this.state.userPlace}</h6>
+                            <h6><strong>Dream Destination:</strong> {this.state.dreamTrip}</h6>
                         </div>
                     </div>
                 // </div>

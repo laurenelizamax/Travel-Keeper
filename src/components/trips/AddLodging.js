@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"

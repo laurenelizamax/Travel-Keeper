@@ -100,3 +100,13 @@ label {
   padding: 8px;
   margin-right: 5px;
 }
+    h6 {
+        text-align: center;
+    }
+     .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+  }

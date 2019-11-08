@@ -6,7 +6,7 @@ import AddTransportation from "./AddTransportation"
 import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
-import { Button } from "reactstrap"
+// import { Button } from "reactstrap"
 import "./Trip.css"
 
 class LocationDetails extends Component {
@@ -150,10 +150,10 @@ class LocationDetails extends Component {
                     </div>
                 </div>
 
-                <div className="card">
-                    <div className="card-content">
+                {/* <div className="card">
+                    <div className="card-content"> */}
                         {this.state.accommodations.map(accommodation =>
-                            <div key={accommodation.id}>
+                            <div  className="card" key={accommodation.id}>
                                 <h5>Where You Stayed</h5>
                                 <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
                                 <p><strong>Description:</strong> {accommodation.stayDescription}</p>
@@ -161,13 +161,13 @@ class LocationDetails extends Component {
                                 <button className="deleteButton" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Stay</button>
                             </div>
                         )}
-                    </div>
-                </div>
+                    {/* </div>
+                </div> */}
 
-                <div className="card">
-                    <div className="card-content">
+                {/* <div className="card">
+                    <div className="card-content"> */}
                         {this.state.activities.map(activity =>
-                            <div key={activity.id}>
+                            <div className="card" key={activity.id}>
                                 <h5>What You Did</h5>
                                 <p><strong>Activity:</strong> {activity.activityName}</p>
                                 <p><strong>Description:</strong> {activity.activityDescription}</p>
@@ -176,13 +176,13 @@ class LocationDetails extends Component {
 
                             </div>
                         )}
-                    </div>
-                </div>
+                    {/* </div>
+                </div> */}
 
-                <div className="card">
-                    <div className="card-content">
+                {/* <div className="card">
+                    <div className="card-content"> */}
                         {this.state.transportations.map(transportation =>
-                            <div key={transportation.id}>
+                            <div className="card" key={transportation.id}>
                                 <h5>How You Got There</h5>
                                 <p><strong>Transportation: </strong>{transportation.transportationName}</p>
                                 <p><strong>Description:</strong> {transportation.transportationDescription}</p>
@@ -190,8 +190,8 @@ class LocationDetails extends Component {
                                 <button  className="deleteButton" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transport</button>
                             </div>
                         )}
-                    </div>
-                </div>
+                    {/* </div>
+                </div> */}
 
             </>
         )

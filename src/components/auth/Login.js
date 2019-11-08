@@ -52,11 +52,13 @@ class Login extends Component {
                             id="email"
                             placeholder="Email"
                             required="" autoFocus="" />
+                            <br></br>
                         <label htmlFor="password">Password:</label>
                         <input onChange={this.handleFieldChange} type="password"
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
+                            <br></br>
                         <Button className="logBtn" type="submit">Login</Button>
                   
                 {/* <Register

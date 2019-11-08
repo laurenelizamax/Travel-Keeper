@@ -6,19 +6,28 @@ h1 {
 p {
     font-family: "Montserrat", sans-serif;
 }
-.button {
+.tripAddButton {
     font-family: "Montserrat", sans-serif;
-}
+    background-color: #015939;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    margin-left: 500px;
+    max-width: 155px;
+    /* display: flex;
+    align-content: center; */
+  }
 .card {
-    display: flex;
-    flex-direction: row;
     /* Add shadows to create the "card" effect */
     transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px;
     background:white;
-    margin-bottom: 2em;
-    flex: 0 1 24%;
+    margin-bottom: 1.5em;
+    /* flex: 0 1 24%; */
     width: 30%;
+ text-align: left;
   }
   
   .card-content {
@@ -30,6 +39,18 @@ p {
     color:black;
   }
 
-  /* .card button:hover {
-    background-color:#146173;
+  .tripAddButton:hover {
+    background-color: #027272;
+  }
+  /* .container {
+      display: flex;
+      align-content: center;
   } */
+  .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
