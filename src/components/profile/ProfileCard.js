@@ -11,10 +11,8 @@ class ProfileCard extends Component {
         loaded: false
     }
     componentDidMount = () => {
-        // console.log("profilecard" ,this.props.activeUser)
         LogRegManager.getUserProfile(this.props.activeUser)
             .then((res) => {
-                // console.log("res", res)
                 this.setState({ 
                     name: res.name,
                     userPlace: res.userPlace,
@@ -29,7 +27,7 @@ class ProfileCard extends Component {
             <>{this.state.loaded &&
                 // <div className="card">
                     <div>
-                        <h1>My Profile</h1>
+                        <h1>Profile</h1>
                         <div>
                             <h6><strong>Name:</strong> {this.state.name}</h6>
                             <h6><strong>Location: </strong>{this.state.userPlace}</h6>

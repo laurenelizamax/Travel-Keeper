@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./Trip.css"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
 
@@ -49,12 +49,6 @@ class AddTravelers extends Component {
                     this.props.getData()
                     this.setState({ loadingStatus: false });
                 })
-            // .then(() => {this.props.history.push("/")});
-            // .then(() => {
-            //     this.setState({
-            //     })
-            //     console.log("userId2", this.state.userId);
-            // })
         }
     }
 

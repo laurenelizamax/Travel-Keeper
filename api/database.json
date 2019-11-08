@@ -69,9 +69,9 @@
     {
       "id": 1,
       "title": "Europe Trip",
-      "startDate": "2019-11-07",
-      "endDate": "2019-11-12",
-      "notes": "Great Trip!",
+      "startDate": "2008-07-01",
+      "endDate": "2008-07-31",
+      "notes": "Backpacking Trip through Europe with Lauren K.",
       "userId": 1
     },
     {
@@ -115,14 +115,6 @@
       "userId": 9
     },
     {
-      "title": "Beach Trip with Steph",
-      "startDate": "2019-07-03",
-      "endDate": "2019-07-05",
-      "notes": "We took the dogs too!",
-      "userId": 1,
-      "id": 19
-    },
-    {
       "id": 20,
       "title": "Bali",
       "startDate": "2019-10-31",
@@ -140,11 +132,27 @@
     },
     {
       "id": 22,
-      "title": "new trip",
-      "startDate": "2019-11-06",
-      "endDate": "2019-11-20",
-      "notes": "ok?",
+      "title": "Toronto Trip ",
+      "startDate": "2017-08-04",
+      "endDate": "2017-08-11",
+      "notes": "I went to visit Erika in Toronto!",
       "userId": 1
+    },
+    {
+      "id": 23,
+      "title": "New York",
+      "startDate": "2014-05-22",
+      "endDate": "2014-05-27",
+      "notes": "We didn't make it to the Statue of Liberty or to the Empire State Building so those are definitely things I want to see next trip!",
+      "userId": 1
+    },
+    {
+      "title": "Boston Trip",
+      "startDate": "2015-05-21",
+      "endDate": "2015-05-27",
+      "notes": "I got to see Boston and catch up with Renee!",
+      "userId": 1,
+      "id": 24
     }
   ],
   "places": [
@@ -178,28 +186,34 @@
       "id": 16
     },
     {
-      "id": 17,
-      "placeName": "Gulf Shores",
-      "placeDescription": "Alabama ",
-      "tripId": 19
-    },
-    {
-      "placeName": "here",
-      "placeDescription": "now",
-      "tripId": 19,
-      "id": 19
-    },
-    {
       "id": 20,
-      "placeName": "Paris",
-      "placeDescription": "Awesome",
+      "placeName": "Toronto",
+      "placeDescription": "It was a bit hot in August but still enjoyable.",
       "tripId": 22
     },
     {
       "id": 21,
       "placeName": "Paris",
-      "placeDescription": "went back to see everyone at Les Cedres",
+      "placeDescription": "Lauren K. met me in Paris when I was finishing up the school year at Les Cedres.",
       "tripId": 1
+    },
+    {
+      "placeName": "Gulf Shores,Alabama",
+      "placeDescription": "I wanted to go back to the beach before school started.",
+      "tripId": 21,
+      "id": 22
+    },
+    {
+      "placeName": "New York City!",
+      "placeDescription": "First time visiting the Big Apple.",
+      "tripId": 23,
+      "id": 23
+    },
+    {
+      "placeName": "Boston",
+      "placeDescription": "We went for Memorial Day",
+      "tripId": 24,
+      "id": 24
     }
   ],
   "fellowTravelers": [
@@ -234,11 +248,6 @@
       "tripId": 18
     },
     {
-      "travelerName": "Kaia",
-      "id": 26,
-      "tripId": 19
-    },
-    {
       "travelerName": "Catwoman",
       "tripId": 20,
       "id": 28
@@ -254,14 +263,19 @@
       "tripId": 1
     },
     {
-      "travelerName": "Steph",
-      "tripId": 19,
-      "id": 31
+      "travelerName": "Matthew",
+      "tripId": 23,
+      "id": 35
     },
     {
-      "travelerName": "Dylan",
-      "id": 33,
-      "tripId": 22
+      "travelerName": "Karmen",
+      "tripId": 23,
+      "id": 36
+    },
+    {
+      "travelerName": "Matthew",
+      "tripId": 24,
+      "id": 37
     }
   ],
   "accommodations": [
@@ -304,32 +318,44 @@
     {
       "id": 18,
       "stayName": "The Pink House",
-      "stayDescription": "I slept in the heart room",
+      "stayDescription": "I slept in the heart room.",
       "placeId": 17
     },
     {
-      "stayName": "dfdsdf",
-      "stayDescription": "sdfsfsd",
-      "placeId": 19,
-      "id": 20
-    },
-    {
       "id": 21,
-      "stayName": "Les Cedres",
-      "stayDescription": "cheap!",
+      "stayName": "Erika's apartment",
+      "stayDescription": "I stayed with Erika and her mom and their apartment in Toronto.",
       "placeId": 20
     },
     {
       "id": 22,
       "stayName": "Les Cedres",
-      "stayDescription": "got to stay in a room at a discount rate",
+      "stayDescription": "I was living there, so I got her a cheap room.",
       "placeId": 21
     },
     {
-      "stayName": "Airbnb",
-      "stayDescription": "We also rented an airbnb in Paris",
-      "placeId": 21,
+      "stayName": "We stayed at the Pink House",
+      "stayDescription": "I got the same room again but no dogs this time.",
+      "placeId": 22,
       "id": 23
+    },
+    {
+      "stayName": "Matthew's Friend's Apartment ",
+      "stayDescription": "We stayed most of the trip in Matthew's friend's apartment in Hell's Kitchen. It was great except they had a cat.",
+      "placeId": 23,
+      "id": 24
+    },
+    {
+      "stayName": "Hostel in the Bronx",
+      "stayDescription": "When Karmen came we moved to a hostel in the Bronx. Very quiet area and seemed more low key.",
+      "placeId": 23,
+      "id": 25
+    },
+    {
+      "stayName": "Renee's Apartment",
+      "stayDescription": "Matthew and I stayed with Renee",
+      "placeId": 24,
+      "id": 26
     }
   ],
   "transportations": [
@@ -364,22 +390,28 @@
       "placeId": 17
     },
     {
-      "transportationName": "fsdfds",
-      "transportationDescription": "sdfsd",
-      "placeId": 19,
-      "id": 10
-    },
-    {
-      "transportationName": "metro",
-      "transportationDescription": "fast",
-      "placeId": 20,
-      "id": 12
+      "id": 12,
+      "transportationName": "Airplane",
+      "transportationDescription": "I flew air canada.",
+      "placeId": 20
     },
     {
       "id": 13,
-      "transportationName": "Air Canada and British Air",
-      "transportationDescription": "flew to Toronto on Air Canada and then to London on British Airways",
+      "transportationName": "Metro",
+      "transportationDescription": "We took the Metro around Paris and the RER C to get into the city.",
       "placeId": 21
+    },
+    {
+      "transportationName": "Cars",
+      "transportationDescription": "We drove Sue's car from Nashville to Birmingham and then met her mom and took her car to Gulf Shores.",
+      "placeId": 22,
+      "id": 14
+    },
+    {
+      "transportationName": "Airplane",
+      "transportationDescription": "Matthew and I flew into Boston",
+      "placeId": 24,
+      "id": 15
     }
   ],
   "activities": [
@@ -432,22 +464,76 @@
       "id": 15
     },
     {
-      "activityName": "dsfsf",
-      "activityDescription": "sdfsd",
-      "placeId": 19,
-      "id": 17
-    },
-    {
-      "activityName": "la tour eiffel",
-      "activityDescription": "high up",
-      "placeId": 20,
-      "id": 19
+      "id": 19,
+      "activityName": "Niagara Falls!",
+      "activityDescription": "Every trip to Toronto Erika makes sure she takes me to Niagara Falls. ",
+      "placeId": 20
     },
     {
       "id": 20,
-      "activityName": "We went to Chez Papa",
-      "activityDescription": "It was just as delicious as I remember",
+      "activityName": "La Tour Eiffel",
+      "activityDescription": "We went to see the Eiffel Tower. We did not pay to go up though as it was very expensive.",
       "placeId": 21
+    },
+    {
+      "activityName": "Souvenir Shopping!",
+      "activityDescription": "We went shopping at Alvin's Island which had great prices on souvenirs. ",
+      "placeId": 22,
+      "id": 21
+    },
+    {
+      "activityName": "Island Grill",
+      "activityDescription": "This is probably my favorite restaurant in Gulf Shores. We went there twice on this trip.",
+      "placeId": 22,
+      "id": 22
+    },
+    {
+      "activityName": "St. Jacob's",
+      "activityDescription": "There's this awesome town and market called St. Jacob's that we always go to. I got some cool earrings there this year.",
+      "placeId": 20,
+      "id": 23
+    },
+    {
+      "activityName": "Niagara on the lakes",
+      "activityDescription": "This quaint little town is amazing! Lots of cute houses and fun unique stores. Its a fun walking experience. I think I like going there as much as I like going to Niagara Falls.",
+      "placeId": 20,
+      "id": 24
+    },
+    {
+      "activityName": "The Met",
+      "activityDescription": "Karmen and I went to the Met which was very cool. We went quickly through it all.",
+      "placeId": 23,
+      "id": 25
+    },
+    {
+      "activityName": "Brooklyn Bridge",
+      "activityDescription": "We walked across the Brooklyn Bridge and then got pizza in Brooklyn. After seeing the bridge in so many movies it was really great to see it in person!",
+      "placeId": 23,
+      "id": 26
+    },
+    {
+      "activityName": "MoMA",
+      "activityDescription": "We went to The MoMA which was super fun and kinda crazy. I like modern art but Matthew wasn't impressed.",
+      "placeId": 23,
+      "id": 27
+    },
+    {
+      "activityName": "The High Line",
+      "activityDescription": "One of my favorite activities was walking on the high line in NYC. Its right on the river and a gorgeous view at night.",
+      "placeId": 23,
+      "id": 28
+    },
+    {
+      "activityName": "RAN A HALF MARATHON!!",
+      "activityDescription": "I got to run my first half marathon in Boston's Run to Remember on Memorial Day weekend!!",
+      "placeId": 24,
+      "id": 29
+    },
+    {
+      "activityName": "Harvard",
+      "activityDescription": "We all went to Harvard which was super fun! Very cool old buildings.",
+      "placeId": 24,
+      "id": 30
     }
   ]
 }

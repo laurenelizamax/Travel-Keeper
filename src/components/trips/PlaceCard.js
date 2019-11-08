@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Link } from "react-router-dom"
 import EditLocationForm from "./EditLocationForm"
-// import { Button } from "reactstrap"
 import "./Trip.css"
 
 
@@ -39,8 +38,6 @@ class PlaceCard extends Component {
     render() {
         return (
             <>
-                <div className="card">
-                    <div className="card-content">
                         <h4>Location Details</h4>
                         <p><strong>Location: </strong>{this.props.place.placeName}</p>
                         <p><strong>Description: </strong>{this.props.place.placeDescription}</p>
@@ -53,12 +50,7 @@ class PlaceCard extends Component {
 
                         <Link to={`/places/${this.props.placeId}`}><button className="detailsButton"> Location Details</button></Link>
 
-                    </div>
-                </div>
-
-
-                <div className="card">
-                    <div className="card-content">
+              
                         {this.state.accommodations.map(accommodation =>
                             <div key={accommodation.id}>
                                 <h5>Where You Stayed</h5>
@@ -66,11 +58,7 @@ class PlaceCard extends Component {
                                 <p><strong>Description: </strong>{accommodation.stayDescription}</p>
                             </div>
                         )}
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-content">
+             
                         {this.state.activities.map(activity =>
                             <div key={activity.id}>
                                 <h5>What You Did</h5>
@@ -78,11 +66,7 @@ class PlaceCard extends Component {
                                 <p><strong>Description:</strong> {activity.activityDescription}</p>
                             </div>
                         )}
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-content">
+               
                         {this.state.transportations.map(transportation =>
                             <div key={transportation.id}>
                                 <h5>How You Got There</h5>
@@ -91,8 +75,7 @@ class PlaceCard extends Component {
 
                             </div>
                         )}
-                    </div>
-                </div>
+                
             </>
         )
     }

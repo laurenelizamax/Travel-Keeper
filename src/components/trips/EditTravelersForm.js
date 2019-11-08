@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 
@@ -24,7 +24,6 @@ class EditTravelersForm extends Component {
     }
 
     updateExistingTraveler = evt => {
-        // console.log(this.props)
         evt.preventDefault()
         this.toggle();
         this.setState({ loadingStatus: true });
@@ -36,13 +35,10 @@ class EditTravelersForm extends Component {
 
         APIManager.updateTraveler(editedTraveler)
             .then(() => this.props.getData())
-        // console.log(editedTraveler)
     }
     componentDidMount() {
-        // console.log(this.props)
         APIManager.getOneTraveler(this.props.fellowTravelerId)
             .then(fellowTravelers => {
-                // console.log(fellowTravelers)
                 this.setState({
                     travelerName: fellowTravelers.travelerName,
                     loadingStatus: false
