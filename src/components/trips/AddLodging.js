@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-// import { Link } from "react-router-dom"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {  Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 
@@ -28,7 +27,6 @@ class AddLodging extends Component {
     componentDidMount() {
         APIManager.getTripAccommodations(2)
             .then((allStays) => {
-                // console.log(allStays)
                 this.setState({
                     accommodations: allStays
                 })
@@ -52,7 +50,6 @@ class AddLodging extends Component {
                     this.props.getData()
                     this.setState({ loadingStatus: false });
                 })
-            // .then(() => {this.props.history.push("/")});
         }
     }
 

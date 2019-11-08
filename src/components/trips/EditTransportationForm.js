@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 
@@ -41,7 +41,6 @@ class EditTransportationForm extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
         APIManager.getOneTransportation(this.props.transportationId)
             .then(transportations => {
                 this.setState({

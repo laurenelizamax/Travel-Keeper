@@ -6,7 +6,6 @@ import "./TripList.css"
 
 
 class TripList extends Component {
-    //define what this component needs to render
     state = {
         trips: [],
         activeUser: this.props.activeUser,

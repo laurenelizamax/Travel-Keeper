@@ -5,8 +5,6 @@ import AddLocation from "./AddLocation"
 import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
 import EditTravelersForm from "./EditTravelersForm"
-import { Button } from "reactstrap"
-// import "./TripList.css"
 import "./Trip.css"
 
 class TripDetails extends Component {
@@ -16,7 +14,6 @@ class TripDetails extends Component {
         places: [],
         fellowTravelers: [],
         fellowTraveler: "",
-        // loadingStatus: false,
         modal: false
     }
     componentDidMount() {
@@ -27,7 +24,6 @@ class TripDetails extends Component {
             })
             .then(() => APIManager.getTripPlaces(this.props.tripId)
                 .then((places) => {
-                    // console.log(places)
                     setNewState.places = places
                 })
             ).then(() => APIManager.getTripTravelers(this.props.tripId)
@@ -117,11 +113,11 @@ class TripDetails extends Component {
                                     this.deleteTraveler(fellowTraveler.id)}>Delete Traveler</button>
                             </div>
                         )}
-                    </div>
+                   </div>
                 </div>
 
-                {/* <div className="card">
-                    <div className="card-content"> */}
+                <div className="card">
+                    <div className="card-content">
                         {this.state.places.map(place =>
                             <div key={place.id}>
                                 <PlaceCard
@@ -133,8 +129,8 @@ class TripDetails extends Component {
                                 />
                             </div>
                         )}
-                {/* </div>
-                </div> */}
+                </div>
+                </div>
 
             </>
         )

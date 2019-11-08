@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 
@@ -28,7 +28,6 @@ class EditTripForm extends Component {
     }
 
     updateExistingTrip = evt => {
-        // console.log(this.props)
         evt.preventDefault()
         this.toggle();
         this.setState({ loadingStatus: true });
@@ -42,14 +41,12 @@ class EditTripForm extends Component {
         };
 
         APIManager.updateTrip(editedTrip)
-            // console.log(editedTrip)
             .then(() => this.props.getData())
     }
 
     componentDidMount() {
         APIManager.getTrip(this.props.tripId)
             .then(trip => {
-                // console.log(this.state.trip)
                 this.setState({
                     tripTitle: trip.title,
                     startDate: trip.startDate,

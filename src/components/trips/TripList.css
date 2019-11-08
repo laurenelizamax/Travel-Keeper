@@ -25,6 +25,7 @@ p {
     border-radius: 5px;
     background:white;
     margin-bottom: 1.5em;
+    padding-bottom: -20px;
     /* flex: 0 1 24%; */
     width: 30%;
  text-align: left;

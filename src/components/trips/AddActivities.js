@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-// import { Link } from "react-router-dom"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 
@@ -51,7 +50,6 @@ class AddActivities extends Component {
                     this.props.getData()
                     this.setState({ loadingStatus: false });
                 })
-            // .then(() => {this.props.history.push("/")});
         }
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./Trip.css"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 
 class AddLocation extends Component {
@@ -25,7 +25,6 @@ class AddLocation extends Component {
         this.setState(stateToChange);
     };
     componentDidMount() {
-        // console.log(this.props)
         APIManager.getTripPlaces()
             .then((allPlaces) => {
                 this.setState({
@@ -52,7 +51,6 @@ class AddLocation extends Component {
                     this.props.getData()
                     this.setState({ loadingStatus: false });
                 })
-            // .then(() => {this.props.history.push("/")});
         }
     }
 

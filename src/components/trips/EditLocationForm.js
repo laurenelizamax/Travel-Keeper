@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
 
 class EditLocationForm extends Component {
@@ -25,7 +25,6 @@ class EditLocationForm extends Component {
     }
 
     updateExistingLocation = evt => {
-        // console.log(this.props.placeId)
         evt.preventDefault()
         this.toggle();
         this.setState({ loadingStatus: true });
@@ -42,7 +41,6 @@ class EditLocationForm extends Component {
     componentDidMount() {
         APIManager.getOnePlace(this.props.placeId)
             .then(place => {
-                // console.log(this.state.trip)
                 this.setState({
                     placeName: place.placeName,
                     placeDescription: place.placeDescription,
@@ -94,15 +92,15 @@ class EditLocationForm extends Component {
                                     value={this.state.placeDescription}
                                 />
                                 <ModalFooter>
-                                    <Button
+                                    <button
                                         type="button" disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingLocation}
-                                        className="button"
-                                    >Save Location</Button>
+                                        className="submitButton"
+                                    >Save Location</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                     </Button>
+                                     </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>
