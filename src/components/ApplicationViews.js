@@ -4,8 +4,6 @@ import ProfileCard from "./profile/ProfileCard"
 // import FriendsList from "./friends/FriendsList"
 import TripList from "./trips/TripList"
 import TripDetails from "./trips/TripDetails"
-// import TripAddForm from "./trips/TripAddForm"
-import TripEditForm from "./trips/TripEditForm"
 import LocationDetails from "./trips/LocationDetails"
 
 class ApplicationViews extends Component {
@@ -37,17 +35,7 @@ class ApplicationViews extends Component {
                     return <LocationDetails placeId={parseInt(props.match.params.placeId)} activeUser={this.props.activeUser} 
                     {...props} />
                 }} />
-                {/* <Route exact path="/trip/new" render={(props) => {
-                    return <TripAddForm activeUser={this.props.activeUser} {...props} />
-                }} /> */}
-                <Route
-                    exact path="/trips/:tripId(\d+)/edit" render={props => {
-                        return <TripEditForm activeUser={this.props.activeUser} {...props} />
-                    }}
-                />
-                {/* <Route exact path="/profile/new" render={(props) => {
-                    return <AddProfile {...props} />
-                }} /> */}
+
             </React.Fragment>
         );
     }

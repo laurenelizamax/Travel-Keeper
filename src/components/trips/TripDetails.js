@@ -6,7 +6,7 @@ import AddTravelers from "./AddTravelers"
 import EditTripForm from "./EditTripForm"
 import EditTravelersForm from "./EditTravelersForm"
 import { Button } from "reactstrap"
-import "./TripList.css"
+// import "./TripList.css"
 import "./Trip.css"
 
 class TripDetails extends Component {
@@ -120,7 +120,8 @@ class TripDetails extends Component {
                     </div>
                 </div>
 
-               
+                {/* <div className="card">
+                    <div className="card-content"> */}
                         {this.state.places.map(place =>
                             <div key={place.id}>
                                 <PlaceCard
@@ -132,7 +133,8 @@ class TripDetails extends Component {
                                 />
                             </div>
                         )}
-                
+                {/* </div>
+                </div> */}
 
             </>
         )

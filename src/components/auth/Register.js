@@ -34,10 +34,10 @@ class Register extends Component {
         let email = this.state.regEmail;
         let userPlace = this.state.userPlace;
         let dreamTrip = this.state.dreamTrip;
-        if  (name === "") {
+        if (name === "") {
             alert('Please enter a valid Email.');
-        } 
-         else {
+        }
+        else {
             const newUser = {
                 password: password,
                 name: name,
@@ -48,9 +48,9 @@ class Register extends Component {
             LogRegManager.createNewUser(newUser).then(response => {
                 if (response.length === 0) {
                     alert('Please enter a valid Email');
-                }  else  {
-                this.props.setUser(response.id);
-                this.props.history.push("/");
+                } else {
+                    this.props.setUser(response.id);
+                    this.props.history.push("/");
                 }
             });
         }
@@ -82,26 +82,31 @@ class Register extends Component {
                                     id="regName"
                                     placeholder="Enter Name"
                                     required="" autoFocus="" />
+                                <br></br>
                                 <label htmlFor="userPlace">Location:</label>
                                 <input onChange={this.handleFieldChange} type="text"
                                     id="userPlace"
                                     placeholder="Location"
                                     required="" autoFocus="" />
+                                <br></br>
                                 <label htmlFor="dreamTrip">Dream Destination:</label>
                                 <input onChange={this.handleFieldChange} type="text"
                                     id="dreamTrip"
                                     placeholder="Dream Destination"
                                     required="" autoFocus="" />
+                                <br></br>
                                 <label htmlFor="regEmail">Email:</label>
                                 <input onChange={this.handleFieldChange} type="text"
                                     id="regEmail"
                                     placeholder=" Enter Email"
                                     required="" autoFocus="" />
+                                <br></br>
                                 <label htmlFor="regPassword">Password:</label>
                                 <input onChange={this.handleFieldChange} type="password"
                                     id="regPassword"
                                     placeholder=" regPassword"
                                     required="" autoFocus="" />
+                                <br></br>
                                 <ModalFooter>
                                     <Button type="submit" className="submit">Register</Button>
                                     {" "}

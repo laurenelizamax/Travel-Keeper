@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./TripForm.css"
 // import { Link } from "react-router-dom"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./Trip.css"
@@ -46,10 +45,10 @@ class TripAddForm extends Component {
                 userId: this.props.activeUser
             }
             APIManager.postTrip(trip)
-            .then(() => {
-                this.props.getData()
-                this.setState({ loadingStatus: false });
-            })
+                .then(() => {
+                    this.props.getData()
+                    this.setState({ loadingStatus: false });
+                })
         }
     }
     componentDidMount() {
@@ -69,8 +68,10 @@ class TripAddForm extends Component {
         return (
             <>
                 {" "}
-                <button  className="addButtonModal" onClick={this.toggle} >
+                <div className="container">
+                <button className="tripAddButton" onClick={this.toggle} >
                     Add A Trip</button>
+                    </div>
                 < Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -91,6 +92,7 @@ class TripAddForm extends Component {
                                     id="tripTitle"
                                     placeholder="TripTitle"
                                 />
+                                <br></br>
                                 {/* Start Date input*/}
                                 <label htmlFor="startDate">Start Date:</label>
                                 <input
@@ -100,6 +102,7 @@ class TripAddForm extends Component {
                                     id="startDate"
                                     placeholder="Start Date"
                                 />
+                                <br></br>
                                 {/* End Date input*/}
                                 <label htmlFor="endDate">End Date:</label>
                                 <input
@@ -109,6 +112,7 @@ class TripAddForm extends Component {
                                     id="endDate"
                                     placeholder="End Date"
                                 />
+                                <br></br>
                                 {/* Notes input*/}
                                 <label htmlFor="notes">Notes:</label>
                                 <textarea
@@ -120,15 +124,15 @@ class TripAddForm extends Component {
                                 />
                                 <ModalFooter>
                                     {/* Button to create new trip*/}
-                                    <Button className="button"
+                                    <button className="submitButton"
                                         type="submit"
                                         disabled={this.state.loadingStatus}
                                         onClick={this.constructNewTrip}
-                                    >Add A Trip</Button>
+                                    >Add A Trip</button>
                                     {" "}
-                                    <Button className="button" onClick={this.toggle}>
+                                    <button className="cancelButton" onClick={this.toggle}>
                                         Cancel
-                                    </Button>
+                                    </button>
                                 </ModalFooter>
                             </fieldset>
                         </form>
