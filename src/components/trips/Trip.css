@@ -27,6 +27,27 @@ label {
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
+.card {
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px;
+    background:white;
+    margin-bottom: 1.5em;
+    padding-bottom: -20px;
+    /* flex: 0 1 24%; */
+    width: 40%;
+ text-align: left;
+ margin-left: 10px;
+  }
+  .card-content {
+    padding: .5em;
+  }
+  
+  .card-content p {
+    font-size: 100%;
+    color:black;
+  }
+
 .addButtonModal {
   font-family: "Montserrat", sans-serif;
   background-color: #015939;
@@ -60,7 +81,8 @@ label {
   color: white;
   border-radius: 5px;
   padding: 8px;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .cancelButton {
   font-family: "Montserrat", sans-serif;
@@ -99,6 +121,7 @@ label {
   border-radius: 5px;
   padding: 8px;
   margin-right: 5px;
+  margin-bottom: 20px;
 }
     h6 {
         text-align: center;
@@ -110,4 +133,7 @@ label {
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
+  }
+  .tripDetails {
+      margin-left: 20px;
   }

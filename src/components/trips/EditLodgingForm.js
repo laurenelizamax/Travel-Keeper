@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import "./Trip.css"
+import "./TripList.css"
 
 
 class EditLodgingForm extends Component {

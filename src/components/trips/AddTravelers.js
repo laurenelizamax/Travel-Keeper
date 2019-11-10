@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
-import "./Trip.css"
+import "./TripList.css"
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 

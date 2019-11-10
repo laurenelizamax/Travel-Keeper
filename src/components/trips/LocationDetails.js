@@ -6,7 +6,7 @@ import AddTransportation from "./AddTransportation"
 import EditLodgingForm from "./EditLodgingForm"
 import EditActivityForm from "./EditActivityForm"
 import EditTransportationForm from "./EditTransportationForm"
-import "./Trip.css"
+import "./TripList.css"
 
 class LocationDetails extends Component {
 
@@ -21,36 +21,49 @@ class LocationDetails extends Component {
     }
 
     componentDidMount() {
+        // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
             .then((place) => {
+                // console.log(places)
                 this.setState({ place: place })
+
+                //setNewStatethis.place = places
             })
             .then(() => {
                 APIManager.getTripAccommodations(this.props.placeId)
                     .then((lodging) => {
+                        // console.log(lodging)
                         this.setState({ accommodations: lodging })
                     })
             })
 
             .then(() => APIManager.getTripActivities(this.props.placeId)
                 .then((activities) => {
+                    // setNewState.activities = activities
                     this.setState({ activities: activities })
                 })
             )
             .then(() => APIManager.getTripTransportation(this.props.placeId)
                 .then((transportations) => {
+                    // setNewState.transportations = transportations
                     this.setState({ transportations: transportations })
                 })
             )
+            .then(() => {
+                //this.setState(setNewState)
+            })
     }
     getData = () => {
+        // const setNewState = {}
         APIManager.getOnePlace(this.props.placeId)
             .then((place) => {
+                // setNewState.place = places
                 this.setState({ place: place })
             })
             .then(() => {
                 APIManager.getTripAccommodations(this.props.placeId)
                     .then((lodging) => {
+                        //newState.accommodations = 
                         this.setState({ accommodations: lodging })
 
                     })
@@ -64,6 +77,10 @@ class LocationDetails extends Component {
                     this.setState({ transportations: transportations })
                 })
             )
+            .then(() => {
+                // console.log(this.state)
+                // this.setState(setNewState)
+            })
     }
 
     deleteStay = id => {
@@ -123,47 +140,48 @@ class LocationDetails extends Component {
                 <AddActivities  {...this.props} getData={this.getData} />
 
                 <AddTransportation {...this.props} getData={this.getData} />
-
-                <div className="card">
-                    <div className="card-content">
-                        <h4>Location Details</h4>
-                        <p><strong>Location:</strong> {this.state.place.placeName}</p>
-                        <p><strong>Description:</strong> {this.state.place.placeDescription}</p>
+                <div className="container-cards">
+                    <div className="card">
+                        <div className="card-content">
+                            <h4>Location Details</h4>
+                            <p><strong>Location:</strong> {this.state.place.placeName}</p>
+                            <p><strong>Description:</strong> {this.state.place.placeDescription}</p>
+                        </div>
                     </div>
-                </div>
 
-                        {this.state.accommodations.map(accommodation =>
-                            <div  className="card" key={accommodation.id}>
-                                <h5>Where You Stayed</h5>
-                                <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
-                                <p><strong>Description:</strong> {accommodation.stayDescription}</p>
-                                <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
-                                <button className="deleteButton" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Stay</button>
-                            </div>
-                        )}
-                 
-                        {this.state.activities.map(activity =>
-                            <div className="card" key={activity.id}>
-                                <h5>What You Did</h5>
-                                <p><strong>Activity:</strong> {activity.activityName}</p>
-                                <p><strong>Description:</strong> {activity.activityDescription}</p>
-                                <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
-                                <button className="deleteButton" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</button>
-
-                            </div>
-                        )}
-            
-                        {this.state.transportations.map(transportation =>
-                            <div className="card" key={transportation.id}>
-                                <h5>How You Got There</h5>
-                                <p><strong>Transportation: </strong>{transportation.transportationName}</p>
-                                <p><strong>Description:</strong> {transportation.transportationDescription}</p>
-                                <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
-                                <button  className="deleteButton" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transport</button>
-                            </div>
-                        )}
+                   
+                    {this.state.accommodations.map(accommodation =>
+                        <div className="card" key={accommodation.id}>
+                            <h5>Where You Stayed</h5>
+                            <p><strong>Accommodation:</strong> {accommodation.stayName}</p>
+                            <p><strong>Description:</strong> {accommodation.stayDescription}</p>
+                            <EditLodgingForm accommodationId={accommodation.id} {...this.props} getData={this.getData} />
+                            <button className="deleteButton" type="button" onClick={() => this.deleteStay(accommodation.id)}>Delete Stay</button>
+                        </div>
+                    )}
                   
+                    {this.state.activities.map(activity =>
+                        <div className="card" key={activity.id}>
+                            <h5>What You Did</h5>
+                            <p><strong>Activity:</strong> {activity.activityName}</p>
+                            <p><strong>Description:</strong> {activity.activityDescription}</p>
+                            <EditActivityForm activityId={activity.id} {...this.props} getData={this.getData} />
+                            <button className="deleteButton" type="button" onClick={() => this.deleteActivity(activity.id)}>Delete Activity</button>
 
+                        </div>
+                    )}
+                   
+                    {this.state.transportations.map(transportation =>
+                        <div className="card" key={transportation.id}>
+                            <h5>How You Got There</h5>
+                            <p><strong>Transportation: </strong>{transportation.transportationName}</p>
+                            <p><strong>Description:</strong> {transportation.transportationDescription}</p>
+                            <EditTransportationForm transportationId={transportation.id} {...this.props} getData={this.getData} />
+                            <button className="deleteButton" type="button" onClick={() => this.deleteTransportation(transportation.id)}>Delete Transport</button>
+                        </div>
+                    )}
+            
+                </div>
             </>
         )
     }
