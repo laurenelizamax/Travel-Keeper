@@ -132,7 +132,7 @@
     },
     {
       "id": 22,
-      "title": "Toronto Trip ",
+      "title": "Toronto Trip August",
       "startDate": "2017-08-04",
       "endDate": "2017-08-11",
       "notes": "I went to visit Erika in Toronto!",
@@ -198,10 +198,10 @@
       "tripId": 1
     },
     {
-      "placeName": "Gulf Shores,Alabama",
+      "id": 22,
+      "placeName": "Gulf Shores, Alabama",
       "placeDescription": "I wanted to go back to the beach before school started.",
-      "tripId": 21,
-      "id": 22
+      "tripId": 21
     },
     {
       "placeName": "New York City!",
@@ -210,10 +210,22 @@
       "id": 23
     },
     {
+      "id": 24,
       "placeName": "Boston",
       "placeDescription": "We went for Memorial Day",
-      "tripId": 24,
-      "id": 24
+      "tripId": 24
+    },
+    {
+      "placeName": "Orange Beach",
+      "placeDescription": "We went to the Wharf",
+      "tripId": 21,
+      "id": 25
+    },
+    {
+      "placeName": "Rome, Italy",
+      "placeDescription": "It was July and super hot! But really cool to see all of the history.",
+      "tripId": 1,
+      "id": 26
     }
   ],
   "fellowTravelers": [
@@ -316,12 +328,6 @@
       "placeId": 16
     },
     {
-      "id": 18,
-      "stayName": "The Pink House",
-      "stayDescription": "I slept in the heart room.",
-      "placeId": 17
-    },
-    {
       "id": 21,
       "stayName": "Erika's apartment",
       "stayDescription": "I stayed with Erika and her mom and their apartment in Toronto.",
@@ -356,6 +362,12 @@
       "stayDescription": "Matthew and I stayed with Renee",
       "placeId": 24,
       "id": 26
+    },
+    {
+      "stayName": "Hostel",
+      "stayDescription": "We stayed in hostels most of this trip. This one was decent but it was hot.",
+      "placeId": 26,
+      "id": 27
     }
   ],
   "transportations": [
@@ -384,12 +396,6 @@
       "placeId": 16
     },
     {
-      "id": 8,
-      "transportationName": "car!!",
-      "transportationDescription": "We drove from Nashville",
-      "placeId": 17
-    },
-    {
       "id": 12,
       "transportationName": "Airplane",
       "transportationDescription": "I flew air canada.",
@@ -412,6 +418,12 @@
       "transportationDescription": "Matthew and I flew into Boston",
       "placeId": 24,
       "id": 15
+    },
+    {
+      "transportationName": "Train",
+      "transportationDescription": "We took an over night train from Paris. It was hard to sleep.",
+      "placeId": 26,
+      "id": 16
     }
   ],
   "activities": [
@@ -450,18 +462,6 @@
       "activityDescription": "it was hard!",
       "placeId": 16,
       "id": 13
-    },
-    {
-      "id": 14,
-      "activityName": "Swimming at the beach....",
-      "activityDescription": "The water was perfect!",
-      "placeId": 17
-    },
-    {
-      "activityName": "Went to dinner",
-      "activityDescription": "We went to YoHo Tacos and got the Salmon, it was delicious!",
-      "placeId": 17,
-      "id": 15
     },
     {
       "id": 19,
@@ -534,6 +534,24 @@
       "activityDescription": "We all went to Harvard which was super fun! Very cool old buildings.",
       "placeId": 24,
       "id": 30
+    },
+    {
+      "activityName": "Yo Ho Rum Tacos",
+      "activityDescription": "we went to Yo Ho Rum Tacos again. I got the Salmon again because it was such a great price and delicious.",
+      "placeId": 25,
+      "id": 31
+    },
+    {
+      "activityName": "The Vatican ",
+      "activityDescription": "We spent part of the day in the The Vatican. Got to see Michelangelo's ceiling!",
+      "placeId": 26,
+      "id": 32
+    },
+    {
+      "activityName": "Ate Pizza!",
+      "activityDescription": "We got Italian pizza which was really good.",
+      "placeId": 26,
+      "id": 33
     }
   ]
 }
