@@ -63,24 +63,32 @@
       "userPlace": "home",
       "email": "kaia@kaia",
       "id": 13
+    },
+    {
+      "password": "mark",
+      "name": "mark",
+      "dreamTrip": "The park",
+      "userPlace": "nashville",
+      "email": "marky@marky.com",
+      "id": 14
     }
   ],
   "trips": [
     {
       "id": 1,
-      "title": "Europe Trip",
+      "title": "Europe Backpacking Trip",
       "startDate": "2008-07-01",
       "endDate": "2008-07-31",
       "notes": "Backpacking Trip through Europe with Lauren K.",
       "userId": 1
     },
     {
-      "title": "Dog Store",
-      "startDate": "2019-10-02",
-      "endDate": "2019-10-16",
-      "notes": "bones",
-      "userId": 4,
-      "id": 8
+      "id": 8,
+      "title": "Cottage Trip",
+      "startDate": "2019-11-03",
+      "endDate": "2019-11-05",
+      "notes": "We went to Sewanee Tn and stayed at my grandparents cottage.",
+      "userId": 4
     },
     {
       "id": 10,
@@ -147,12 +155,20 @@
       "userId": 1
     },
     {
-      "title": "Boston Trip",
+      "id": 24,
+      "title": "Boston Half Marathon Trip",
       "startDate": "2015-05-21",
       "endDate": "2015-05-27",
-      "notes": "I got to see Boston and catch up with Renee!",
-      "userId": 1,
-      "id": 24
+      "notes": "I got to see Renee and Boston!",
+      "userId": 1
+    },
+    {
+      "title": "Gulf Shores",
+      "startDate": "2019-07-01",
+      "endDate": "2019-07-06",
+      "notes": "My first trip to the beach",
+      "userId": 4,
+      "id": 25
     }
   ],
   "places": [
@@ -226,6 +242,24 @@
       "placeDescription": "It was July and super hot! But really cool to see all of the history.",
       "tripId": 1,
       "id": 26
+    },
+    {
+      "placeName": "Munich, Germany",
+      "placeDescription": "So nice after the heat of Rome.",
+      "tripId": 1,
+      "id": 27
+    },
+    {
+      "id": 28,
+      "placeName": "Sewanee, TN",
+      "placeDescription": "We went to the mountains",
+      "tripId": 8
+    },
+    {
+      "id": 29,
+      "placeName": "Gulf Shores, Alabama",
+      "placeDescription": "we went to the beach!",
+      "tripId": 25
     }
   ],
   "fellowTravelers": [
@@ -270,7 +304,7 @@
       "tripId": 20
     },
     {
-      "travelerName": "Erika",
+      "travelerName": "Lauren K",
       "id": 30,
       "tripId": 1
     },
@@ -288,6 +322,46 @@
       "travelerName": "Matthew",
       "tripId": 24,
       "id": 37
+    },
+    {
+      "travelerName": "My Mom",
+      "tripId": 8,
+      "id": 38
+    },
+    {
+      "travelerName": "Papi",
+      "tripId": 8,
+      "id": 39
+    },
+    {
+      "travelerName": "Mami",
+      "tripId": 8,
+      "id": 40
+    },
+    {
+      "travelerName": "My Mom",
+      "tripId": 25,
+      "id": 41
+    },
+    {
+      "travelerName": "Steph",
+      "tripId": 25,
+      "id": 42
+    },
+    {
+      "travelerName": "Kaia",
+      "tripId": 25,
+      "id": 43
+    },
+    {
+      "travelerName": "Sue",
+      "tripId": 21,
+      "id": 44
+    },
+    {
+      "travelerName": "Chalice",
+      "tripId": 21,
+      "id": 45
     }
   ],
   "accommodations": [
@@ -368,6 +442,12 @@
       "stayDescription": "We stayed in hostels most of this trip. This one was decent but it was hot.",
       "placeId": 26,
       "id": 27
+    },
+    {
+      "stayName": "Cottage",
+      "stayDescription": "We stayed at the cottage.",
+      "placeId": 28,
+      "id": 28
     }
   ],
   "transportations": [
@@ -424,6 +504,12 @@
       "transportationDescription": "We took an over night train from Paris. It was hard to sleep.",
       "placeId": 26,
       "id": 16
+    },
+    {
+      "transportationName": "The dreaded car",
+      "transportationDescription": "I really don't like the car, i get sick.",
+      "placeId": 28,
+      "id": 17
     }
   ],
   "activities": [
@@ -552,6 +638,18 @@
       "activityDescription": "We got Italian pizza which was really good.",
       "placeId": 26,
       "id": 33
+    },
+    {
+      "id": 34,
+      "activityName": "Dog Park",
+      "activityDescription": "We went to the dog park and I got to play with this really cool dog named Wanda.",
+      "placeId": 28
+    },
+    {
+      "activityName": "Walks!",
+      "activityDescription": "We went for lots of walks. My favorite was around the lake.",
+      "placeId": 28,
+      "id": 35
     }
   ]
 }
