@@ -3,7 +3,6 @@ import LogRegManager from "../../modules/LogRegManager"
 import { withRouter} from "react-router-dom"
 import { Button } from "reactstrap"
 import "./LogReg.css"
-// import Register from './Register'
 
 
 class Login extends Component {
@@ -58,14 +57,6 @@ class Login extends Component {
                             required="" autoFocus="" />
                             <br></br>
                         <Button className="logBtn" type="submit">Login</Button>
-                  
-                {/* <Register
-              getUser={this.getUser}
-              setUser={this.setUser}
-              user={this.state.user}
-              {...this.props}
-              activeUser={this.state.activeUser}
-            /> */}
               </form>
                 </div>
             </>

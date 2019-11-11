@@ -143,7 +143,7 @@ class LocationDetails extends Component {
                 <div className="container-cards">
                     <div className="card">
                         <div className="card-content">
-                            <h4>Location Details</h4>
+                            <h4><strong>Location Details</strong></h4>
                             <p><strong>Location:</strong> {this.state.place.placeName}</p>
                             <p><strong>Description:</strong> {this.state.place.placeDescription}</p>
                         </div>

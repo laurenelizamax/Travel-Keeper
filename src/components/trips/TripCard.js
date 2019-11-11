@@ -12,10 +12,10 @@ class TripCard extends Component {
                 <div className="card">
                     <div className="card-content">
                         <div className="tripCard">
-                        <h4>Title: <span>{this.props.trip.title}</span></h4>
-                        <p>Start Date: {this.props.trip.startDate}</p>
-                        <p>End Date: {this.props.trip.endDate}</p>
-                        <p>Notes: {this.props.trip.notes}</p>
+                        <h4><span><stong>Title: {this.props.trip.title}</stong></span></h4>
+                        <p><strong>Start Date:</strong> {this.props.trip.startDate}</p>
+                        <p><strong>End Date:</strong> {this.props.trip.endDate}</p>
+                        <p><strong>Notes: </strong>{this.props.trip.notes}</p>
 
                         <Link to={`/trips/${this.props.trip.id}`}><button className="detailsButton">Details</button></Link>
 
