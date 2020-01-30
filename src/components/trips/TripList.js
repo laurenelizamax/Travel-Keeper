@@ -15,14 +15,22 @@ class TripList extends Component {
 
     deleteTrip = id => {
         APIManager.delete(id)
-            .then(() => {
-                APIManager.getAllTrips(this.props.activeUser)
+        .then(() => APIManager.getTripPlaces(this.props.tripId)
+
+        .then((locations) => {
+            locations.forEach(location => {
+                APIManager.deleteLocation(location.id)
+            })
+                
+                    })
+        )
+                    APIManager.getAllTrips(this.props.activeUser)
                     .then((newTrips) => {
                         this.setState({
                             trips: newTrips
                         })
-                    })
             })
+        
     }
 
     getData = () => {

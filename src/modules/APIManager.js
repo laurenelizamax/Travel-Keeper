@@ -86,6 +86,12 @@ export default {
         })
             .then(result => result.json())
     },
+    deleteLocationByTripId(tripId) {
+        return fetch(`http://localhost:5002/places?tripId=${tripId}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
     deleteTraveler(id) {
         return fetch(`http://localhost:5002/fellowTravelers/${id}`, {
             method: "DELETE"
