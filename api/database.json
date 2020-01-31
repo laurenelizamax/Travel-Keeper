@@ -155,14 +155,6 @@
       "userId": 1
     },
     {
-      "id": 24,
-      "title": "Boston Half Marathon Trip",
-      "startDate": "2015-05-21",
-      "endDate": "2015-05-27",
-      "notes": "I got to see Renee and Boston!",
-      "userId": 1
-    },
-    {
       "title": "Gulf Shores",
       "startDate": "2019-07-01",
       "endDate": "2019-07-06",
@@ -224,12 +216,6 @@
       "placeDescription": "First time visiting the Big Apple.",
       "tripId": 23,
       "id": 23
-    },
-    {
-      "id": 24,
-      "placeName": "Boston",
-      "placeDescription": "We went for Memorial Day",
-      "tripId": 24
     },
     {
       "placeName": "Orange Beach",
@@ -317,11 +303,6 @@
       "travelerName": "Karmen",
       "tripId": 23,
       "id": 36
-    },
-    {
-      "travelerName": "Matthew",
-      "tripId": 24,
-      "id": 37
     },
     {
       "travelerName": "My Mom",
@@ -432,12 +413,6 @@
       "id": 25
     },
     {
-      "stayName": "Renee's Apartment",
-      "stayDescription": "Matthew and I stayed with Renee",
-      "placeId": 24,
-      "id": 26
-    },
-    {
       "stayName": "Hostel",
       "stayDescription": "We stayed in hostels most of this trip. This one was decent but it was hot.",
       "placeId": 26,
@@ -492,12 +467,6 @@
       "transportationDescription": "We drove Sue's car from Nashville to Birmingham and then met her mom and took her car to Gulf Shores.",
       "placeId": 22,
       "id": 14
-    },
-    {
-      "transportationName": "Airplane",
-      "transportationDescription": "Matthew and I flew into Boston",
-      "placeId": 24,
-      "id": 15
     },
     {
       "transportationName": "Train",
@@ -608,18 +577,6 @@
       "activityDescription": "One of my favorite activities was walking on the high line in NYC. Its right on the river and a gorgeous view at night.",
       "placeId": 23,
       "id": 28
-    },
-    {
-      "activityName": "RAN A HALF MARATHON!!",
-      "activityDescription": "I got to run my first half marathon in Boston's Run to Remember on Memorial Day weekend!!",
-      "placeId": 24,
-      "id": 29
-    },
-    {
-      "activityName": "Harvard",
-      "activityDescription": "We all went to Harvard which was super fun! Very cool old buildings.",
-      "placeId": 24,
-      "id": 30
     },
     {
       "activityName": "Yo Ho Rum Tacos",
