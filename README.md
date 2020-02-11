@@ -13,25 +13,19 @@ A short description of the motivation behind the creation and maintenance of the
 Built with
        -React
        -Reactstrap
-       -Possibly other CSS library------ to edit
+       -Bootstrap
 
 ### Features
-What makes your project stand out?----------to edit
+Travel Keeper allows users to record details from their trips.
 
-### Installation
-Provide step by step series of examples and explanations about how to get a development env running.--------- to edit
+<!-- ### Installation
+Provide step by step series of examples and explanations about how to get a development env running. -->
 
 ### API Reference
 database.json
 
 ### How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.------- to edit
-
-### Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.-------- to be added as needed
+Create an account. This will sign user in and take them to their list of trips. Click on the add a trip button and fill out the form. Then click on the details page of that trip and add more information.
 
 
-### License
-A short snippet describing the license (MIT, Apache etc)----- to edit
-
-MIT © LaurenMaxwell
+ © LaurenMaxwell
