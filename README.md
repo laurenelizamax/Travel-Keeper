@@ -1,7 +1,7 @@
 # Travel Keeper
  A travel app to store all things related to a specific trip (e.g.,transportation, accommodations, restaurants, places visited). When your friends ask for specific recommendations about a trip you can tell them the best places to stay, eat, visit and avoid. They can also follow you on the app to see your recommendations.
 
-<img src="https://github.com/laurenelizamax/Travel-Keeper/blob/master/travelkeeper.png" alt="travel keeper" width="700" height="400">
+<img src="https://github.com/laurenelizamax/Travel-Keeper/blob/master/travelkeeper.png" alt="travel keeper" width="800" height="400">
 
 
 ### Motivation
