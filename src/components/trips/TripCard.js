@@ -12,7 +12,7 @@ class TripCard extends Component {
                 <div className="card">
                     <div className="card-content">
                         <div className="tripCard">
-                        <h4><span><stong>Title: {this.props.trip.title}</stong></span></h4>
+                        <h4><span><strong>Title: {this.props.trip.title}</strong></span></h4>
                         <p><strong>Start Date:</strong> {this.props.trip.startDate}</p>
                         <p><strong>End Date:</strong> {this.props.trip.endDate}</p>
                         <p><strong>Notes: </strong>{this.props.trip.notes}</p>

@@ -53,7 +53,11 @@ class App extends Component {
               activeUser={this.state.activeUser}
             />
           </>
-          : <><div className="logRegContainer">
+          : <>
+          {/* <div className="logRegContainer"> */}
+            <div className="jumbotron jumbotron-fluid">
+  <div className="container">
+
             <Login
               getUser={this.getUser}
               setUser={this.setUser}
@@ -68,7 +72,8 @@ class App extends Component {
               {...this.props}
               activeUser={this.state.activeUser}
             />
-          </div>
+  </div>
+</div>
           </>}
       </React.Fragment>
     );
